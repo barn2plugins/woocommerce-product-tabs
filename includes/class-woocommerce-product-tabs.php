@@ -172,10 +172,14 @@ class Woocommerce_Product_Tabs {
 		$this->loader->add_action( 'manage_woo_product_tab_posts_custom_column', $plugin_admin, 'custom_columns_in_tab_listing', 10, 2  );
 
 		// Bulk Messages
-		$this->loader->add_filter( 'post_updated_messages', $plugin_admin, 'tab_post_updated_messages' , 10, 2 );
+		$this->loader->add_filter( 'post_updated_messages', $plugin_admin, 'tab_post_updated_messages', 10, 2 );
 
 		// Row actions
 		$this->loader->add_filter( 'post_row_actions', $plugin_admin, 'tab_post_row_actions' , 10, 2 );
+
+        // Hide publishing actions.
+        $this->loader->add_action( 'admin_head-post.php', $plugin_admin, 'hide_publishing_actions' );
+        $this->loader->add_action( 'admin_head-post-new.php', $plugin_admin, 'hide_publishing_actions' );
 
 	}
 

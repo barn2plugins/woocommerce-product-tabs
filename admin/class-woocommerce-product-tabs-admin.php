@@ -129,12 +129,9 @@ class Woocommerce_Product_Tabs_Admin {
 
 		$priority = $post->menu_order;
 		echo '<p><label for="_wpt_option_priority"><strong>';
-		echo sprintf('%s (%s)',
-			__( 'Priority', 'woocommerce-product-tabs' ),
-			__( 'required', 'woocommerce-product-tabs' )
-		 );
+        echo __( 'Priority', 'woocommerce-product-tabs' );
 		echo '</strong></label></p>';
-    echo '<input type="number" name="_wpt_option_priority" id="_wpt_option_priority" value="'.$priority.'" min="0"/>';
+    echo '<input type="number" name="_wpt_option_priority" id="_wpt_option_priority" value="'.$priority.'" min="0" style="max-width:70px;"/>';
 	}
 
 	public function tab_conditions_meta_box_callback(  $post  ){
@@ -407,6 +404,27 @@ class Woocommerce_Product_Tabs_Admin {
 		return $actions;
 
 	}
+
+    /**
+     * Hide publishing actions.
+     *
+     * @since 1.0.0
+     */
+    function hide_publishing_actions() {
+        global $post;
+        if ( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB !== $post->post_type ) {
+            return;
+        }
+        ?>
+        <style type="text/css">
+        #misc-publishing-actions,#minor-publishing-actions{
+            display:none;
+        }
+        </style>
+        <?php
+        return;
+    }
+
 
 
 
