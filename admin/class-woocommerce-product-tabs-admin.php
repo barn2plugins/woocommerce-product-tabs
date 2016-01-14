@@ -82,18 +82,6 @@ class Woocommerce_Product_Tabs_Admin {
 		if ( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB == $screen->id ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __FILE__ ) . 'css/tab.css', array(), $this->version, 'all' );
 		}
-		// wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/woocommerce-product-tabs-admin.css', array(), $this->version, 'all' );
-
-	}
-
-	/**
-	 * Register the JavaScript for the dashboard.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-
-		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woocommerce-product-tabs-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -146,7 +134,7 @@ class Woocommerce_Product_Tabs_Admin {
 			__( 'required', 'woocommerce-product-tabs' )
 		 );
 		echo '</strong></label></p>';
-    echo '<input type="number" name="_wpt_option_priority" id="_wpt_option_priority" value="'.$priority.'" min="1"/>';
+    echo '<input type="number" name="_wpt_option_priority" id="_wpt_option_priority" value="'.$priority.'" min="0"/>';
 	}
 
 	public function tab_conditions_meta_box_callback(  $post  ){
@@ -296,10 +284,8 @@ class Woocommerce_Product_Tabs_Admin {
 
 		// priority
 		$priority = $_POST['_wpt_option_priority'];
-		$priority = abs(intval($priority));
-		if ( $priority < 1 ) {
-			$priority = 50;
-		}
+		$priority = absint( $priority );
+
 		global $wpdb;
 		$sql = $wpdb->prepare('UPDATE '. $wpdb->posts.' SET `menu_order`=%d WHERE ID=%d',
 			$priority,

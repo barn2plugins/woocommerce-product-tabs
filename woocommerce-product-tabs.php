@@ -13,10 +13,10 @@
  * @package           Woocommerce_Product_Tabs
  *
  * @wordpress-plugin
- * Plugin Name:       Woocommerce Product Tabs
+ * Plugin Name:       WooCommerce Product Tabs
  * Plugin URI:        https://wordpress.org/plugins/woocommerce-product-tabs/
  * Description:       Custom Product Tabs for WooCommerce
- * Version:           1.1
+ * Version:           1.2
  * Author:            Nilambar Sharma
  * Author URI:        http://www.nilambar.net/
  * License:           GPL-2.0+

@@ -69,7 +69,7 @@ class Woocommerce_Product_Tabs {
 	public function __construct() {
 
 		$this->plugin_name = 'woocommerce-product-tabs';
-		$this->version = '1.1';
+		$this->version = '1.2';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -154,7 +154,6 @@ class Woocommerce_Product_Tabs {
 		$plugin_admin = new Woocommerce_Product_Tabs_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'edit_form_after_editor', $plugin_admin, 'content_after_editor' );
 
@@ -191,12 +190,9 @@ class Woocommerce_Product_Tabs {
 
 		$plugin_public = new Woocommerce_Product_Tabs_Public( $this->get_plugin_name(), $this->get_version() );
 
-		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 		// Public custom hooks
 		$this->loader->add_filter( 'init', $plugin_public, 'custom_post_types' );
-    $this->loader->add_filter( 'woocommerce_product_tabs', $plugin_public, 'custom_woocommerce_product_tabs', 20 );
+        $this->loader->add_filter( 'woocommerce_product_tabs', $plugin_public, 'custom_woocommerce_product_tabs', 20 );
 
 		$this->loader->add_filter( 'wpt_filter_product_tabs', $plugin_public, 'tab_status_check' );
 
