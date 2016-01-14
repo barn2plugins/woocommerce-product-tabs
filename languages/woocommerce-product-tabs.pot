@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: woocommerce-product-tabs\n"
+"POT-Creation-Date: 2015-05-07 15:00+0545\n"
+"PO-Revision-Date: 2015-05-07 15:01+0545\n"
+"Last-Translator: Nilambar Sharma <nilambar@outlook.com>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../../woocommerce-product-tabs\n"
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:109
+msgid "Tab: Settings"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:117
+msgid "Conditions"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:134
+msgid "Use Default for All"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:140
+msgid "Check to display default content in all products"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:145
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:352
+msgid "Priority"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:146
+msgid "required"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:161
+msgid "Product Categories"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:162
+msgid ""
+"Select categories if you want to show tab in selected category only. If "
+"nothing is selected it will be shown for all categories. "
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:186
+msgid "Custom Product Tabs"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:232
+msgid "Not available"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:344
+msgid "Default Content will be displayed if nothing is entered in the Product"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:353
+msgid "Default for All"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:354
+msgid "Tab Key"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:398
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:401
+msgid "Tab updated."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:399
+msgid "Custom field updated."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:400
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:402
+#, php-format
+msgid "Tab restored to revision from %s"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:403
+msgid "Tab published."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:404
+msgid "Tab saved."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:405
+msgid "Tab submitted."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:407
+#, php-format
+msgid "Tab scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:408
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/admin/class-woocommerce-product-tabs-admin.php:410
+msgid "Tab draft updated."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:213
+msgid "Add New Tab"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:214
+msgid "New Tab"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:215
+msgid "Edit Tab"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:216
+msgid "View Tab"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:217
+msgid "Product Tabs"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:218
+msgid "Search Tabs"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:219
+msgid "Parent Tabs:"
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:220
+msgid "No tabs found."
+msgstr ""
+
+#: ../../woocommerce-product-tabs/public/class-woocommerce-product-tabs-public.php:221
+msgid "No tabs found in Trash."
+msgstr ""
