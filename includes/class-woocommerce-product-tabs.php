@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the dashboard.
  *
- * @link       http://www.nilambar.net
+ * @link       http://nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
@@ -69,7 +69,7 @@ class Woocommerce_Product_Tabs {
 	public function __construct() {
 
 		$this->plugin_name = 'woocommerce-product-tabs';
-		$this->version = '1.2';
+		$this->version = '2.0';
 
 		$this->load_dependencies();
 		$this->set_locale();

@@ -3,7 +3,7 @@
 /**
  * The dashboard-specific functionality of the plugin.
  *
- * @link       http://www.nilambar.net
+ * @link       http://nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
