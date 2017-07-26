@@ -123,7 +123,7 @@ class Woocommerce_Product_Tabs_Public {
           $content_to_show = $tab_default_value;
 
           if ( 'yes' != $tab['use_default_for_all'] ) {
-            $tab_value = get_post_meta( $product->id, '_wpt_field_'.$key, true );
+            $tab_value = get_post_meta( $product->get_id(), '_wpt_field_'.$key, true );
             if ( ! empty( $tab_value ) ) {
               $content_to_show = $tab_value;
             }
@@ -165,7 +165,7 @@ class Woocommerce_Product_Tabs_Public {
 		}
 		else{
 			// no default
-			$tab_value = get_post_meta( $product->id, '_wpt_field_'.$key, true );
+			$tab_value = get_post_meta( $product->get_id(), '_wpt_field_'.$key, true );
 			if ( ! empty( $tab_value ) ) {
 				// Value is set for Product
 				echo apply_filters( 'the_content', $tab_value );
