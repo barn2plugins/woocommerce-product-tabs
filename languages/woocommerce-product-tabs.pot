@@ -36,7 +36,7 @@ msgid "Check to display default content in all products"
 msgstr ""
 
 #: admin/class-woocommerce-product-tabs-admin.php:132
-#: admin/class-woocommerce-product-tabs-admin.php:335
+#: admin/class-woocommerce-product-tabs-admin.php:341
 msgid "Priority"
 msgstr ""
 
@@ -54,60 +54,64 @@ msgstr ""
 msgid "Custom Product Tabs"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:217
-msgid "Not available"
+#: admin/class-woocommerce-product-tabs-admin.php:219
+msgid "There is no any custom tab to be set specific to the product."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:327
+#: admin/class-woocommerce-product-tabs-admin.php:220
+msgid "Click here to add custom tabs."
+msgstr ""
+
+#: admin/class-woocommerce-product-tabs-admin.php:333
 msgid "Default Content will be displayed if nothing is entered in the Product"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:336
+#: admin/class-woocommerce-product-tabs-admin.php:342
 msgid "Default for All"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:337
+#: admin/class-woocommerce-product-tabs-admin.php:343
 msgid "Tab Key"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:381
-#: admin/class-woocommerce-product-tabs-admin.php:384
+#: admin/class-woocommerce-product-tabs-admin.php:387
+#: admin/class-woocommerce-product-tabs-admin.php:390
 msgid "Tab updated."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:382
+#: admin/class-woocommerce-product-tabs-admin.php:388
 msgid "Custom field updated."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:383
+#: admin/class-woocommerce-product-tabs-admin.php:389
 msgid "Custom field deleted."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:385
+#: admin/class-woocommerce-product-tabs-admin.php:391
 msgid "Tab restored to revision from %s"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:386
+#: admin/class-woocommerce-product-tabs-admin.php:392
 msgid "Tab published."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:387
+#: admin/class-woocommerce-product-tabs-admin.php:393
 msgid "Tab saved."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:388
+#: admin/class-woocommerce-product-tabs-admin.php:394
 msgid "Tab submitted."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:390
+#: admin/class-woocommerce-product-tabs-admin.php:396
 msgid "Tab scheduled for: <strong>%1$s</strong>."
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:391
+#: admin/class-woocommerce-product-tabs-admin.php:397
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: admin/class-woocommerce-product-tabs-admin.php:393
+#: admin/class-woocommerce-product-tabs-admin.php:399
 msgid "Tab draft updated."
 msgstr ""
 

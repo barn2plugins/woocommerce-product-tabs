@@ -213,8 +213,14 @@ class Woocommerce_Product_Tabs_Admin {
 			}
 
 		}
-		else{
-			echo __( 'Not available', 'woocommerce-product-tabs' );
+		else {
+			?>
+			<div>
+				<p><?php esc_html_e( 'There is no any custom tab to be set specific to the product.', 'woocommerce-product-tabs' ); ?></p>
+				<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ); ?>" target="_blank"><?php esc_html_e( 'Click here to add custom tabs.', 'woocommerce-product-tabs' ); ?></a>
+
+			</div>
+			<?php
 		}
 
 	}
