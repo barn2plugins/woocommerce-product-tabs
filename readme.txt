@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ramro
 Tags: woocommerce, product, tab, custom, tabs, custom tabs
 Requires at least: 4.6
 Tested up to: 4.8
-Stable tag: 2.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,7 @@ Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woo
 
 == Changelog ==
 
-= 2.0 =
+= 2.0.0 =
 * Update: Major code refactoring
 * Fix: Minor bug fixes
 

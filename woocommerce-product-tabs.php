@@ -13,16 +13,16 @@
  * @package           Woocommerce_Product_Tabs
  *
  * @wordpress-plugin
- * Plugin Name:       WooCommerce Product Tabs
- * Plugin URI:        https://wordpress.org/plugins/woocommerce-product-tabs/
- * Description:       Custom Product Tabs for WooCommerce
- * Version:           2.0
- * Author:            Nilambar Sharma
- * Author URI:        http://nilambar.net/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       woocommerce-product-tabs
- * Domain Path:       /languages
+ * Plugin Name: WooCommerce Product Tabs
+ * Plugin URI: https://wordpress.org/plugins/woocommerce-product-tabs/
+ * Description: Custom Product Tabs for WooCommerce.
+ * Version: 2.0.0
+ * Author: Nilambar Sharma
+ * Author URI: http://nilambar.net/
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: woocommerce-product-tabs
+ * Domain Path: /languages
  */
 
 // If this file is called directly, abort.

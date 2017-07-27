@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Product Tabs 2.0\n"
+"Project-Id-Version: WooCommerce Product Tabs 2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-07 15:00+0545\n"
 "MIME-Version: 1.0\n"
@@ -160,7 +160,7 @@ msgid "https://wordpress.org/plugins/woocommerce-product-tabs/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Custom Product Tabs for WooCommerce"
+msgid "Custom Product Tabs for WooCommerce."
 msgstr ""
 
 #. Author of the plugin/theme
