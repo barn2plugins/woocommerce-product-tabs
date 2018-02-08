@@ -1,7 +1,6 @@
 === WooCommerce Product Tabs ===
 Contributors: rabmalin
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ramrojob1%40gmail%2ecom&lc=US&item_name=Nilambar%20Sharma&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
-Tags: woocommerce, product, tab, custom, tabs, custom tabs
+Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.2
 Requires at least: 4.7
 Tested up to: 4.9.4
