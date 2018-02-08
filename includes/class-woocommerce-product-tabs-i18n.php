@@ -6,7 +6,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that its ready for translation.
  *
- * @link       http://nilambar.net
+ * @link       https://nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs

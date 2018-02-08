@@ -8,6 +8,7 @@ module.exports = function( grunt ) {
 		'admin/**',
 		'public/**',
 		'includes/**',
+		'languages/**',
 		'readme.txt',
 		'uninstall.php',
 		'<%= pkg.main_file %>'

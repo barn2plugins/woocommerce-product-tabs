@@ -168,7 +168,7 @@ msgid "Nilambar Sharma"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://nilambar.net/"
+msgid "https://nilambar.net/"
 msgstr ""
 
 #: public/class-woocommerce-product-tabs-public.php:186

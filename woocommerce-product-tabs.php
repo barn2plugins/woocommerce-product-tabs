@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://nilambar.net
+ * @link              https://nilambar.net
  * @since             1.0.0
  * @package           Woocommerce_Product_Tabs
  *
@@ -18,7 +18,7 @@
  * Description: Custom Product Tabs for WooCommerce.
  * Version: 2.0.1
  * Author: Nilambar Sharma
- * Author URI: http://nilambar.net/
+ * Author URI: https://nilambar.net/
  * WC requires at least: 2.2
  * WC tested up to: 3.3.1
  * License: GPL-2.0+
