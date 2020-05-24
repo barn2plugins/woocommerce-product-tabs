@@ -1,10 +1,11 @@
 === WooCommerce Product Tabs ===
+
 Contributors: rabmalin
 Tags: woocommerce, product, tabs, custom tabs
-Requires PHP: 5.2
-Requires at least: 4.7
-Tested up to: 4.9.4
-Stable tag: 2.0.1
+Requires PHP: 5.6.20
+Requires at least: 5.2
+Tested up to: 5.4
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +33,6 @@ If you have any question, suggestion or issue, please [post here](http://wordpre
 1. Upload the 'woocommerce-product-tabs' directory to your 'wp-content/plugins' directory
 1. Activate the plugin on the WordPress Plugins dashboard
 
-
 == Frequently Asked Questions ==
 
 = There is something cool you could add... =
@@ -46,6 +46,9 @@ Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woo
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.0.2 =
+* Fix: Minor bug fixes
 
 = 2.0.1 =
 * Compatibility with Woo 3.3

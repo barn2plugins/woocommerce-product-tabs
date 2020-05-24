@@ -2,7 +2,7 @@
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
   "description": "WooCommerce Product Tabs",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "GPL-2.0+",
   "main": "Gruntfile.js",
   "main_file": "woocommerce-product-tabs.php",
