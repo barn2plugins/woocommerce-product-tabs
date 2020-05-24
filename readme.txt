@@ -8,7 +8,7 @@ Tested up to: 5.4
 Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Donate link: https://nilambar.net/
+Donate link: https://www.nilambar.net/2019/05/woocommerce-product-tabs-wordpress-plugin.html
 
 
 Custom Product Tabs for WooCommerce

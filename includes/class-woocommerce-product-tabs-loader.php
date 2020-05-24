@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://nilambar.net
+ * @link       https://www.nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs

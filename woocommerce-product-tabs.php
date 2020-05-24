@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://nilambar.net
+ * @link              https://www.nilambar.net
  * @since             1.0.0
  * @package           Woocommerce_Product_Tabs
  *
  * @wordpress-plugin
  * Plugin Name: WooCommerce Product Tabs
- * Plugin URI: https://wordpress.org/plugins/woocommerce-product-tabs/
+ * Plugin URI: https://www.nilambar.net/2019/05/woocommerce-product-tabs-wordpress-plugin.html
  * Description: Custom Product Tabs for WooCommerce.
  * Version: 2.0.2
  * Author: Nilambar Sharma
- * Author URI: https://nilambar.net/
+ * Author URI: https://www.nilambar.net/
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: woocommerce-product-tabs
