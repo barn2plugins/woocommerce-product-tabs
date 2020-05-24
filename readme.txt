@@ -1,6 +1,7 @@
 === WooCommerce Product Tabs ===
 
 Contributors: rabmalin
+Donate link: https://www.nilambar.net/2019/05/woocommerce-product-tabs-wordpress-plugin.html
 Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6.20
 Requires at least: 5.2
@@ -8,8 +9,6 @@ Tested up to: 5.4
 Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Donate link: https://www.nilambar.net/2019/05/woocommerce-product-tabs-wordpress-plugin.html
-
 
 Custom Product Tabs for WooCommerce
 
