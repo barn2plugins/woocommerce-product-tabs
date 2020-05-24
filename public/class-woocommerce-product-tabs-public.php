@@ -112,8 +112,8 @@ class Woocommerce_Product_Tabs_Public {
     if ( ! empty( $tabs ) && is_array( $tabs ) ) {
 
       foreach ($tabs as $tab_key => $tab) {
-
         $key = $tab['id'];
+
         $tab_post = get_page_by_path( $key, OBJECT, WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB );
 
         if ( ! empty( $tab_post ) ) {
@@ -132,9 +132,10 @@ class Woocommerce_Product_Tabs_Public {
           if ( empty( $content_to_show ) ) {
             unset( $tabs[ $tab_key ] );
           }
+
           if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) ) {
             // check category condition
-            $cat_list = wp_get_post_terms( $product->id, 'product_cat', array( 'fields' => 'ids' ) );
+            $cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
 
             if ( ! array_intersect( $cat_list, $tab['conditions_category'] ) ) {
               unset( $tabs[ $tab_key ] );
