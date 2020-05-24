@@ -19,12 +19,12 @@
  * Version: 2.0.2
  * Author: Nilambar Sharma
  * Author URI: https://nilambar.net/
- * WC requires at least: 2.2
- * WC tested up to: 3.3.1
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: woocommerce-product-tabs
  * Domain Path: /languages
+ * WC requires at least: 3.6.0
+ * WC tested up to: 4.3.0
  */
 
 // If this file is called directly, abort.
