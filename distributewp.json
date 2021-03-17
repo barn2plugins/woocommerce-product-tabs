@@ -1,6 +1,0 @@
-{
-  "plugin_slug": "woocommerce-product-tabs",
-  "deployment_folder": "deploy/woocommerce-product-tabs",
-  "deploy_assets": true,
-  "assets_folder": "plugin-assets"
-}

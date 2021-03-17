@@ -8,11 +8,13 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy",
+    "wpdeploy": "gulp build && gulp deploy && grunt wp_deploy"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
+    "grunt-wp-deploy": "^2.1.2",
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^1.6.0",
     "gulp-plumber": "^1.2.1",
