@@ -14,7 +14,7 @@ Custom Product Tabs for WooCommerce
 
 == Description ==
 
-Woocommerce Product Tabs helps you to add your custom Tabs in product page in WooCommerce. You can add any number of Tabs. You can also define default tab to be placed in every products. Shortcodes can be used in the tab content which allows you to place any content which you can display using shortcode.
+WooCommerce Product Tabs helps you to add your custom Tabs in product page in WooCommerce. You can add any number of Tabs. You can also define default tab to be placed in every products. Shortcodes can be used in the tab content which allows you to place any content which you can display using shortcode.
 
 If you like this plugin, please [rate and review](http://wordpress.org/support/view/plugin-reviews/woocommerce-product-tabs).
 If you have any question, suggestion or issue, please [post here](http://wordpress.org/support/plugin/woocommerce-product-tabs).
@@ -38,7 +38,7 @@ If you have any question, suggestion or issue, please [post here](http://wordpre
 
 = There is something cool you could add... =
 
-Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woocommerce-product-tabs "Woocommerce Product Tabs Support") and let us know. We are always looking for ways to improve our plugins.
+Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woocommerce-product-tabs "WooCommerce Product Tabs Support") and let us know. We are always looking for ways to improve our plugins.
 
 == Screenshots ==
 
