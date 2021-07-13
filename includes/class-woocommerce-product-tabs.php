@@ -6,11 +6,9 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the dashboard.
  *
- * @link       https://www.nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
  */
 
 /**
@@ -24,8 +22,6 @@
  *
  * @since      1.0.0
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
- * @author     Nilambar Sharma <nilambar@outlook.com>
  */
 class Woocommerce_Product_Tabs {
 

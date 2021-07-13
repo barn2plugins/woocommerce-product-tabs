@@ -3,11 +3,9 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://www.nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
  */
 
 /**
@@ -17,8 +15,6 @@
  *
  * @since      1.0.0
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
- * @author     Nilambar Sharma <nilambar@outlook.com>
  */
 class Woocommerce_Product_Tabs_Activator {
 

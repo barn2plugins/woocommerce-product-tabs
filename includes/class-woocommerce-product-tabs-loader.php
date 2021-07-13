@@ -3,11 +3,9 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://www.nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
  */
 
 /**
@@ -18,8 +16,6 @@
  * run function to execute the list of actions and filters.
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/includes
- * @author     Nilambar Sharma <nilambar@outlook.com>
  */
 class Woocommerce_Product_Tabs_Loader {
 
