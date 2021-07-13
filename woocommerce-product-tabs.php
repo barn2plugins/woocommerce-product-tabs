@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: WooCommerce Product Tabs
- * Plugin URI: https://www.nilambar.net/2019/05/woocommerce-product-tabs-wordpress-plugin.html
+ * Plugin URI: https://wpconcern.com/plugins/woocommerce-product-tabs/
  * Description: Custom Product Tabs for WooCommerce.
- * Version: 2.0.3
- * Author: Nilambar Sharma
- * Author URI: https://www.nilambar.net/
+ * Version: 2.0.4
+ * Author: WP Concern
+ * Author URI: https://wpconcern.com/
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: woocommerce-product-tabs

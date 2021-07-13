@@ -3,19 +3,15 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://www.nilambar.net
  * @since      1.0.0
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/public
  */
 
 /**
  * The public-facing functionality of the plugin.
  *
  * @package    Woocommerce_Product_Tabs
- * @subpackage Woocommerce_Product_Tabs/public
- * @author     Nilambar Sharma <nilambar@outlook.com>
  */
 class Woocommerce_Product_Tabs_Public {
 

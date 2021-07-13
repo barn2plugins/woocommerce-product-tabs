@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 			deploy: {
 				options: {
 					plugin_slug: '<%= pkg.name %>',
-					svn_user: 'rabmalin',
+					svn_user: 'wpconcern',
 					build_dir: 'deploy/<%= pkg.name %>',
 					assets_dir: '.wordpress-org'
 				},
