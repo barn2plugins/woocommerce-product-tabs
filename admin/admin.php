@@ -29,7 +29,7 @@ function wpt_render_admin_page() {
 					</div><!-- .tab-wrapper -->
 
 					<div class="tabs-stage">
-						<div id="tab-features" class="meta-box-sortables ui-sortable">
+						<div id="tab-features" class="meta-box-sortables ui-sortable active">
 							<div class="postbox">
 								<div class="inside inside-content">
 									<h4>Key features</h4>

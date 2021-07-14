@@ -11,7 +11,7 @@
  * Text Domain: woocommerce-product-tabs
  * Domain Path: /languages
  * WC requires at least: 3.6.0
- * WC tested up to: 5.1.0
+ * WC tested up to: 5.5.0
  *
  * @package Woocommerce_Product_Tabs
  */

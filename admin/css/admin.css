@@ -63,3 +63,11 @@
 	list-style-type: disc;
 	list-style-position: inside;
 }
+
+.tabs-stage .ui-sortable {
+	display: none;
+}
+
+.tabs-stage .ui-sortable.active {
+	display: block;
+}

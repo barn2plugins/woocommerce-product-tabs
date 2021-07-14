@@ -5,7 +5,7 @@ Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6.20
 Requires at least: 5.2
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,10 +14,9 @@ Custom Product Tabs for WooCommerce
 
 == Description ==
 
-WooCommerce Product Tabs helps you to add your custom Tabs in product page in WooCommerce. You can add any number of Tabs. You can also define default tab to be placed in every products. Shortcodes can be used in the tab content which allows you to place any content which you can display using shortcode.
+WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the WooCommerce product using this plugin. It adds the standard WordPress WYSIWYG editor for each new tab you create. Additionally, it also supports shortcodes, images, HTML and embedded codes on the tab content.
 
-If you like this plugin, please [rate and review](http://wordpress.org/support/view/plugin-reviews/woocommerce-product-tabs).
-If you have any question, suggestion or issue, please [post here](http://wordpress.org/support/plugin/woocommerce-product-tabs).
+You can assign a newly added custom tab as a default tab to all products or use it for a specific product only. WooCommerce Product Tabs plugin allows you to change the order of all tabs you have added. 
 
 == Installation ==
 
@@ -36,9 +35,29 @@ If you have any question, suggestion or issue, please [post here](http://wordpre
 
 == Frequently Asked Questions ==
 
-= There is something cool you could add... =
+= Does this plugin work with all themes? =
 
-Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woocommerce-product-tabs "WooCommerce Product Tabs Support") and let us know. We are always looking for ways to improve our plugins.
+Yes, this plugin works with most of the standard themes. If you find a compatibility issue with any theme, you can create a support ticket. Our team will fix it as soon as possible.
+
+= Where can I create a support ticket? =
+
+For the free version of a plugin, you can create a support ticket on the WordPress support forum. The paid version of a plugin comes with an admin page where you can find a standard form to contact our support team.
+
+= How can I add a new tab? =
+
+Find the Product Tabs under WooCommerce menu on the left panel of a WordPress dashboard. Click on Add New and create a new tab. 
+
+= How many tabs can I create? =
+
+There is no limitation on the number of tabs you can create. You can add as many tabs as you need. 
+
+= What are the most important things I need to consider while adding a new tab? =
+
+Adding a new tab is straightforward. However, you need to consider few important settings like priority of the tab, enable it as the default tab for all products or not, enable it for specific categories and so on.
+
+= What is the priority I need to use? =
+
+WooCommerce adds 3 tabs Description, Additional Information and Reviews by default. Priority of them is set to 10, 20 and 30 respectively. You can set priority according to default tabs. For example, if you want a custom tab to appear first, you can set priority below 10. Likewise, if you want the custom tab to appear between Description and Additional Information, you can set the priority value 11 to 19. To display any additional tabs after review, you can set the priority higher than 30.
 
 == Screenshots ==
 
@@ -48,7 +67,7 @@ Nice, make a post on the [Support Forum](http://wordpress.org/support/plugin/woo
 
 == Changelog ==
 
-= 2.0.4 - 2021-07-15 =
+= 2.0.4 - 2021-07-14 =
 * Fix: Minor bug fixes
 
 = 2.0.3 =
