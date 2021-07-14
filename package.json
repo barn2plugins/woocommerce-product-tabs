@@ -17,6 +17,7 @@
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "dotenv": "^10.0.0",
+    "grunt": "^1.4.1",
     "grunt-wp-deploy": "^2.1.2",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.0.1",
