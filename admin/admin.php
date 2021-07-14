@@ -34,11 +34,11 @@ function wpt_render_admin_page() {
 								<div class="inside inside-content">
 									<h4>Key features</h4>
 									<ul>
-									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-									<li>Morbi vitae massa id nulla ornare vulputate.</li>
-									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-									<li>Morbi vitae massa id nulla ornare vulputate.</li>
-									<li>Nulla varius sapien vel vulputate tincidunt.</li>
+									<li>Create multiple tabs; no limit in number of tabs</li>
+									<li>Supports shortcodes and embedded codes</li>
+									<li>Setup common tab for all products</li>
+									<li>Enable tab based on product category</li>
+									<li>Change order of the tabs</li>
 									</ul>
 								</div><!-- .inside -->
 							</div><!-- .postbox -->
@@ -76,9 +76,9 @@ function wpt_render_admin_page() {
 							<h3><span>Our Products</span></h3>
 							<div class="inside">
 								<ul>
-								<li><a href="https://wpconcern.com/plugins/advanced-google-recaptcha/" target="_blank">Advanced Google reCAPTCHA</a></li>
 								<li><a href="https://wpconcern.com/plugins/post-grid-elementor-addon/" target="_blank">Post Grid Elementor Addon</a></li>
 								<li><a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank">WooCommerce Product Tabs</a></li>
+								<li><a href="https://wpconcern.com/plugins/advanced-google-recaptcha/" target="_blank">Advanced Google reCAPTCHA</a></li>
 								</ul>
 							</div> <!-- .inside -->
 
@@ -90,7 +90,7 @@ function wpt_render_admin_page() {
 
 							<h3><span>Have any queries?</span></h3>
 							<div class="inside">
-								If you have any queries or feedback, please feel free to send us an email to <code>support@wpconcern.com</code>
+								<p>If you have any queries or feedback, please feel free to send us an email to <code>support@wpconcern.com</code></p>
 							</div><!-- .inside -->
 
 						</div><!-- .postbox -->
