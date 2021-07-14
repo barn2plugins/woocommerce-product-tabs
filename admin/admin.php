@@ -126,7 +126,7 @@ function wpt_render_admin_page() {
  * @since 1.0.0
  */
 function wpt_register_menu() {
-	add_menu_page( esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ), esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ), 'manage_options', 'wpt-welcome', 'wpt_render_admin_page', 'dashicons-admin-site-alt3' );
+	add_submenu_page( 'edit.php?post_type=woo_product_tab', esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ), esc_html__( 'Getting Started', 'woocommerce-product-tabs' ), 'manage_options', 'wpt-welcome', 'wpt_render_admin_page' );
 }
 
 add_action( 'admin_menu', 'wpt_register_menu' );
@@ -139,7 +139,7 @@ add_action( 'admin_menu', 'wpt_register_menu' );
  * @param string $hook Hook name.
  */
 function wpt_load_admin_scripts( $hook ) {
-	if ( 'toplevel_page_wpt-welcome' === $hook ) {
+	if ( 'woo_product_tab_page_wpt-welcome' === $hook ) {
 		wp_enqueue_style( 'wpt-admin-style', plugins_url( 'admin/css/admin.css', dirname( __FILE__ ) ), array(), '1.0.0' );
 		wp_enqueue_script( 'wpt-admin-script', plugins_url( 'admin/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), '1.0.0', true );
 	}

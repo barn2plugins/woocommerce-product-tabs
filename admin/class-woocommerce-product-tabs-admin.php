@@ -399,7 +399,6 @@ class Woocommerce_Product_Tabs_Admin {
 	}
 
 	public function tab_post_row_actions( $actions, $post ){
-
 		if ( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB == $post->post_type && isset( $actions['inline hide-if-no-js'] ) ){
 			unset( $actions['inline hide-if-no-js'] );
 		}
@@ -427,7 +426,12 @@ class Woocommerce_Product_Tabs_Admin {
         return;
     }
 
-
-
-
+    /**
+     * Customize admin menu.
+     *
+     * @since 2.0.3
+     */
+    function customize_menu() {
+    	remove_submenu_page( 'edit.php?post_type=woo_product_tab', 'post-new.php?post_type=woo_product_tab' );
+    }
 } //end class
