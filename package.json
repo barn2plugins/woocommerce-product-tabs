@@ -6,19 +6,19 @@
   "main_file": "woocommerce-product-tabs.php",
   "repository": "github:wpconcern/woocommerce-product-tabs",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
+    "dev": "gulp",
     "deploy": "gulp deploy",
-    "wpdeploy": "gulp build && gulp deploy && grunt wp_deploy"
+    "pot": "npm run textdomain && npm run language",
+    "textdomain": "wpi18n addtextdomain",
+    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
+    "wpdeploy": "gulp deploy && grunt wp_deploy"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
+    "dotenv": "^10.0.0",
     "grunt-wp-deploy": "^2.1.2",
     "gulp": "^4.0.2",
-    "gulp-load-plugins": "^1.6.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-run": "^1.7.1",
     "gulp-zip": "^5.0.1",
     "node-wp-i18n": "^1.2.3"
   }
