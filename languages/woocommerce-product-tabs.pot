@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce Product Tabs 2.0.4\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-product-tabs\n"
-"POT-Creation-Date: 2021-07-14 07:45:28+00:00\n"
+"POT-Creation-Date: 2021-07-14 09:52:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,6 +24,10 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "WooCommerce Product Tabs"
+msgstr ""
+
+#: admin/admin.php:129 includes/class-woocommerce-product-tabs.php:257
+msgid "Getting Started"
 msgstr ""
 
 #: admin/class-woocommerce-product-tabs-admin.php:93
@@ -122,48 +126,44 @@ msgstr ""
 msgid "Tab draft updated."
 msgstr ""
 
-#: includes/class-woocommerce-product-tabs.php:254
-#: public/class-woocommerce-product-tabs-public.php:192
+#: includes/class-woocommerce-product-tabs.php:256
+#: public/class-woocommerce-product-tabs-public.php:190
 msgid "Product Tabs"
 msgstr ""
 
-#: includes/class-woocommerce-product-tabs.php:255
-msgid "Welcome"
-msgstr ""
-
-#: includes/class-woocommerce-product-tabs.php:263
+#: includes/class-woocommerce-product-tabs.php:265
 msgid "Go Pro"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:188
+#: public/class-woocommerce-product-tabs-public.php:186
 msgid "Add New Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:189
+#: public/class-woocommerce-product-tabs-public.php:187
 msgid "New Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:190
+#: public/class-woocommerce-product-tabs-public.php:188
 msgid "Edit Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:191
+#: public/class-woocommerce-product-tabs-public.php:189
 msgid "View Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:193
+#: public/class-woocommerce-product-tabs-public.php:191
 msgid "Search Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:194
+#: public/class-woocommerce-product-tabs-public.php:192
 msgid "Parent Tabs:"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:195
+#: public/class-woocommerce-product-tabs-public.php:193
 msgid "No tabs found."
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:196
+#: public/class-woocommerce-product-tabs-public.php:194
 msgid "No tabs found in Trash."
 msgstr ""
 
@@ -183,22 +183,22 @@ msgstr ""
 msgid "https://wpconcern.com/"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:183
+#: public/class-woocommerce-product-tabs-public.php:181
 msgctxt "post type general name"
 msgid "Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:184
+#: public/class-woocommerce-product-tabs-public.php:182
 msgctxt "post type singular name"
 msgid "Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:185
+#: public/class-woocommerce-product-tabs-public.php:183
 msgctxt "admin menu"
-msgid "Product Tabs"
+msgid "WooCommerce Product Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:186
+#: public/class-woocommerce-product-tabs-public.php:184
 msgctxt "add new on admin bar"
 msgid "Tab"
 msgstr ""

@@ -149,6 +149,8 @@ class Woocommerce_Product_Tabs {
 
 		$plugin_admin = new Woocommerce_Product_Tabs_Admin( $this->get_plugin_name(), $this->get_version() );
 
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'customize_menu' );
+
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 
 		$this->loader->add_action( 'edit_form_after_editor', $plugin_admin, 'content_after_editor' );
@@ -251,8 +253,8 @@ class Woocommerce_Product_Tabs {
 	public function add_plugin_action_links( $links ) {
 		$output = array_merge(
 			array(
-				'settings' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ) . '">' . esc_html__( 'Product Tabs', 'woocommerce-product-tabs' ) . '</a>',
-				'welcome'  => '<a href="' . esc_url( admin_url( 'admin.php?page=wpt-welcome' ) ) . '">' . esc_html__( 'Welcome', 'woocommerce-product-tabs' ) . '</a>',
+				'product-tabs' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ) . '">' . esc_html__( 'Product Tabs', 'woocommerce-product-tabs' ) . '</a>',
+				'getting-started'  => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab&page=wpt-welcome' ) ) . '">' . esc_html__( 'Getting Started', 'woocommerce-product-tabs' ) . '</a>',
 			),
 			$links
 		);

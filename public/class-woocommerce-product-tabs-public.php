@@ -63,8 +63,6 @@ class Woocommerce_Product_Tabs_Public {
 	}
 
 	public function custom_woocommerce_product_tabs( $tabs ){
-
-
 		global $product;
 
 		if ( empty( $this->product_tabs_list ) ) {
@@ -182,7 +180,7 @@ class Woocommerce_Product_Tabs_Public {
 		$labels = array(
 				'name'               => _x( 'Tabs', 'post type general name', 'woocommerce-product-tabs' ),
 				'singular_name'      => _x( 'Tab', 'post type singular name', 'woocommerce-product-tabs' ),
-				'menu_name'          => _x( 'Product Tabs', 'admin menu', 'woocommerce-product-tabs' ),
+				'menu_name'          => _x( 'WooCommerce Product Tabs', 'admin menu', 'woocommerce-product-tabs' ),
 				'name_admin_bar'     => _x( 'Tab', 'add new on admin bar', 'woocommerce-product-tabs' ),
 				'add_new'            => _x( 'Add New', WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB, 'woocommerce-product-tabs' ),
 				'add_new_item'       => __( 'Add New Tab', 'woocommerce-product-tabs' ),
@@ -206,7 +204,8 @@ class Woocommerce_Product_Tabs_Public {
 				'capability_type'    => 'post',
 				'has_archive'        => false,
 				'hierarchical'       => false,
-				'show_in_menu'       => 'woocommerce',
+				'menu_icon'          => 'dashicons-admin-site-alt3',
+				'menu_position'      => 58,
 				'supports'           => array( 'title', 'editor' )
 			);
 
