@@ -177,6 +177,9 @@ class Woocommerce_Product_Tabs {
         $this->loader->add_action( 'admin_head-post.php', $plugin_admin, 'hide_publishing_actions' );
         $this->loader->add_action( 'admin_head-post-new.php', $plugin_admin, 'hide_publishing_actions' );
 
+        // Add an action link pointing to the options page.
+        $base_file = $this->plugin_name . '/' . $this->plugin_name . '.php';
+        add_filter( 'plugin_action_links_' . $base_file, array( $this, 'add_plugin_action_links' ) );
 	}
 
 	/**
@@ -237,5 +240,23 @@ class Woocommerce_Product_Tabs {
 	public function get_version() {
 		return $this->version;
 	}
+
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $links Links.
+	 */
+	public function add_plugin_action_links( $links ) {
+		return array_merge(
+			array(
+				'settings' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ) . '">' . esc_html__( 'Product Tabs', 'woocommerce-product-tabs' ) . '</a>',
+				'welcome'  => '<a href="' . esc_url( admin_url( 'admin.php?page=wpt-welcome' ) ) . '">' . esc_html__( 'Welcome', 'woocommerce-product-tabs' ) . '</a>',
+			),
+			$links
+		);
+	}
+
 
 }
