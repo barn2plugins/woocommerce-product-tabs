@@ -242,21 +242,28 @@ class Woocommerce_Product_Tabs {
 	}
 
 	/**
-	 * Add settings action link to the plugins page.
+	 * Add action links to the plugins page.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @param array $links Links.
 	 */
 	public function add_plugin_action_links( $links ) {
-		return array_merge(
+		$output = array_merge(
 			array(
 				'settings' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ) . '">' . esc_html__( 'Product Tabs', 'woocommerce-product-tabs' ) . '</a>',
 				'welcome'  => '<a href="' . esc_url( admin_url( 'admin.php?page=wpt-welcome' ) ) . '">' . esc_html__( 'Welcome', 'woocommerce-product-tabs' ) . '</a>',
 			),
 			$links
 		);
+
+		$output = array_merge(
+			$output,
+			array(
+				'go-pro' => '<a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'woocommerce-product-tabs' ) . '</a>',
+			),
+		);
+
+		return $output;
 	}
-
-
 }
