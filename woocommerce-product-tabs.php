@@ -35,7 +35,7 @@ define( 'WOOCOMMERCE_PRODUCT_TABS_BASENAME', basename( dirname( __FILE__ ) ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB', 'woo_product_tab' );
-define( 'WPT_UPGRADE_URL', 'https://checkout.freemius.com/mode/dialog/plugin/8667/plan/14484/' );
+define( 'WPT_UPGRADE_URL', 'https://checkout.freemius.com/mode/dialog/plugin/8712/plan/14552/' );
 
 /**
  * The code that runs during plugin activation.
