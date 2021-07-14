@@ -1,6 +1,6 @@
 === WooCommerce Product Tabs ===
 
-Contributors: wpconcern, rabmalin 
+Contributors: wpconcern, rabmalin
 Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6.20
@@ -16,7 +16,18 @@ Custom Product Tabs for WooCommerce
 
 WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the WooCommerce product using this plugin. It adds the standard WordPress WYSIWYG editor for each new tab you create. Additionally, it also supports shortcodes, images, HTML and embedded codes on the tab content.
 
-You can assign a newly added custom tab as a default tab to all products or use it for a specific product only. WooCommerce Product Tabs plugin allows you to change the order of all tabs you have added. 
+You can assign a newly added custom tab as a default tab to all products or use it for a specific product only. WooCommerce Product Tabs plugin allows you to change the order of all tabs you have added.
+
+###Premium features
+
+* Drag & Drop Tabs Reorder (Default Tabs & Custom Tabs)
+* Rename Default Tabs
+* Add Icon to Tabs
+* Hide Default Tabs
+* Search by Custom Tabs (Search based on the title and content of the custom tabs added)
+* Convert Tabs to Accordion
+* Assign Tabs Based on Categories, Tags and Products
+* Add Multiple Tabs From Individual Product Page
 
 == Installation ==
 
@@ -45,11 +56,11 @@ For the free version of a plugin, you can create a support ticket on the WordPre
 
 = How can I add a new tab? =
 
-Find the Product Tabs under WooCommerce menu on the left panel of a WordPress dashboard. Click on Add New and create a new tab. 
+Find the Product Tabs under WooCommerce menu on the left panel of a WordPress dashboard. Click on Add New and create a new tab.
 
 = How many tabs can I create? =
 
-There is no limitation on the number of tabs you can create. You can add as many tabs as you need. 
+There is no limitation on the number of tabs you can create. You can add as many tabs as you need.
 
 = What are the most important things I need to consider while adding a new tab? =
 
