@@ -6,7 +6,7 @@ Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6.20
 Requires at least: 5.2
 Tested up to: 5.8
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,8 @@ Custom Product Tabs for WooCommerce
 WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the WooCommerce product using this plugin. It adds the standard WordPress WYSIWYG editor for each new tab you create. Additionally, it also supports shortcodes, images, HTML and embedded codes on the tab content.
 
 You can assign a newly added custom tab as a default tab to all products or use it for a specific product only. WooCommerce Product Tabs plugin allows you to change the order of all tabs you have added.
+
+[Homepage](https://wpconcern.com/plugins/woocommerce-product-tabs/) | [Documentation](https://wpconcern.com/documentation/woocommerce-product-tabs/) | [Support](https://wordpress.org/support/plugin/woocommerce-product-tabs/) | [Buy Pro](https://wpconcern.com/plugins/woocommerce-product-tabs/)
 
 ###Premium features
 
@@ -62,7 +64,7 @@ Find the Product Tabs under WooCommerce menu on the left panel of a WordPress da
 
 There is no limitation on the number of tabs you can create. You can add as many tabs as you need.
 
-= What are the most important things I need to consider while adding a new tab? =
+= Few things to consider while adding a new tab? =
 
 Adding a new tab is straightforward. However, you need to consider few important settings like priority of the tab, enable it as the default tab for all products or not, enable it for specific categories and so on.
 
@@ -78,7 +80,7 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 
 == Changelog ==
 
-= 2.0.4 - 2021-07-14 =
+= 2.0.5 - 2021-07-14 =
 * Fix: Minor bug fixes
 
 = 2.0.3 =
