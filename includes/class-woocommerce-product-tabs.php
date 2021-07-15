@@ -65,7 +65,7 @@ class Woocommerce_Product_Tabs {
 	public function __construct() {
 
 		$this->plugin_name = 'woocommerce-product-tabs';
-		$this->version = '2.0.5';
+		$this->version = '2.0.6';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -263,7 +263,7 @@ class Woocommerce_Product_Tabs {
 			$output,
 			array(
 				'go-pro' => '<a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'woocommerce-product-tabs' ) . '</a>',
-			),
+			)
 		);
 
 		return $output;

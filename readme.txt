@@ -6,7 +6,7 @@ Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6.20
 Requires at least: 5.2
 Tested up to: 5.8
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.0.6 - 2021-07-15 =
+* Fix: PHP error in PHP 7.1
 
 = 2.0.5 - 2021-07-14 =
 * Fix: Minor bug fixes
