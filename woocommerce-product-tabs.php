@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Product Tabs
  * Plugin URI: https://wpconcern.com/plugins/woocommerce-product-tabs/
  * Description: Custom Product Tabs for WooCommerce.
- * Version: 2.0.6
+ * Version: 2.0.7
  * Author: WP Concern
  * Author URI: https://wpconcern.com/
  * License: GPL-2.0+
@@ -62,8 +62,8 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-product-t
 // Load admin page.
 require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
 
-// Fix WordPress Capabilities.php Fatal Error
-include_once(ABSPATH . 'wp-includes/pluggable.php');
+// Fix WordPress Capabilities.php Fatal Error.
+include_once( ABSPATH . 'wp-includes/pluggable.php' );
 
 /**
  * Begins execution of the plugin.
