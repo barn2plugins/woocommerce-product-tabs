@@ -62,6 +62,9 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-product-t
 // Load admin page.
 require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
 
+// Fix WordPress Capabilities.php Fatal Error
+include_once(ABSPATH . 'wp-includes/pluggable.php');
+
 /**
  * Begins execution of the plugin.
  *
