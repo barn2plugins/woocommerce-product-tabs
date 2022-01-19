@@ -36,7 +36,6 @@ class Woocommerce_Product_Tabs_Admin {
 	 */
 	private $version;
 
-	private $product_tabs_list;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -49,19 +48,7 @@ class Woocommerce_Product_Tabs_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		$this->product_tabs_list = get_posts(
-			array(
-				'post_type'      => WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB,
-				'posts_per_page' => -1,
-				'orderby'        => 'menu_order',
-				'order'          => 'asc',
-				)
-			);
-		if ( ! empty( $this->product_tabs_list ) ) {
-			foreach ($this->product_tabs_list as $key => $t) {
-				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
-			}
-		}
+		
 
 	}
 
@@ -179,6 +166,20 @@ class Woocommerce_Product_Tabs_Admin {
 		// Add an nonce field so we can check for it later.
 		wp_nonce_field( 'wpt_product_meta_box', 'wpt_meta_box_product_nonce' );
 
+		$this->product_tabs_list = get_posts(
+			array(
+				'post_type'      => WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB,
+				'posts_per_page' => -1,
+				'orderby'        => 'menu_order',
+				'order'          => 'asc',
+				)
+			);
+		if ( ! empty( $this->product_tabs_list ) ) {
+			foreach ($this->product_tabs_list as $key => $t) {
+				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
+			}
+		}
+		
 		$required_tabs = $this->product_tabs_list;
 
 		// Check for All flag;

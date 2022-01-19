@@ -32,7 +32,6 @@ class Woocommerce_Product_Tabs_Public {
 	 * @var      string    $version    The current version of this plugin.
 	 */
 	private $version;
-	private $product_tabs_list;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -45,6 +44,13 @@ class Woocommerce_Product_Tabs_Public {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+
+	}
+
+	public function custom_woocommerce_product_tabs( $tabs ){
+		global $product;
+
 		$this->product_tabs_list = get_posts(
 			array(
 				'post_type'      => WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB,
@@ -58,12 +64,6 @@ class Woocommerce_Product_Tabs_Public {
 				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
 			}
 		}
-
-
-	}
-
-	public function custom_woocommerce_product_tabs( $tabs ){
-		global $product;
 
 		if ( empty( $this->product_tabs_list ) ) {
 			return $tabs;
