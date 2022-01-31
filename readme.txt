@@ -5,8 +5,8 @@ Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: woocommerce, product, tabs, custom tabs
 Requires PHP: 5.6
 Requires at least: 5.2
-Tested up to: 5.8
-Stable tag: 2.0.9
+Tested up to: 5.9
+Stable tag: 2.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,7 +80,7 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 
 == Changelog ==
 
-= 2.0.9 - 2022-01-31 =
+= 2.0.10 - 2022-01-31 =
 * WP 5.9 compatibility
 
 = 2.0.8 - 2022-01-19 =
