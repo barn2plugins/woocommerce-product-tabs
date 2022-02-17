@@ -1,7 +1,7 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": "github:wpconcern/woocommerce-product-tabs",
@@ -9,7 +9,7 @@
     "dev": "gulp",
     "deploy": "gulp deploy",
     "pot": "npm run textdomain && npm run language",
-    "textdomain": "wpi18n addtextdomain",
+    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
     "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "wpdeploy": "gulp deploy && grunt wp_deploy"
   },
