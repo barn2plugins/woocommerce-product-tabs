@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 			deploy: {
 				options: {
 					plugin_slug: '<%= pkg.name %>',
+					plugin_main_file: '<%= pkg.main_file %>',
 					svn_user: 'wpconcern',
 					build_dir: 'deploy/<%= pkg.name %>',
 					assets_dir: '.wordpress-org'
@@ -17,4 +18,6 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-wp-deploy');
+
+	grunt.registerTask('wpdeploy', ['wp_deploy']);
 };
