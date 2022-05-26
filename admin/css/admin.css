@@ -71,3 +71,11 @@
 .tabs-stage .ui-sortable.active {
 	display: block;
 }
+
+#tab-free-vs-pro a.button {
+	text-align: center;
+	display: block;
+	width: 180px;
+	margin-right: 15px;
+	margin-left: auto;
+}
