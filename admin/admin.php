@@ -23,12 +23,23 @@ function wpt_render_admin_page() {
 
 					<div class="tab-wrapper">
 						<ul class="tabs-nav">
-							<li class="tab-active"><a href="#tab-features" class="button"><?php esc_html_e( 'Features', 'woocommerce-product-tabs' ); ?></a></li>
-							<li><a href="#tab-free-vs-pro" class="button"><?php esc_html_e( 'Free vs Pro', 'woocommerce-product-tabs' ); ?></a></li>
+							<li class="tab-active"><a href="#tab-free-vs-pro" class="button">Free vs Pro</a></li>
+							<li><a href="#tab-features" class="button">Features</a></li>
+							<li><a href="#tab-support" class="button">Support</a></li>
 						</ul>
 					</div><!-- .tab-wrapper -->
 
 					<div class="tabs-stage">
+
+						<div id="tab-free-vs-pro" class="meta-box-sortables ui-sortable">
+							<div class="postbox">
+								<div class="inside inside-content">
+									<img src="<?php echo plugin_dir_url( __DIR__ ) . 'admin/images/free-vs-pro.png'; ?>" alt="" />
+									<a href="<?php echo esc_url( WPT_UPGRADE_URL ); ?>" id="purchase" class="button button-primary" target="_blank">Upgrade to Pro</a>
+								</div><!-- .inside -->
+							</div><!-- .postbox -->
+						</div><!-- .meta-box-sortables -->
+
 						<div id="tab-features" class="meta-box-sortables ui-sortable active">
 							<div class="postbox">
 								<div class="inside inside-content">
@@ -44,13 +55,22 @@ function wpt_render_admin_page() {
 							</div><!-- .postbox -->
 						</div><!-- .meta-box-sortables -->
 
-						<div id="tab-free-vs-pro" class="meta-box-sortables ui-sortable">
+						<div id="tab-support" class="meta-box-sortables ui-sortable">
 							<div class="postbox">
 								<div class="inside inside-content">
-									<img src="<?php echo plugin_dir_url( __DIR__ ) . 'admin/images/free-vs-pro.png'; ?>" alt="" />
+									<h3><span>Need Support?</span></h3>
+									<div class="inside">
+										<a href="https://wordpress.org/support/plugin/woocommerce-product-tabs/" target="_blank">Go to Support Forum</a>
+									</div><!-- .inside -->
+
+									<h3><span>Have any queries?</span></h3>
+									<div class="inside">
+										<p>If you have any queries or feedback, please feel free to send us an email to <code>support@wpconcern.com</code></p>
+									</div><!-- .inside -->
 								</div><!-- .inside -->
 							</div><!-- .postbox -->
 						</div><!-- .meta-box-sortables -->
+
 
 					</div><!-- .tabs-stage -->
 
@@ -73,39 +93,32 @@ function wpt_render_admin_page() {
 					<div class="meta-box-sortables">
 						<div class="postbox">
 
-							<h3><span>Our Products</span></h3>
+							<h3><span>Important Links</span></h3>
 							<div class="inside">
-								<ul>
-								<li><a href="https://wpconcern.com/plugins/post-grid-elementor-addon/" target="_blank">Post Grid Elementor Addon</a></li>
-								<li><a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank">WooCommerce Product Tabs</a></li>
-								<li><a href="https://wpconcern.com/plugins/advanced-google-recaptcha/" target="_blank">Advanced Google reCAPTCHA</a></li>
-								</ul>
+								<ol>
+								<li><a href="https://wpconcern.com/documentation/woocommerce-product-tabs/" target="_blank">Documentation</a></li>
+								<li><a href="https://wpconcern.com/request-customization/" target="_blank">Customization Request</a></li>
+								<li><a href="https://wordpress.org/plugins/woocommerce-product-tabs/#reviews" target="_blank">Submit a Review</a></li>
+								</ol>
 							</div> <!-- .inside -->
 
 						</div><!-- .postbox -->
 					</div><!-- .meta-box-sortables -->
 
 					<div class="meta-box-sortables">
+
 						<div class="postbox">
 
-							<h3><span>Have any queries?</span></h3>
+							<h3><span>Recommended Plugins</span></h3>
 							<div class="inside">
-								<p>If you have any queries or feedback, please feel free to send us an email to <code>support@wpconcern.com</code></p>
-							</div><!-- .inside -->
-
-						</div><!-- .postbox -->
-					</div><!-- .meta-box-sortables -->
-
-					<div class="meta-box-sortables">
-						<div class="postbox">
-
-							<h3><span>Important Links</span></h3>
-							<div class="inside">
-								<ul>
-								<li><a href="https://wpconcern.com/documentation/woocommerce-product-tabs/" target="_blank">Documentation</a></li>
-								<li><a href="https://wpconcern.com/request-customization/" target="_blank">Customization Request</a></li>
-								<li><a href="https://wordpress.org/plugins/woocommerce-product-tabs/#reviews" target="_blank">Submit a Review</a></li>
-								</ul>
+								<ol>
+									<li><a href="https://wpconcern.com/plugins/post-grid-elementor-addon/" target="_blank">Post Grid Elementor Addon</a></li>
+									<li><a href="https://wpconcern.com/plugins/advanced-google-recaptcha/" target="_blank">Advanced Google reCAPTCHA</a></li>
+									<li><a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank">WooCommerce Product Tabs</a></li>
+									<li><a href="https://wordpress.org/plugins/nifty-coming-soon-and-under-construction-page/" target="_blank">Coming Soon & Maintenance Mode Page</a></li>
+									<li><a href="https://wordpress.org/plugins/admin-customizer/" target="_blank">Admin Customizer</a></li>
+									<li><a href="https://wordpress.org/plugins/prime-addons-for-elementor/" target="_blank">Prime Addons for Elementor</a></li>
+								</ol>
 							</div> <!-- .inside -->
 
 						</div><!-- .postbox -->
