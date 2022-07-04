@@ -159,3 +159,20 @@ function wpt_load_admin_scripts( $hook ) {
 }
 
 add_action( 'admin_enqueue_scripts', 'wpt_load_admin_scripts' );
+
+/**
+ * Add admin notice.
+ *
+ * @since 2.0.14
+ */
+function wpt_add_admin_notice() {
+	// Setup notice.
+	\Nilambar\AdminNotice\Notice::init(
+		array(
+			'slug' => WOOCOMMERCE_PRODUCT_TABS_SLUG,
+			'name' => esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ),
+		)
+	);
+}
+
+add_action( 'admin_init', 'wpt_add_admin_notice' );
