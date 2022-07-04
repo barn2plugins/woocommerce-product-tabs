@@ -1,27 +1,29 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": "github:wpconcern/woocommerce-product-tabs",
   "scripts": {
     "dev": "gulp",
     "deploy": "gulp deploy",
-		"prewpdeploy": "npm run deploy",
+		"version": "grunt version",
+    "prewpdeploy": "npm run deploy",
     "pot": "npm run textdomain && npm run language",
-    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules,freemius",
-    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules,freemius",
+    "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
+    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "wpdeploy": "grunt wpdeploy"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "dotenv": "^10.0.0",
-    "grunt": "^1.4.1",
+    "browser-sync": "^2.27.10",
+    "del": "^6.1.1",
+    "dotenv": "^16.0.1",
+    "grunt": "^1.5.3",
+    "grunt-replace": "^2.0.2",
     "grunt-wp-deploy": "^2.1.2",
     "gulp": "^4.0.2",
-    "gulp-zip": "^5.0.1",
-    "node-wp-i18n": "^1.2.3"
+    "gulp-zip": "^5.1.0",
+    "node-wp-i18n": "^1.2.6"
   }
 }

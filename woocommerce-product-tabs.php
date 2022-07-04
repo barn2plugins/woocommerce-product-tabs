@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Product Tabs
  * Plugin URI: https://wpconcern.com/plugins/woocommerce-product-tabs/
  * Description: WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the product using this plugin.
- * Version: 2.0.13
+ * Version: 2.0.14
  * Author: WP Concern
  * Author URI: https://wpconcern.com/
  * License: GPL-2.0+
@@ -33,6 +33,7 @@ if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) && ! function_exists( '
 // Define.
 define( 'WOOCOMMERCE_PRODUCT_TABS_NAME', 'Woocommerce Product Tabs' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_SLUG', 'woocommerce-product-tabs' );
+define( 'WOOCOMMERCE_PRODUCT_TABS_VERSION', '2.0.14' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_BASENAME', basename( dirname( __FILE__ ) ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
