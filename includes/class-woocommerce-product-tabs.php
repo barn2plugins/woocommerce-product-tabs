@@ -64,8 +64,8 @@ class Woocommerce_Product_Tabs {
 	 */
 	public function __construct() {
 
-		$this->plugin_name = 'woocommerce-product-tabs';
-		$this->version = '2.0.13';
+		$this->plugin_name = WOOCOMMERCE_PRODUCT_TABS_SLUG;
+		$this->version = WOOCOMMERCE_PRODUCT_TABS_VERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();

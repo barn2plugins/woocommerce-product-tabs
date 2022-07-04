@@ -153,8 +153,8 @@ add_action( 'admin_menu', 'wpt_register_menu' );
  */
 function wpt_load_admin_scripts( $hook ) {
 	if ( 'woo_product_tab_page_wpt-welcome' === $hook ) {
-		wp_enqueue_style( 'wpt-admin-style', plugins_url( 'admin/css/admin.css', dirname( __FILE__ ) ), array(), '1.0.0' );
-		wp_enqueue_script( 'wpt-admin-script', plugins_url( 'admin/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_style( 'wpt-admin-style', plugins_url( 'admin/css/admin.css', dirname( __FILE__ ) ), array(), WOOCOMMERCE_PRODUCT_TABS_VERSION );
+		wp_enqueue_script( 'wpt-admin-script', plugins_url( 'admin/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), WOOCOMMERCE_PRODUCT_TABS_VERSION, true );
 	}
 }
 
