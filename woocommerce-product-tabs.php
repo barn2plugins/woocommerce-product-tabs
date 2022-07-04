@@ -40,6 +40,9 @@ define( 'WOOCOMMERCE_PRODUCT_TABS_URL', rtrim( plugin_dir_url( __FILE__ ), '/' )
 define( 'WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB', 'woo_product_tab' );
 define( 'WPT_UPGRADE_URL', 'https://checkout.freemius.com/mode/dialog/plugin/8712/plan/14552/' );
 
+// Init autoload.
+require_once WOOCOMMERCE_PRODUCT_TABS_DIR . '/vendor/autoload.php';
+
 /**
  * The code that runs during plugin activation.
  */
