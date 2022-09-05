@@ -110,16 +110,7 @@ function wpt_render_admin_page() {
 						<div class="postbox">
 
 							<h3><span>Recommended Plugins</span></h3>
-							<div class="inside">
-								<ol>
-									<li><a href="https://wpconcern.com/plugins/post-grid-elementor-addon/" target="_blank">Post Grid Elementor Addon</a></li>
-									<li><a href="https://wpconcern.com/plugins/advanced-google-recaptcha/" target="_blank">Advanced Google reCAPTCHA</a></li>
-									<li><a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank">WooCommerce Product Tabs</a></li>
-									<li><a href="https://wordpress.org/plugins/nifty-coming-soon-and-under-construction-page/" target="_blank">Coming Soon & Maintenance Mode Page</a></li>
-									<li><a href="https://wordpress.org/plugins/admin-customizer/" target="_blank">Admin Customizer</a></li>
-									<li><a href="https://wordpress.org/plugins/prime-addons-for-elementor/" target="_blank">Prime Addons for Elementor</a></li>
-								</ol>
-							</div> <!-- .inside -->
+							<div class="wpc-plugins-list inside"></div>
 
 						</div><!-- .postbox -->
 					</div><!-- .meta-box-sortables -->
@@ -155,10 +146,66 @@ function wpt_load_admin_scripts( $hook ) {
 	if ( 'woo_product_tab_page_wpt-welcome' === $hook ) {
 		wp_enqueue_style( 'wpt-admin-style', plugins_url( 'admin/css/admin.css', dirname( __FILE__ ) ), array(), WOOCOMMERCE_PRODUCT_TABS_VERSION );
 		wp_enqueue_script( 'wpt-admin-script', plugins_url( 'admin/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), WOOCOMMERCE_PRODUCT_TABS_VERSION, true );
+		wp_enqueue_script( 'wpt-plugins-list', plugins_url( 'admin/js/plugins-list.js', dirname( __FILE__ ) ), array( 'jquery' ), WOOCOMMERCE_PRODUCT_TABS_VERSION, true );
 	}
 }
 
 add_action( 'admin_enqueue_scripts', 'wpt_load_admin_scripts' );
+
+/**
+ * Return plugins list.
+ *
+ * @since 1.0.0
+ *
+ * @return array Plugins list array.
+ */
+function wpt_get_plugins_list() {
+	$transient_key = 'wpc_plugins_list';
+
+	$transient_period = 21 * DAY_IN_SECONDS;
+
+	$output = get_transient( $transient_key );
+
+	if ( false === $output ) {
+		$output = array();
+
+		$request = wp_safe_remote_get( 'https://wpconcern.com/wpc-api/plugins-list' );
+
+		if ( is_wp_error( $request ) ) {
+				return $output;
+		}
+
+		$body = wp_remote_retrieve_body( $request );
+		$json = json_decode( $body, true );
+
+		if ( isset( $json['plugins'] ) && ! empty( $json['plugins'] ) ) {
+			$output = $json['plugins'];
+		}
+
+		set_transient( $transient_key, $output, $transient_period );
+	}
+
+	return $output;
+}
+
+function wpt_get_list_ajax_callback() {
+	$output = array();
+
+	$posts = wpt_get_plugins_list();
+
+	if ( ! empty( $posts ) ) {
+		$output = $posts;
+	}
+
+	if ( ! empty( $output ) ) {
+		wp_send_json_success( $output, 200 );
+	} else {
+		wp_send_json_error( $output, 404 );
+	}
+}
+
+add_action( 'wp_ajax_nopriv_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
+add_action( 'wp_ajax_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
 
 /**
  * Add admin notice.
