@@ -1,29 +1,33 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": "github:wpconcern/woocommerce-product-tabs",
   "scripts": {
-    "dev": "gulp",
-    "deploy": "gulp deploy",
-		"version": "grunt version",
-    "prewpdeploy": "npm run deploy",
-    "pot": "npm run textdomain && npm run language",
+    "version": "easy-replace-in-files",
+    "preinstall": "npx only-allow pnpm",
+    "pot": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
     "textdomain": "wpi18n addtextdomain --exclude=vendor,deploy,node_modules",
-    "language": "wpi18n makepot --domain-path=languages --exclude=vendor,deploy,node_modules",
-    "wpdeploy": "grunt wpdeploy"
+    "prewpdeploy": "pnpm run deploy",
+    "wpdeploy": "wp-deployer",
+    "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o",
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
+	"wpDeployer": {
+		"repoType": "plugin",
+		"username": "wpconcern",
+		"buildDir": "deploy/woocommerce-product-tabs",
+		"deployAssets": true
+	},
   "devDependencies": {
-    "browser-sync": "^2.27.10",
-    "del": "^6.1.1",
-    "dotenv": "^16.0.1",
-    "grunt": "^1.5.3",
-    "grunt-replace": "^2.0.2",
-    "grunt-wp-deploy": "^2.1.2",
-    "gulp": "^4.0.2",
-    "gulp-zip": "^5.1.0",
-    "node-wp-i18n": "^1.2.6"
+    "bestzip": "^2.2.1",
+    "copy-files-from-to": "^3.2.2",
+    "cross-var": "^1.1.0",
+    "easy-replace-in-files": "^1.0.2",
+    "node-wp-i18n": "^1.2.6",
+    "shx": "^0.3.4",
+    "wp-deployer": "^1.0.3"
   }
 }
