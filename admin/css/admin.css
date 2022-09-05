@@ -54,6 +54,11 @@
   margin-top: 70px;
 }
 
+.postbox-container ol,
+.postbox-container ul {
+  margin-left: 1.3em;
+}
+
 .inside-content img {
 	width: 100%;
 	height: auto;
