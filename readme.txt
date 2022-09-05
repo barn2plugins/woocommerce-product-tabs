@@ -10,7 +10,7 @@ Stable tag: 2.0.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Custom Product Tabs for WooCommerce
+Custom Product Tabs for WooCommerce. Add and manage multiple tabs to WooCommerce products. Easy way to add new tabs to WooCommerce products.
 
 == Description ==
 
