@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53dd5fe0303401771b8024d23f399571",
+    "content-hash": "6f411dc481437545e2c6ae698f63dacd",
     "packages": [
         {
             "name": "ernilambar/wp-admin-notice",
@@ -52,6 +52,49 @@
                 "source": "https://github.com/ernilambar/wp-admin-notice/tree/1.0.0"
             },
             "time": "2022-06-27T07:08:52+00:00"
+        },
+        {
+            "name": "ernilambar/wp-welcome",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ernilambar/wp-welcome.git",
+                "reference": "d8828cc0e52e887ffcf76509233e965f7623c55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ernilambar/wp-welcome/zipball/d8828cc0e52e887ffcf76509233e965f7623c55f",
+                "reference": "d8828cc0e52e887ffcf76509233e965f7623c55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nilambar Sharma",
+                    "email": "nilambar@outlook.com",
+                    "homepage": "https://www.nilambar.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create welcome page in WordPress. Useful for themes to showcase related information.",
+            "homepage": "https://github.com/ernilambar/wp-welcome",
+            "keywords": [
+                "plugin",
+                "theme",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/ernilambar/wp-welcome/issues",
+                "source": "https://github.com/ernilambar/wp-welcome/tree/1.0.1"
+            },
+            "time": "2022-09-29T10:59:23+00:00"
         }
     ],
     "packages-dev": [],
