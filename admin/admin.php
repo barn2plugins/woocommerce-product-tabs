@@ -5,135 +5,213 @@
  * @package Woocommerce_Product_Tabs
  */
 
+use Nilambar\Welcome\Welcome;
+
+add_action(
+	'wp_welcome_init',
+	function() {
+		$obj = new Welcome( 'plugin', 'woocommerce-product-tabs' );
+
+		$obj->set_page(
+			array(
+				'page_title'    => esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ),
+				'page_subtitle' => sprintf( esc_html__( 'Version: %s', 'woocommerce-product-tabs' ), WOOCOMMERCE_PRODUCT_TABS_VERSION ),
+				'menu_title'    => esc_html__( 'Getting Started', 'woocommerce-product-tabs' ),
+				'menu_slug'     => 'wpt-welcome',
+				'parent_page'   => 'edit.php?post_type=woo_product_tab',
+			)
+		);
+
+		$obj->set_quick_links(
+			array(
+				array(
+					'text' => 'Plugin Page',
+					'url'  => 'https://wpconcern.com/plugins/woocommerce-product-tabs/',
+					'type' => 'primary',
+				),
+				array(
+					'text' => 'Get Support',
+					'url'  => 'https://wordpress.org/support/plugin/woocommerce-product-tabs/#new-post',
+					'type' => 'secondary',
+				),
+			)
+		);
+
+		$obj->set_admin_notice(
+			array(
+				'screens' => array( 'dashboard' ),
+			)
+		);
+
+		$obj->add_tab(
+			array(
+				'id'    => 'welcome',
+				'title' => 'Welcome',
+				'type'  => 'grid',
+				'items' => array(
+					array(
+						'title'       => 'Get Support',
+						'icon'        => 'dashicons dashicons-editor-help',
+						'description' => 'Got plugin support question or found bug or got some feedbacks? Please visit support forum in the WordPress.org directory.',
+						'button_text' => 'Visit Support',
+						'button_url'  => 'https://wordpress.org/support/plugin/woocommerce-product-tabs/#new-post',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+					array(
+						'title'       => 'Documentation',
+						'icon'        => 'dashicons dashicons-admin-page',
+						'description' => 'Kindly check our plugin documentation for detailed information and instructions.',
+						'button_text' => 'View Documentation',
+						'button_url'  => 'https://wpconcern.com/documentation/woocommerce-product-tabs/',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+					array(
+						'title'       => 'Customization Request',
+						'icon'        => 'dashicons dashicons-admin-generic',
+						'description' => 'Feel free to contact us if you need any customization service.',
+						'button_text' => 'Customization Request',
+						'button_url'  => 'https://wpconcern.com/request-customization/',
+						'button_type' => 'secondary',
+						'is_new_tab'  => true,
+					),
+				),
+			)
+		);
+
+		$obj->add_tab(
+			array(
+				'id'             => 'free-vs-pro',
+				'title'          => 'Free Vs. Pro',
+				'type'           => 'comparison',
+				'upgrade_button' => array(
+					'url' => WPT_UPGRADE_URL,
+				),
+				'items'          => array(
+					array(
+						'title' => 'Add Unlimited Additional Tabs',
+						'free'  => 'yes',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Shortcode, HTML, Images & Embedded Code Support',
+						'free'  => 'yes',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Set as Default Tab',
+						'free'  => 'yes',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Change Priority',
+						'free'  => 'yes',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Default Tabs Reorder',
+						'free'  => 'no',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Rename Default Tabs',
+						'free'  => 'no',
+						'pro'   => 'yes',
+					),
+					array(
+						'title'       => 'Reorder All Tabs',
+						'description' => 'Drag & Drop',
+						'free'        => 'no',
+						'pro'         => 'yes',
+					),
+					array(
+						'title'       => 'Add Tab Icon',
+						'description' => 'Applies to Default Tabs as well',
+						'free'        => 'no',
+						'pro'         => 'yes',
+					),
+					array(
+						'title'       => 'Search By Product Tabs',
+						'description' => 'Search based on the title and content of the tabs added',
+						'free'        => 'no',
+						'pro'         => 'yes',
+					),
+					array(
+						'title'       => 'Convert Tabs to Accordion',
+						'description' => 'Convert existing tabs to accordion below specific viewport',
+						'free'        => 'no',
+						'pro'         => 'yes',
+					),
+					array(
+						'title' => 'Hide Default Tabs',
+						'free'  => 'no',
+						'pro'   => 'yes',
+					),
+					array(
+						'title' => 'Add Tabs from Individual Product Page',
+						'free'  => 'no',
+						'pro'   => 'yes',
+					),
+					array(
+						'title'       => 'Categories, Tags & Product Based Tabs',
+						'description' => 'Enable tabs based on the categories, tags and products',
+						'free'        => 'no',
+						'pro'         => 'yes',
+					),
+				),
+			)
+		);
+
+		$obj->set_sidebar(
+			array(
+				'render_callback' => 'wpt_render_welcome_page_sidebar',
+			)
+		);
+
+		$obj->run();
+	}
+);
+
 /**
- * Render admin page.
+ * Render welcome page sidebar.
  *
- * @since 1.0.0
- */
-function wpt_render_admin_page() {
-	?>
-	<div class="wrap">
-		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-
-		<div id="poststuff">
-
-			<div id="post-body" class="metabox-holder columns-2">
-
-				<div id="post-body-content">
-
-					<div class="tab-wrapper">
-						<ul class="tabs-nav">
-							<li class="tab-active"><a href="#tab-free-vs-pro" class="button">Free vs Pro</a></li>
-							<li><a href="#tab-features" class="button">Features</a></li>
-							<li><a href="#tab-support" class="button">Support</a></li>
-						</ul>
-					</div><!-- .tab-wrapper -->
-
-					<div class="tabs-stage">
-
-						<div id="tab-free-vs-pro" class="meta-box-sortables ui-sortable">
-							<div class="postbox">
-								<div class="inside inside-content">
-									<img src="<?php echo plugin_dir_url( __DIR__ ) . 'admin/images/free-vs-pro.png'; ?>" alt="" />
-									<a href="<?php echo esc_url( WPT_UPGRADE_URL ); ?>" id="purchase" class="button button-primary" target="_blank">Upgrade to Pro</a>
-								</div><!-- .inside -->
-							</div><!-- .postbox -->
-						</div><!-- .meta-box-sortables -->
-
-						<div id="tab-features" class="meta-box-sortables ui-sortable active">
-							<div class="postbox">
-								<div class="inside inside-content">
-									<h4>Key features</h4>
-									<ul>
-									<li>Create multiple tabs; no limit in number of tabs</li>
-									<li>Supports shortcodes and embedded codes</li>
-									<li>Setup common tab for all products</li>
-									<li>Enable tab based on product category</li>
-									<li>Change order of the tabs</li>
-									</ul>
-								</div><!-- .inside -->
-							</div><!-- .postbox -->
-						</div><!-- .meta-box-sortables -->
-
-						<div id="tab-support" class="meta-box-sortables ui-sortable">
-							<div class="postbox">
-								<div class="inside inside-content">
-									<h3><span>Need Support?</span></h3>
-									<div class="inside">
-										<a href="https://wordpress.org/support/plugin/woocommerce-product-tabs/" target="_blank">Go to Support Forum</a>
-									</div><!-- .inside -->
-
-									<h3><span>Have any queries?</span></h3>
-									<div class="inside">
-										<p>If you have any queries or feedback, please feel free to send us an email to <code>support@wpconcern.com</code></p>
-									</div><!-- .inside -->
-								</div><!-- .inside -->
-							</div><!-- .postbox -->
-						</div><!-- .meta-box-sortables -->
-
-
-					</div><!-- .tabs-stage -->
-
-				</div><!-- #post-body-content -->
-
-				<div id="postbox-container-1" class="postbox-container">
-
-					<div class="meta-box-sortables">
-						<div class="postbox">
-
-							<h3><span>Upgrade to Pro</span></h3>
-							<div class="inside">
-								<p>Buy pro plugin unlock more awesome features.</p>
-								<a href="<?php echo esc_url( WPT_UPGRADE_URL ); ?>" id="purchase" class="button button-primary" target="_blank">Buy Pro Plugin</a>
-							</div> <!-- .inside -->
-
-						</div><!-- .postbox -->
-					</div><!-- .meta-box-sortables -->
-
-					<div class="meta-box-sortables">
-						<div class="postbox">
-
-							<h3><span>Important Links</span></h3>
-							<div class="inside">
-								<ol>
-								<li><a href="https://wpconcern.com/documentation/woocommerce-product-tabs/" target="_blank">Documentation</a></li>
-								<li><a href="https://wpconcern.com/request-customization/" target="_blank">Customization Request</a></li>
-								<li><a href="https://wordpress.org/plugins/woocommerce-product-tabs/#reviews" target="_blank">Submit a Review</a></li>
-								</ol>
-							</div> <!-- .inside -->
-
-						</div><!-- .postbox -->
-					</div><!-- .meta-box-sortables -->
-
-					<div class="meta-box-sortables">
-
-						<div class="postbox">
-
-							<h3><span>Recommended Plugins</span></h3>
-							<div class="wpc-plugins-list inside"></div>
-
-						</div><!-- .postbox -->
-					</div><!-- .meta-box-sortables -->
-
-				</div><!-- #postbox-container-1 .postbox-container -->
-
-			</div><!-- #post-body -->
-		</div><!-- #poststuff -->
-
-	</div><!-- .wrap -->
-	<?php
-}
-
-/**
- * Register menu page.
+ * @since 2.0.16
  *
- * @since 1.0.0
+ * @param Welcome $object Instance of Welcome class.
  */
-function wpt_register_menu() {
-	add_submenu_page( 'edit.php?post_type=woo_product_tab', esc_html__( 'WooCommerce Product Tabs', 'woocommerce-product-tabs' ), esc_html__( 'Getting Started', 'woocommerce-product-tabs' ), 'manage_options', 'wpt-welcome', 'wpt_render_admin_page' );
-}
+function wpt_render_welcome_page_sidebar( $object ) {
+	$object->render_sidebar_box(
+		array(
+			'title'        => 'Upgrade to Pro',
+			'content'      => 'Upgrade to pro version for additional features and options.',
+			'class'        => 'gray',
+			'button_text'  => 'Upgrade Now',
+			'button_url'   => WPT_UPGRADE_URL,
+			'button_class' => 'button button-primary button-upgrade',
+		),
+		$object
+	);
 
-add_action( 'admin_menu', 'wpt_register_menu' );
+	$object->render_sidebar_box(
+		array(
+			'title'        => 'Leave a Review',
+			'content'      => $object->get_stars() . sprintf( 'Are you enjoying %1$s? We would appreciate a review.', $object->get_name() ),
+			'button_text'  => 'Submit Review',
+			'button_url'   => 'https://wordpress.org/support/plugin/woocommerce-product-tabs/reviews/#new-post',
+			'button_class' => 'button',
+		),
+		$object
+	);
+
+	$object->render_sidebar_box(
+		array(
+			'title'   => 'Our Plugins',
+			'content' => '<div class="wpc-plugins-list"></div>',
+		),
+		$object
+	);
+}
 
 /**
  * Load admin assets.
@@ -144,8 +222,6 @@ add_action( 'admin_menu', 'wpt_register_menu' );
  */
 function wpt_load_admin_scripts( $hook ) {
 	if ( 'woo_product_tab_page_wpt-welcome' === $hook ) {
-		wp_enqueue_style( 'wpt-admin-style', plugins_url( 'admin/css/admin.css', dirname( __FILE__ ) ), array(), WOOCOMMERCE_PRODUCT_TABS_VERSION );
-		wp_enqueue_script( 'wpt-admin-script', plugins_url( 'admin/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), WOOCOMMERCE_PRODUCT_TABS_VERSION, true );
 		wp_enqueue_script( 'wpt-plugins-list', plugins_url( 'admin/js/plugins-list.js', dirname( __FILE__ ) ), array( 'jquery' ), WOOCOMMERCE_PRODUCT_TABS_VERSION, true );
 	}
 }
@@ -160,7 +236,7 @@ add_action( 'admin_enqueue_scripts', 'wpt_load_admin_scripts' );
  * @return array Plugins list array.
  */
 function wpt_get_plugins_list() {
-	$transient_key = 'wpc_plugins_list';
+	$transient_key = 'wpt_wpc_plugins_list';
 
 	$transient_period = 21 * DAY_IN_SECONDS;
 
@@ -204,8 +280,8 @@ function wpt_get_list_ajax_callback() {
 	}
 }
 
-add_action( 'wp_ajax_nopriv_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
-add_action( 'wp_ajax_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
+add_action( 'wp_ajax_nopriv_wpt_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
+add_action( 'wp_ajax_wpt_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
 
 /**
  * Add admin notice.
@@ -213,7 +289,6 @@ add_action( 'wp_ajax_wpc_get_plugins_list', 'wpt_get_list_ajax_callback' );
  * @since 2.0.14
  */
 function wpt_add_admin_notice() {
-	// Setup notice.
 	\Nilambar\AdminNotice\Notice::init(
 		array(
 			'slug' => WOOCOMMERCE_PRODUCT_TABS_SLUG,

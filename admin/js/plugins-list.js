@@ -57,6 +57,6 @@
 	$('.wpc-plugins-list').WPC_Plugins_list({
 		api: ajaxurl,
 		list_type: 'ol',
-		action: 'wpc_get_plugins_list'
+		action: 'wpt_wpc_get_plugins_list'
 	});
 })(jQuery);
