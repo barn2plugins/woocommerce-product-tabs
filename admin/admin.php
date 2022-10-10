@@ -50,6 +50,15 @@ add_action(
 				'type'  => 'grid',
 				'items' => array(
 					array(
+						'title'       => 'Custom Tabs',
+						'icon'        => 'dashicons dashicons-list-view',
+						'description' => 'Click button below to start creating custom tabs and assign those to products. You can also create tabs with default content for the product.',
+						'button_text' => 'Product Tabs',
+						'button_url'  => admin_url( 'edit.php?post_type=woo_product_tab' ),
+						'button_type' => 'primary',
+						'is_new_tab'  => false,
+					),
+					array(
 						'title'       => 'Get Support',
 						'icon'        => 'dashicons dashicons-editor-help',
 						'description' => 'Got plugin support question or found bug or got some feedbacks? Please visit support forum in the WordPress.org directory.',

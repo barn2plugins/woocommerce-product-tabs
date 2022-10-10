@@ -6,7 +6,7 @@
   "main_file": "woocommerce-product-tabs.php",
   "repository": {
 		"type": "git",
-		"url": "https://gitlab.com/wpconcern/woocommerce-product-tabs.git"
+		"url": "https://gitlab.com/wpconcern/woocommerce-product-tabs"
 	},
   "scripts": {
     "version": "easy-replace-in-files",
@@ -28,7 +28,7 @@
     "bestzip": "^2.2.1",
     "copy-files-from-to": "^3.2.2",
     "cross-var": "^1.1.0",
-    "easy-replace-in-files": "^1.0.2",
+    "easy-replace-in-files": "^1.0.3",
     "node-wp-i18n": "^1.2.6",
     "shx": "^0.3.4",
     "wp-deployer": "^1.0.3"
