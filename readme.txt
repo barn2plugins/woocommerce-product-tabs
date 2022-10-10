@@ -80,7 +80,7 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 
 == Changelog ==
 
-= 2.0.16 - 2022-09-30 =
+= 2.0.16 - 2022-10-10 =
 * Update dashboard
 * Minor bug fixes
 
