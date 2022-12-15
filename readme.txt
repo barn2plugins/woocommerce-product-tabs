@@ -3,10 +3,10 @@
 Contributors: wpconcern, rabmalin, maneshtimilsina
 Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
-Requires PHP: 5.6
+Requires PHP: 7.2
 Requires at least: 5.8
 Tested up to: 6.1
-Stable tag: 2.0.16
+Stable tag: 2.0.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,9 +80,11 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 
 == Changelog ==
 
+= 2.0.17 - 2022-12-15 =
+* Fix admin links
+
 = 2.0.16 - 2022-10-10 =
 * Update dashboard
-* Minor bug fixes
 
 = 2.0.15 - 2022-09-05 =
 * Minor bug fixes
