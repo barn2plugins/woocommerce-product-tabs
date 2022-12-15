@@ -1,13 +1,13 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": {
-		"type": "git",
-		"url": "https://gitlab.com/wpconcern/woocommerce-product-tabs"
-	},
+    "type": "git",
+    "url": "https://gitlab.com/wpconcern/woocommerce-product-tabs"
+  },
   "scripts": {
     "version": "easy-replace-in-files",
     "preinstall": "npx only-allow pnpm",
@@ -18,18 +18,18 @@
     "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o",
     "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
-	"wpDeployer": {
-		"repoType": "plugin",
-		"username": "wpconcern",
-		"buildDir": "deploy/woocommerce-product-tabs",
-		"deployAssets": true
-	},
+  "wpDeployer": {
+    "repoType": "plugin",
+    "username": "wpconcern",
+    "buildDir": "deploy/woocommerce-product-tabs",
+    "deployAssets": false
+  },
   "devDependencies": {
     "bestzip": "^2.2.1",
-    "copy-files-from-to": "^3.2.2",
+    "copy-files-from-to": "^3.6.0",
     "cross-var": "^1.1.0",
     "easy-replace-in-files": "^1.0.3",
-    "node-wp-i18n": "^1.2.6",
+    "node-wp-i18n": "^1.2.7",
     "shx": "^0.3.4",
     "wp-deployer": "^1.0.3"
   }
