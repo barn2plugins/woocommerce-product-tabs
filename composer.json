@@ -1,6 +1,9 @@
 {
-    "require": {
-        "ernilambar/wp-admin-notice": "^1.0",
-        "ernilambar/wp-welcome": "^1.0"
-    }
+	"name": "wpconcern/woocommerce-product-tabs",
+	"description": "WooCommerce Product Tabs",
+	"license": "GPL-2.0-or-later",
+	"require": {
+			"ernilambar/wp-admin-notice": "^1.0",
+			"ernilambar/wp-welcome": "^1.0"
+	}
 }
