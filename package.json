@@ -1,7 +1,7 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.18",
+  "version": "2.0.19",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": {
@@ -16,7 +16,7 @@
     "prewpdeploy": "pnpm run deploy",
     "wpdeploy": "wp-deployer",
     "predeploy": "shx rm -rf vendor/ && composer install --no-dev --no-scripts -o",
-    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
+    "deploy": "shx rm -rf deploy/ && shx mkdir deploy && copy-files-from-to --silent && cd deploy/ && cross-var shx mv temp $npm_package_name && cross-var bestzip ../$npm_package_name.zip * && cd .. && cross-var shx mv $npm_package_name.zip deploy/"
   },
   "wpDeployer": {
     "repoType": "plugin",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "bestzip": "^2.2.1",
-    "copy-files-from-to": "^3.8.0",
+    "copy-files-from-to": "^3.9.0",
     "cross-var": "^1.1.0",
     "easy-replace-in-files": "^1.0.3",
     "node-wp-i18n": "^1.2.7",
