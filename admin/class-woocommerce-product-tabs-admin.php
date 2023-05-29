@@ -48,7 +48,7 @@ class Woocommerce_Product_Tabs_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		
+
 
 	}
 
@@ -179,7 +179,7 @@ class Woocommerce_Product_Tabs_Admin {
 				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
 			}
 		}
-		
+
 		$required_tabs = $this->product_tabs_list;
 
 		// Check for All flag;
@@ -435,4 +435,66 @@ class Woocommerce_Product_Tabs_Admin {
     function customize_menu() {
     	remove_submenu_page( 'edit.php?post_type=woo_product_tab', 'post-new.php?post_type=woo_product_tab' );
     }
+
+	/**
+	 * Add Product Tabs in woocommerce settings.
+	 *
+	 * @since 2.0.2
+	 *
+	 * @param array $settings_tabs Setting tab name.
+	 * @return array $settings_tabs Tab name.
+	 */
+	function add_settings_tab( $settings_tabs ) {
+		$settings_tabs['wpt_settings'] = esc_html__( 'Product Tabs', 'woocommerce-product-tabs' );
+		return $settings_tabs;
+	}
+
+	/**
+	 * Product Tabs add settings.
+	 *
+	 * @since 2.0.2
+	 */
+	function add_settings() {
+		woocommerce_admin_fields( $this->wpt_get_settings() );
+	}
+
+	/**
+	 * Product Tab setting lists.
+	 *
+	 * @since 2.0.2
+	 *
+	 * @return array $settings
+	 */
+	function wpt_get_settings() {
+		$settings = array(
+			'tab_section' => array(
+				'name'      => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
+				'type'      => 'title',
+				'id'        => 'wpt_tab_section',
+			),
+			'wpt_disable_content_filter'  => array(
+				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
+				'type'    => 'checkbox',
+				'desc'    => esc_html__( 'Use this option if you are using page builder and have issue with contents preview.', 'woocommerce-product-tabs' ),
+				'default' => 'no',
+				'class'   => 'wpt_disable_content_filter',
+				'id'      => 'wpt_disable_content_filter',
+			),
+			'tab_section_end' => array(
+				'type'          => 'sectionend',
+				'id'            => 'wpt_tab_section_end',
+			),
+		);
+
+		return $settings;
+	}
+
+	/**
+	 * Product Tab settings save.
+	 *
+	 * @since 2.0.2
+	 */
+	function update_settings() {
+		woocommerce_update_options( $this->wpt_get_settings() );
+	}
 } //end class

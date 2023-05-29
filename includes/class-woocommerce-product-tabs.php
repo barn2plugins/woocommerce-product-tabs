@@ -169,6 +169,11 @@ class Woocommerce_Product_Tabs {
 		$this->loader->add_filter( 'manage_edit-woo_product_tab_sortable_columns', $plugin_admin, 'sortable_tab_columns' );
 		$this->loader->add_action( 'manage_woo_product_tab_posts_custom_column', $plugin_admin, 'custom_columns_in_tab_listing', 10, 2  );
 
+		//Settings Tab
+		$this->loader->add_action( 'woocommerce_settings_tabs_array', $plugin_admin, 'add_settings_tab', 50  );
+		$this->loader->add_action( 'woocommerce_settings_tabs_wpt_settings', $plugin_admin, 'add_settings' );
+		$this->loader->add_action( 'woocommerce_update_options_wpt_settings', $plugin_admin, 'update_settings' );
+
 		// Bulk Messages
 		$this->loader->add_filter( 'post_updated_messages', $plugin_admin, 'tab_post_updated_messages', 10, 2 );
 

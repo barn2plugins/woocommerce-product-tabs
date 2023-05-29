@@ -45,7 +45,10 @@ class Woocommerce_Product_Tabs_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-
+		if ( $this->enable_the_content_filter() ) {
+			add_filter( 'wpt_use_the_content_filter', '__return_false' );
+			add_filter( 'wpt_filter_tab_content', array( $this, 'product_tabs_filter_content' ), 10, 1 );
+		}
 	}
 
 	public function custom_woocommerce_product_tabs( $tabs ){
@@ -156,18 +159,19 @@ class Woocommerce_Product_Tabs_Public {
 		$flag_wpt_option_use_default_for_all = get_post_meta( $tab_post->ID, '_wpt_option_use_default_for_all', true );
 		if ( 'yes' == $flag_wpt_option_use_default_for_all ) {
 			// Default content for all
-			echo apply_filters( 'the_content', $tab_post->post_content );
+			echo $this->get_filter_content( $tab_post->post_content );
 		}
 		else{
 			// no default
 			$tab_value = get_post_meta( $product->get_id(), '_wpt_field_'.$key, true );
 			if ( ! empty( $tab_value ) ) {
 				// Value is set for Product
-				echo apply_filters( 'the_content', $tab_value );
+				echo $this->get_filter_content( $tab_value );
 			}
 			else{
 				// Value is empty; show default
-				echo apply_filters( 'the_content', $tab_post->post_content );
+				echo $this->get_filter_content( $tab_post->post_content );
+
 			}
 
 		}
@@ -212,6 +216,69 @@ class Woocommerce_Product_Tabs_Public {
 			register_post_type( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB, $args );
 
 
+	}
+
+	/**
+	 * Filter the content.
+	 *
+	 * @since 2.0.2
+	 *
+	 * @return string $content Tab content.
+	 */
+	public function product_tabs_filter_content( $content ){
+		$content = function_exists( 'capital_P_dangit' ) ? capital_P_dangit( $content ) : $content;
+		$content = function_exists( 'wptexturize' ) ? wptexturize( $content ) : $content;
+		$content = function_exists( 'convert_smilies' ) ? convert_smilies( $content ) : $content;
+		$content = function_exists( 'wpautop' ) ? wpautop( $content ) : $content;
+		$content = function_exists( 'shortcode_unautop' ) ? shortcode_unautop( $content ) : $content;
+		$content = function_exists( 'prepend_attachment' ) ? prepend_attachment( $content ) : $content;
+		$content = function_exists( 'wp_filter_content_tags' ) ? wp_filter_content_tags( $content ) : $content;
+		$content = function_exists( 'do_shortcode' ) ? do_shortcode( $content ) : $content;
+
+		if ( class_exists( 'WP_Embed' ) ) {
+			$embed = new WP_Embed;
+			$content = method_exists( $embed, 'autoembed' ) ? $embed->autoembed( $content ) : $content;
+		}
+
+		return $content;
+	}
+
+	/**
+	 * Get filter for the content.
+	 *
+	 * @since 2.0.2
+	 *
+	 * @return string $content Tab content.
+	 */
+	public function get_filter_content( $content ){
+		$use_the_content_filter = apply_filters( 'wpt_use_the_content_filter', true );
+
+		if ( $use_the_content_filter === true ) {
+			$content = apply_filters( 'the_content', $content );
+		} else {
+			$content = apply_filters( 'wpt_filter_tab_content', $content );
+		}
+		return $content;
+	}
+
+	/**
+	 * Check to enable custom filter for the content.
+	 *
+	 * @since 2.0.2
+	 */
+	public function enable_the_content_filter() {
+		$disable_the_content_filter = get_option( 'wpt_disable_content_filter' );
+		$output = false;
+
+		if ( empty( $disable_the_content_filter ) ){
+			$disable_the_content_filter = 'no';
+		}
+
+		if ( 'yes' === $disable_the_content_filter ){
+			$output = true;
+		}
+
+		return $output;
 	}
 
 }
