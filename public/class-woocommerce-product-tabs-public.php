@@ -219,11 +219,12 @@ class Woocommerce_Product_Tabs_Public {
 	}
 
 	/**
-	 * Filter the content.
+	 * Filter the tab content.
 	 *
 	 * @since 2.0.2
 	 *
-	 * @return string $content Tab content.
+	 * @param string $content Content for the current tab.
+	 * @return string Tab content.
 	 */
 	public function product_tabs_filter_content( $content ){
 		$content = function_exists( 'capital_P_dangit' ) ? capital_P_dangit( $content ) : $content;
@@ -248,6 +249,7 @@ class Woocommerce_Product_Tabs_Public {
 	 *
 	 * @since 2.0.2
 	 *
+	 * @param string $content Content to apply filter.
 	 * @return string $content Tab content.
 	 */
 	public function get_filter_content( $content ){
