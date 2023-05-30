@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Product Tabs 2.0.19\n"
+"Project-Id-Version: WooCommerce Product Tabs 2.0.20\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-product-tabs\n"
-"POT-Creation-Date: 2023-05-25 06:48:51+00:00\n"
+"POT-Creation-Date: 2023-05-30 05:40:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Version: %s"
 msgstr ""
 
-#: admin/admin.php:19 includes/class-woocommerce-product-tabs.php:257
+#: admin/admin.php:19 includes/class-woocommerce-product-tabs.php:262
 msgid "Getting Started"
 msgstr ""
 
@@ -122,44 +122,63 @@ msgstr ""
 msgid "Tab draft updated."
 msgstr ""
 
-#: includes/class-woocommerce-product-tabs.php:256
-#: public/class-woocommerce-product-tabs-public.php:190
+#: admin/class-woocommerce-product-tabs-admin.php:448
+#: includes/class-woocommerce-product-tabs.php:261
+#: public/class-woocommerce-product-tabs-public.php:194
 msgid "Product Tabs"
 msgstr ""
 
-#: includes/class-woocommerce-product-tabs.php:265
+#: admin/class-woocommerce-product-tabs-admin.php:471
+msgid "Product Tab Settings"
+msgstr ""
+
+#: admin/class-woocommerce-product-tabs-admin.php:476
+msgid "Disable the_content Filter"
+msgstr ""
+
+#: admin/class-woocommerce-product-tabs-admin.php:478
+msgid ""
+"Enable this checkbox if you are using a page builder and have problems with "
+"the content preview."
+msgstr ""
+
+#: includes/class-woocommerce-product-tabs.php:263
+msgid "Settings"
+msgstr ""
+
+#: includes/class-woocommerce-product-tabs.php:271
 msgid "Go Pro"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:186
+#: public/class-woocommerce-product-tabs-public.php:190
 msgid "Add New Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:187
+#: public/class-woocommerce-product-tabs-public.php:191
 msgid "New Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:188
+#: public/class-woocommerce-product-tabs-public.php:192
 msgid "Edit Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:189
+#: public/class-woocommerce-product-tabs-public.php:193
 msgid "View Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:191
+#: public/class-woocommerce-product-tabs-public.php:195
 msgid "Search Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:192
+#: public/class-woocommerce-product-tabs-public.php:196
 msgid "Parent Tabs:"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:193
+#: public/class-woocommerce-product-tabs-public.php:197
 msgid "No tabs found."
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:194
+#: public/class-woocommerce-product-tabs-public.php:198
 msgid "No tabs found in Trash."
 msgstr ""
 
@@ -182,22 +201,22 @@ msgstr ""
 msgid "https://wpconcern.com/"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:181
+#: public/class-woocommerce-product-tabs-public.php:185
 msgctxt "post type general name"
 msgid "Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:182
+#: public/class-woocommerce-product-tabs-public.php:186
 msgctxt "post type singular name"
 msgid "Tab"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:183
+#: public/class-woocommerce-product-tabs-public.php:187
 msgctxt "admin menu"
 msgid "WooCommerce Product Tabs"
 msgstr ""
 
-#: public/class-woocommerce-product-tabs-public.php:184
+#: public/class-woocommerce-product-tabs-public.php:188
 msgctxt "add new on admin bar"
 msgid "Tab"
 msgstr ""

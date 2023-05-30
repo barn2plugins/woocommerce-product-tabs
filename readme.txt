@@ -80,6 +80,9 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 
 == Changelog ==
 
+= 2.0.20 - 2023-05-30 =
+* Add option to disable the_content filter
+
 = 2.0.19 - 2023-05-25 =
 * Update Admin Notice package
 

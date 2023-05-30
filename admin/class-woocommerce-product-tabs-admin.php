@@ -475,7 +475,7 @@ class Woocommerce_Product_Tabs_Admin {
 			'wpt_disable_content_filter'  => array(
 				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
 				'type'    => 'checkbox',
-				'desc'    => esc_html__( 'Use this option if you are using page builder and have issue with contents preview.', 'woocommerce-product-tabs' ),
+				'desc'    => esc_html__( 'Enable this checkbox if you are using a page builder and have problems with the content preview.', 'woocommerce-product-tabs' ),
 				'default' => 'no',
 				'class'   => 'wpt_disable_content_filter',
 				'id'      => 'wpt_disable_content_filter',
