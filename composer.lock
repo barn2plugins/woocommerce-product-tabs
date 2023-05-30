@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ernilambar/wp-admin-notice",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ernilambar/wp-admin-notice.git",
-                "reference": "99d73f74a17357a60abff104be06e5c07ec72f7f"
+                "reference": "626e4685775bdd06085e7af76f9ae9380c68c9f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ernilambar/wp-admin-notice/zipball/99d73f74a17357a60abff104be06e5c07ec72f7f",
-                "reference": "99d73f74a17357a60abff104be06e5c07ec72f7f",
+                "url": "https://api.github.com/repos/ernilambar/wp-admin-notice/zipball/626e4685775bdd06085e7af76f9ae9380c68c9f0",
+                "reference": "626e4685775bdd06085e7af76f9ae9380c68c9f0",
                 "shasum": ""
             },
             "require": {
@@ -49,9 +49,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ernilambar/wp-admin-notice/issues/",
-                "source": "https://github.com/ernilambar/wp-admin-notice/tree/1.0.1"
+                "source": "https://github.com/ernilambar/wp-admin-notice/tree/1.0.2"
             },
-            "time": "2023-05-23T10:16:06+00:00"
+            "time": "2023-05-29T05:53:39+00:00"
         },
         {
             "name": "ernilambar/wp-welcome",
@@ -105,5 +105,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
