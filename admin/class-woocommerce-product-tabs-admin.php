@@ -442,7 +442,7 @@ class Woocommerce_Product_Tabs_Admin {
 	 * @since 2.0.2
 	 *
 	 * @param array $settings_tabs Setting tab name.
-	 * @return array $settings_tabs Tab name.
+	 * @return array Modify setting tab name array.
 	 */
 	function add_settings_tab( $settings_tabs ) {
 		$settings_tabs['wpt_settings'] = esc_html__( 'Product Tabs', 'woocommerce-product-tabs' );
@@ -463,7 +463,7 @@ class Woocommerce_Product_Tabs_Admin {
 	 *
 	 * @since 2.0.2
 	 *
-	 * @return array $settings
+	 * @return array Add custom settings for product tabs.
 	 */
 	function wpt_get_settings() {
 		$settings = array(
