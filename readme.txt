@@ -1,6 +1,6 @@
 === WooCommerce Product Tabs ===
 
-Contributors: wpconcern, rabmalin, maneshtimilsina
+Contributors: barn2media, wpconcern, rabmalin, maneshtimilsina
 Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
 Requires PHP: 7.2
