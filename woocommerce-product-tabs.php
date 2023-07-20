@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Product Tabs
  * Plugin URI: https://barn2.com/wordpress-plugins/woocommerce-product-tabs/
  * Description: WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the product using this plugin.
- * Version: 2.0.21
+ * Version: 2.0.22
  * Author: Barn2 Plugins
  * Author URI: https://barn2.com
  * License: GPL-2.0+
@@ -14,7 +14,7 @@
  * Requires at least: 5.8
  * Tested up to: 6.2
  * WC requires at least: 3.6
- * WC tested up to: 7.4
+ * WC tested up to: 7.9.0
  *
  * @package Woocommerce_Product_Tabs
  */
@@ -36,7 +36,7 @@ if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) && ! function_exists( '
 // Define.
 define( 'WOOCOMMERCE_PRODUCT_TABS_NAME', 'Woocommerce Product Tabs' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_SLUG', 'woocommerce-product-tabs' );
-define( 'WOOCOMMERCE_PRODUCT_TABS_VERSION', '2.0.21' );
+define( 'WOOCOMMERCE_PRODUCT_TABS_VERSION', '2.0.22' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_BASENAME', basename( dirname( __FILE__ ) ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
