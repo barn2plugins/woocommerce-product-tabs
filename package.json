@@ -1,12 +1,12 @@
 {
   "name": "woocommerce-product-tabs",
   "title": "WooCommerce Product Tabs",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "license": "GPL-2.0+",
   "main_file": "woocommerce-product-tabs.php",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/wpconcern/woocommerce-product-tabs"
+    "url": "https://github.com/Barn2Media/woocommerce-product-tabs.git"
   },
   "scripts": {
     "version": "easy-replace-in-files",
@@ -20,7 +20,7 @@
   },
   "wpDeployer": {
     "repoType": "plugin",
-    "username": "wpconcern",
+    "username": "barn2media",
     "buildDir": "deploy/woocommerce-product-tabs",
     "deployAssets": false
   },
