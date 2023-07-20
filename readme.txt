@@ -1,14 +1,14 @@
 === WooCommerce Product Tabs ===
 
 Contributors: barn2media, wpconcern, rabmalin, maneshtimilsina
-Donate link: https://wpconcern.com/plugins/woocommerce-product-tabs/
 Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
 Requires PHP: 7.2
 Requires at least: 5.8
 Tested up to: 6.2.2
 Stable tag: 2.0.21
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Donate link: https://barn2.com
 
 Custom Product Tabs for WooCommerce. Add and manage multiple tabs to WooCommerce products. Easy way to add new tabs to WooCommerce products.
 
@@ -18,7 +18,7 @@ WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCom
 
 You can assign a newly added custom tab as a default tab to all products or use it for a specific product only. WooCommerce Product Tabs plugin allows you to change the order of all tabs you have added.
 
-[Homepage](https://wpconcern.com/plugins/woocommerce-product-tabs/) | [Documentation](https://wpconcern.com/documentation/woocommerce-product-tabs/) | [Support](https://wordpress.org/support/plugin/woocommerce-product-tabs/) | [Buy Pro](https://wpconcern.com/plugins/woocommerce-product-tabs/)
+[Homepage](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/) | [Documentation](https://barn2.com/kb-categories/product-tabs-documentation/) | [Support](https://wordpress.org/support/plugin/woocommerce-product-tabs/) | [Buy Pro](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/#pricing)
 
 ###Premium features
 
