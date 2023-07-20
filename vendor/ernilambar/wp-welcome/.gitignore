@@ -46,11 +46,10 @@ npm-debug.log
 .sass-cache/
 
 # Project folders
-docs/
 build/
 deploy/
+docs/
+languages/
 node_modules/
-vendor/*
-!vendor/autoload.php
-!vendor/composer
-!vendor/ernilambar
+vendor/
+assets/wp-welcome.asset.php
