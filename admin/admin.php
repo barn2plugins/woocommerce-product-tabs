@@ -26,12 +26,12 @@ add_action(
 			array(
 				array(
 					'text' => 'Plugin Page',
-					'url'  => 'https://wpconcern.com/plugins/woocommerce-product-tabs/',
+					'url'  => 'https://barn2.com/wordpress-plugins/woocommerce-product-tabs/',
 					'type' => 'primary',
 				),
 				array(
 					'text' => 'View Documentation',
-					'url'  => 'https://wpconcern.com/documentation/woocommerce-product-tabs/',
+					'url'  => 'https://barn2.com/kb/woocommerce-product-tabs-free-documentation/',
 					'type' => 'secondary',
 				),
 			)
@@ -81,7 +81,7 @@ add_action(
 						'icon'        => 'dashicons dashicons-admin-generic',
 						'description' => 'Feel free to contact us if you need any customization service.',
 						'button_text' => 'Customization Request',
-						'button_url'  => 'https://wpconcern.com/request-customization/',
+						'button_url'  => 'https://barn2.com/kb/plugin-customizations/',
 						'button_type' => 'secondary',
 						'is_new_tab'  => true,
 					),
@@ -212,14 +212,6 @@ function wpt_render_welcome_page_sidebar( $object ) {
 		),
 		$object
 	);
-
-	$object->render_sidebar_box(
-		array(
-			'title'   => 'Our Plugins',
-			'content' => '<div class="wpc-plugins-list"></div>',
-		),
-		$object
-	);
 }
 
 /**
@@ -257,7 +249,7 @@ function wpt_get_plugins_list() {
 		$request = wp_safe_remote_get( 'https://wpconcern.com/wpc-api/plugins-list' );
 
 		if ( is_wp_error( $request ) ) {
-				return $output;
+			return $output;
 		}
 
 		$body = wp_remote_retrieve_body( $request );

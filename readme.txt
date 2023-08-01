@@ -1,11 +1,11 @@
 === WooCommerce Product Tabs ===
 
-Contributors: barn2media, wpconcern, rabmalin, maneshtimilsina
+Contributors: barn2media
 Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
 Requires PHP: 7.2
 Requires at least: 5.8
 Tested up to: 6.2.2
-Stable tag: 2.0.22
+Stable tag: 2.0.23
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -79,6 +79,9 @@ WooCommerce adds 3 tabs Description, Additional Information and Reviews by defau
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.0.23 - 2023-08-01 =
+* Changed link to Pro Upgrade
 
 = 2.0.22 - 2023-07-20 =
 * Fixed admin area crashing due to missing dependency library

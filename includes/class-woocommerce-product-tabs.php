@@ -268,7 +268,7 @@ class Woocommerce_Product_Tabs {
 		$output = array_merge(
 			$output,
 			array(
-				'go-pro' => '<a href="https://wpconcern.com/plugins/woocommerce-product-tabs/" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'woocommerce-product-tabs' ) . '</a>',
+				'go-pro' => '<a href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/#pricing" target="_blank" style="font-weight:700;">' . esc_html__( 'Go Pro', 'woocommerce-product-tabs' ) . '</a>',
 			)
 		);
 

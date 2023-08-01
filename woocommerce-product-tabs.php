@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Product Tabs
  * Plugin URI: https://barn2.com/wordpress-plugins/woocommerce-product-tabs/
  * Description: WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the product using this plugin.
- * Version: 2.0.22
+ * Version: 2.0.23
  * Author: Barn2 Plugins
  * Author URI: https://barn2.com
  * License: GPL-2.0+
@@ -36,12 +36,12 @@ if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) && ! function_exists( '
 // Define.
 define( 'WOOCOMMERCE_PRODUCT_TABS_NAME', 'Woocommerce Product Tabs' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_SLUG', 'woocommerce-product-tabs' );
-define( 'WOOCOMMERCE_PRODUCT_TABS_VERSION', '2.0.22' );
+define( 'WOOCOMMERCE_PRODUCT_TABS_VERSION', '2.0.23' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_BASENAME', basename( dirname( __FILE__ ) ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_URL', rtrim( plugin_dir_url( __FILE__ ), '/' ) );
 define( 'WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB', 'woo_product_tab' );
-define( 'WPT_UPGRADE_URL', 'https://checkout.freemius.com/mode/dialog/plugin/8712/plan/14552/' );
+define( 'WPT_UPGRADE_URL', 'https://barn2.com/wordpress-plugins/woocommerce-product-tabs/#pricing' );
 
 if ( ! defined( 'WP_WELCOME_DIR' ) ) {
 	define( 'WP_WELCOME_DIR', WOOCOMMERCE_PRODUCT_TABS_DIR . '/vendor/ernilambar/wp-welcome' );
