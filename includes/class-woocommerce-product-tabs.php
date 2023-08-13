@@ -203,6 +203,7 @@ class Woocommerce_Product_Tabs {
 		// Public custom hooks
 		$this->loader->add_filter( 'init', $plugin_public, 'custom_post_types' );
         $this->loader->add_filter( 'woocommerce_product_tabs', $plugin_public, 'custom_woocommerce_product_tabs', 20 );
+        $this->loader->add_filter( 'wc_quick_view_pro_quick_view_tabs_enabled', $plugin_public, 'custom_woocommerce_product_tabs', 20 );
 
 		$this->loader->add_filter( 'wpt_filter_product_tabs', $plugin_public, 'tab_status_check' );
 

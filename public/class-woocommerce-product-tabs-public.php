@@ -60,8 +60,9 @@ class Woocommerce_Product_Tabs_Public {
 				'posts_per_page' => -1,
 				'orderby'        => 'menu_order',
 				'order'          => 'asc',
-				)
-			);
+			)
+		);
+
 		if ( ! empty( $this->product_tabs_list ) ) {
 			foreach ($this->product_tabs_list as $key => $t) {
 				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
@@ -74,21 +75,18 @@ class Woocommerce_Product_Tabs_Public {
 
 		$wpt_tabs = array();
 		foreach ($this->product_tabs_list as $key => $prd) {
-
 			$wpt_tabs[$key]['id'] = $prd->post_name;
 			$wpt_tabs[$key]['title'] = esc_attr( $prd->post_title );
-      $wpt_tabs[$key]['priority'] = esc_attr( $prd->menu_order );
-      $wpt_tabs[$key]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
+			$wpt_tabs[$key]['priority'] = esc_attr( $prd->menu_order );
+			$wpt_tabs[$key]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
 			$wpt_tabs[$key]['use_default_for_all'] = esc_attr( get_post_meta( $prd->ID, '_wpt_option_use_default_for_all', true ) );
-
 		}
 
-    $wpt_tabs = apply_filters( 'wpt_filter_product_tabs', $wpt_tabs );
+		$wpt_tabs = apply_filters( 'wpt_filter_product_tabs', $wpt_tabs );
 
 		if ( ! empty( $wpt_tabs ) ) {
 
 			foreach ($wpt_tabs as $key => $tab) {
-
 				$tab_temp             = array();
 				$tab_temp['title']    = $tab['title'];
 				$tab_temp['priority'] = $tab['priority'];

@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WooCommerce Product Tabs
+ * Plugin Name: WooCommerce Product Tabs (Free)
  * Plugin URI: https://barn2.com/wordpress-plugins/woocommerce-product-tabs/
- * Description: WooCommerce Product Tabs is the best WordPress plugin to add new tabs for WooCommerce products. You can add as many custom tabs as you need to the product using this plugin.
+ * Description: Boost your product pages by adding custom tabs containing extra information. Add an unlimited number of extra tabs for all products or specific categories.
  * Version: 2.0.23
  * Author: Barn2 Plugins
  * Author URI: https://barn2.com
