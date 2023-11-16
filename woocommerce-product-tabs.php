@@ -3,18 +3,18 @@
  * Plugin Name: WooCommerce Product Tabs (Free)
  * Plugin URI: https://barn2.com/wordpress-plugins/woocommerce-product-tabs/
  * Description: Boost your product pages by adding custom tabs containing extra information. Add an unlimited number of extra tabs for all products or specific categories.
- * Version: 2.0.23
+ * Version: 2.0.24
  * Author: Barn2 Plugins
  * Author URI: https://barn2.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: woocommerce-product-tabs
  * Domain Path: /languages
- * Requires PHP: 7.2
- * Requires at least: 5.8
- * Tested up to: 6.2
- * WC requires at least: 3.6
- * WC tested up to: 7.9.0
+ * Requires PHP: 7.4
+ * Requires at least: 6.0
+ * Tested up to: 6.4
+ * WC requires at least: 6.5
+ * WC tested up to: 8.2.2
  *
  * @package Woocommerce_Product_Tabs
  */
