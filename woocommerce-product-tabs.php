@@ -33,6 +33,17 @@ if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) && ! function_exists( '
   return;
 }
 
+// Bail if the WTA Pro is active
+if( is_plugin_active( 'woocommerce-product-tabs-pro/woocommerce-product-tabs.php' ) ) {
+	return;
+}
+
+add_action( 'before_woocommerce_init', function() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );
+
 // Define.
 define( 'WOOCOMMERCE_PRODUCT_TABS_NAME', 'Woocommerce Product Tabs' );
 define( 'WOOCOMMERCE_PRODUCT_TABS_SLUG', 'woocommerce-product-tabs' );
