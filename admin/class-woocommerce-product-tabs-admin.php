@@ -63,7 +63,7 @@ class Woocommerce_Product_Tabs_Admin {
 		$screen = get_current_screen();
 
 		if ( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB == $screen->id ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __FILE__ ) . 'css/tab.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __FILE__ ) . 'assets/css/admin/tab.css', array(), $this->version, 'all' );
 		}
 
 	}
