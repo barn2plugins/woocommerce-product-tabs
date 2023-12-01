@@ -54,3 +54,5 @@ vendor/*
 !vendor/autoload.php
 !vendor/composer
 !vendor/ernilambar
+bin
+woocommerce-product-tabs.zip

@@ -260,7 +260,6 @@ class Woocommerce_Product_Tabs {
 		$output = array_merge(
 			array(
 				'product-tabs' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab' ) ) . '">' . esc_html__( 'Product Tabs', 'woocommerce-product-tabs' ) . '</a>',
-				'getting-started'  => '<a href="' . esc_url( admin_url( 'edit.php?post_type=woo_product_tab&page=wpt-welcome' ) ) . '">' . esc_html__( 'Getting Started', 'woocommerce-product-tabs' ) . '</a>',
 				'settings'  => '<a href="' . esc_url( admin_url( 'admin.php?page=wc-settings&tab=wpt_settings' ) ) . '">' . esc_html__( 'Settings', 'woocommerce-product-tabs' ) . '</a>',
 			),
 			$links
