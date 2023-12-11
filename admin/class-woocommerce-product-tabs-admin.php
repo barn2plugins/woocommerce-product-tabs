@@ -52,21 +52,6 @@ class Woocommerce_Product_Tabs_Admin {
 
 	}
 
-	/**
-	 * Register the stylesheets for the Dashboard.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
-
-
-		$screen = get_current_screen();
-
-		if ( WOOCOMMERCE_PRODUCT_TABS_POST_TYPE_TAB == $screen->id ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __FILE__ ) . 'assets/css/admin/tab.css', array(), $this->version, 'all' );
-		}
-
-	}
 
 	public function add_tab_meta_boxes(){
 
