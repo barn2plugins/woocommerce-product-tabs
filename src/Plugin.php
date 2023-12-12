@@ -75,8 +75,6 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 	public function add_services() {
 		$this->add_service( 'wizard', new Setup_Wizard( $this ) );
 		$this->add_service( 'post_type', new Post_Type() );
-		$this->add_service( 'scripts', new Frontend_Scripts( $this ) );
-		$this->add_service( 'review_notice', new Review_Notice( $this ) );
 
 		// Admin only services
 		if ( Util::is_admin() ) {

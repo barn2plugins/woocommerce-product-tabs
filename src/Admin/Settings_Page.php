@@ -39,7 +39,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 	 */
 	public function __construct( Plugin $plugin ) {
 		$this->plugin              = $plugin;
-		$this->registered_settings = $this->get_settings_tabs();
+		// $this->registered_settings = $this->get_settings_tabs();
 	}
 
 	/**
@@ -54,8 +54,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 	 */
 	public function register() {
 		$this->register_settings_tabs();
-
-		add_action( 'admin_menu', [ $this, 'add_settings_page' ] );
 	}
 
 	/**
@@ -85,20 +83,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 				}
 			},
 			$this->registered_settings
-		);
-	}
-
-	/**
-	 * Register the Settings submenu page.
-	 */
-	public function add_settings_page() {
-		add_submenu_page(
-			'edit.php?post_type=product',
-			__( 'Product Tabs', 'woocommerce-product-tabs' ),
-			__( 'Product Tabs', 'woocommerce-product-tabs' ),
-			'manage_woocommerce',
-			'wta_settings',
-			[ $this, 'render_settings_page' ]
 		);
 	}
 
@@ -152,17 +136,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 							<?php esc_html_e( 'The following options control the WooCommerce Product Options extension.', 'woocommerce-product-tabs' ); ?>
 						</p>
 
-						<form action="options.php" method="post">
-							<?php
-							settings_errors();
-							settings_fields( $this->registered_settings[ $active_tab ]::OPTION_GROUP );
-							do_settings_sections( $this->registered_settings[ $active_tab ]::MENU_SLUG );
-							?>
-
-							<p class="submit">
-								<input name="Submit" type="submit" name="submit" class="button button-primary" value="<?php esc_attr_e( 'Save Changes', 'woocommerce-product-tabs' ); ?>" />
-							</p>
-						</form>
 					<?php endif; ?>
 				</div>
 
@@ -189,5 +162,36 @@ class Settings_Page implements Service, Registerable, Conditional {
 			)
             // phpcs:enable
 		);
+	}
+
+	/**
+	 * Product Tab setting lists.
+	 *
+	 * @since 2.0.2
+	 *
+	 * @return array Add custom settings for product tabs.
+	 */
+	function wpt_get_settings() {
+		$settings = array(
+			'tab_section' => array(
+				'name'      => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
+				'type'      => 'title',
+				'id'        => 'wpt_tab_section',
+			),
+			'wpt_disable_content_filter'  => array(
+				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
+				'type'    => 'checkbox',
+				'desc'    => esc_html__( 'Enable this checkbox if you are using a page builder and have problems with the content preview.', 'woocommerce-product-tabs' ),
+				'default' => 'no',
+				'class'   => 'wpt_disable_content_filter',
+				'id'      => 'wpt_disable_content_filter',
+			),
+			'tab_section_end' => array(
+				'type'          => 'sectionend',
+				'id'            => 'wpt_tab_section_end',
+			),
+		);
+
+		return $settings;
 	}
 }
