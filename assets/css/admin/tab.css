@@ -9,4 +9,200 @@
   margin-left: 15px;
 }
 
+/* Add/Edit Tabs Page Style */
+#woocommerce-product-tabs_conditions_section.postbox .postbox-header,
+#woocommerce-product-tabs_tab_inclusions_section.postbox .postbox-header {
+  display: none;
+}
+
+#woocommerce-product-tabs_tab_inclusions_section .form-table {
+  display: none;
+}
+
+#woocommerce-product-tabs_tab_inclusions_section .form-table.display-section {
+  display: table;
+}
+
+.wta-loader,
+.wta-component-no-results {
+  display: none;
+}
+
+.wta-spinner {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wta-spinner svg path {
+  stroke: #007cba;
+}
+
+.wta-term-inclusions-section {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 0 !important;
+  flex-direction: column;
+}
+
+.wta-term-inclusions-section > div {
+  flex-grow: 1;
+  max-width: 60%;
+}
+
+.wta-term-inclusions-section .wta-component-search-field-control {
+  min-height: 36px;
+  padding: 0px 8px;
+  line-height: 2;
+  border-radius: 4px;
+  border: 1px solid #8c8f94;
+  box-shadow: 0 0 0 transparent;
+  color: #2c3338;
+  font-size: 13px;
+  width: 100%;
+}
+
+.wta-component-no-results {
+  background: #fff;
+  border-bottom: 1px solid #c3c4c7;
+  border-right: 1px solid #c3c4c7;
+  border-top: 1px solid #c3c4c7;
+  border-left: 4px solid #007cba;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  margin: 1em 0;
+  text-align: center;
+  padding: 11px;
+  font-size: 13px;
+}
+
+.barn2-search-list__list {
+  display: none;
+  padding: 0;
+  margin: 20px 0;
+  max-height: 17em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+}
+
+.barn2-search-list__list li {
+  margin-bottom: 0;
+}
+
+.barn2-search-list__list .barn2-search-list__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0 !important;
+  color: #757575;
+  border-bottom: none;
+  margin: 0px !important;
+}
+
+.barn2-search-list__list .barn2-search-list__item:hover {
+  background-color: #f0f0f0;
+}
+
+.barn2-search-list__list .barn2-search-list__item .barn2-search-list__item-input {
+  margin: 0 8px 0 0;
+}
+
+.barn2-search-list__list .barn2-search-list__item .barn2-search-list__item-label {
+  display: flex;
+  flex: 1;
+}
+
+.barn2-search-list__list .barn2-search-list__item .barn2-search-list__item-name {
+  display: inline-block;
+}
+
+.barn2-search-list__selected {
+  margin-top: 20px;
+}
+
+.barn2-search-list__selected.wpt-hide-selected-terms-section {
+  display: none;
+}
+
+.barn2-search-list__selected ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.barn2-search-list__selected .barn2-search-list__selected-header {
+  margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.barn2-search-list-clear__all {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #cc1818;
+  height: auto;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+  transition-duration: 0.05s;
+  transition-property: border, background, color;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.barn2-selected-list__tag {
+  display: inline-flex;
+  margin: 1px 4px 1px 0;
+  overflow: hidden;
+  align-items: center;
+}
+
+.barn2-selected-list__tag .barn2-tag__text {
+  padding: 0 4px 0 8px;
+  border-radius: 12px 0 0 12px;
+}
+
+.barn2-selected-list__tag .barn2-tag__remove {
+  cursor: pointer;
+  height: inherit;
+  padding: 0 2px;
+  border-radius: 0 12px 12px 0;
+  color: #757575;
+  line-height: 10px;
+  text-indent: 0;
+  height: 24px;
+  display: inline-block;
+  background: none;
+  transition: all 0.2s cubic-bezier(0.4, 1, 0.4, 1);
+  font-size: 13px;
+  font-weight: 400;
+  border: 0;
+}
+
+.barn2-selected-list__tag .barn2-tag__remove svg {
+  fill: #757575;
+  transition: all 0.2s ease-in;
+}
+
+.barn2-selected-list__tag .barn2-tag__remove:hover svg {
+  fill: #000;
+}
+
+.form-table.hide-section {
+  display: none;
+}
+
+.wta-component-search-field.disabled input {
+  background-color: #f1f1f1;
+}
+.wta-component-search-field.disabled a {
+  margin-top: 10px;
+  font-weight: 500;
+  display: block;
+}
+
 /*# sourceMappingURL=tab.css.map*/

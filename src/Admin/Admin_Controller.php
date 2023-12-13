@@ -50,6 +50,7 @@ class Admin_Controller implements Registerable, Service {
 		$this->add_service( 'plugin_promo', new Plugin_Promo( $this->plugin ) );
 		$this->add_service( 'settings_api', new Settings_API_Helper( $this->plugin ) );
 		$this->add_service( 'settings_page', new Settings_Page( $this->plugin ) );
+		$this->add_service( 'single_tab', new Single_Tab() );
 	}
 
 	/**
@@ -101,7 +102,10 @@ class Admin_Controller implements Registerable, Service {
     // TODO: Check this condition later
 
 		if ( 'woo_product_tab' == $screen->id ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __FILE__ ) . 'assets/css/admin/tab.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
+			wp_enqueue_script( $this->plugin_name . '-debounce', plugin_dir_url( __DIR__ ) . '../assets/js/admin/jquery-throttle-debounce.js', [ 'jquery' ], $this->version, true );
+
+			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch', $this->plugin_name . '-debounce' ], $this->version, true );
 		}
 
 	}
