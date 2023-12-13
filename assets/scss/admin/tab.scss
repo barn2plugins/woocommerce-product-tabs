@@ -180,3 +180,126 @@
     }
   }
 }
+
+/* product page */
+#product_tabs {
+  padding: 20px;
+  .add-new-tab {
+    margin-top: 10px;
+  }
+  .remove-tabs {
+    margin-bottom: 15px;
+    float: right;
+  }
+  .remove_product_tab {
+    color: #b32d2e;
+  }
+  .tab_title_field, .tabs_content_field {
+    width: 100%;
+    border-color: #ceced0;
+  }
+  .icon-wrap {
+    float: left;
+  }
+  .tab-content-wrap {
+    .wpt_accordion {
+      border: 1px solid #eee;
+      cursor: pointer;
+      padding: 12px;
+      font-size: 14px;
+      transition: 0.4s;
+      margin: 0;
+      color: #1d2327;
+    }
+    .wp-editor-wrap {
+      padding: 0 15px 15px;
+      background-color: white;
+      overflow: hidden;
+      border: 1px solid #eee;
+      border-bottom: none;
+      border-top: none;
+      flex: 1 1 100%;
+    }
+    .tab-container.hidden > * {
+      display: hidden;
+    }
+    .tab-container {
+      display: flex;
+      border: 1px solid #eee;
+      border-top: none;
+      flex-wrap: wrap;
+      .override-tab-content-label {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 1;
+        padding: 15px 15px!important;
+        margin: 0;
+        label {
+          margin: 0 0 0 5px;
+          min-width: fit-content;
+        }
+      }
+      &.hidden {
+        display: none;
+      }
+      .icon-container {
+        padding: 15px;
+        p {
+          margin: 0;
+          padding: 0;
+        }
+        .icon-output {
+          margin: 0;
+        }
+      }
+      .edit-tab-product {
+        width: 100%;
+        box-sizing: border-box;
+        .icon-output {
+          margin: 15px 0 0!important;
+          a {
+            color: red;
+            text-decoration: none;
+          }
+        }
+        &.edit-tab-footer {
+          display: flex;
+          flex: 1;
+          justify-content: flex-end;
+
+          .edit-global-tab {
+            padding: 15px;
+            min-width: fit-content;
+            text-decoration: none;
+          }
+        }
+      }
+      .wp-core-ui.wp-editor-wrap {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .wp-editor-area {
+    border: 1px solid #ceced0;
+  }
+  p.form-field {
+    padding: 5px 0 0 !important;
+  }
+  .tab_icon {
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #2271b1;
+    border-radius: 3px;
+  }
+  .new-tab-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: -3px;
+  }
+  .icon-output {
+    margin-top: 10px;
+  }
+}

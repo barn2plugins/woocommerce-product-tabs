@@ -205,4 +205,126 @@
   display: block;
 }
 
+/* product page */
+#product_tabs {
+  padding: 20px;
+}
+#product_tabs .add-new-tab {
+  margin-top: 10px;
+}
+#product_tabs .remove-tabs {
+  margin-bottom: 15px;
+  float: right;
+}
+#product_tabs .remove_product_tab {
+  color: #b32d2e;
+}
+#product_tabs .tab_title_field, #product_tabs .tabs_content_field {
+  width: 100%;
+  border-color: #ceced0;
+}
+#product_tabs .icon-wrap {
+  float: left;
+}
+#product_tabs .tab-content-wrap .wpt_accordion {
+  border: 1px solid #eee;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 14px;
+  transition: 0.4s;
+  margin: 0;
+  color: #1d2327;
+}
+#product_tabs .tab-content-wrap .wp-editor-wrap {
+  padding: 0 15px 15px;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-bottom: none;
+  border-top: none;
+  flex: 1 1 100%;
+}
+#product_tabs .tab-content-wrap .tab-container.hidden > * {
+  display: hidden;
+}
+#product_tabs .tab-content-wrap .tab-container {
+  display: flex;
+  border: 1px solid #eee;
+  border-top: none;
+  flex-wrap: wrap;
+}
+#product_tabs .tab-content-wrap .tab-container .override-tab-content-label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  padding: 15px 15px !important;
+  margin: 0;
+}
+#product_tabs .tab-content-wrap .tab-container .override-tab-content-label label {
+  margin: 0 0 0 5px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+#product_tabs .tab-content-wrap .tab-container.hidden {
+  display: none;
+}
+#product_tabs .tab-content-wrap .tab-container .icon-container {
+  padding: 15px;
+}
+#product_tabs .tab-content-wrap .tab-container .icon-container p {
+  margin: 0;
+  padding: 0;
+}
+#product_tabs .tab-content-wrap .tab-container .icon-container .icon-output {
+  margin: 0;
+}
+#product_tabs .tab-content-wrap .tab-container .edit-tab-product {
+  width: 100%;
+  box-sizing: border-box;
+}
+#product_tabs .tab-content-wrap .tab-container .edit-tab-product .icon-output {
+  margin: 15px 0 0 !important;
+}
+#product_tabs .tab-content-wrap .tab-container .edit-tab-product .icon-output a {
+  color: red;
+  text-decoration: none;
+}
+#product_tabs .tab-content-wrap .tab-container .edit-tab-product.edit-tab-footer {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+#product_tabs .tab-content-wrap .tab-container .edit-tab-product.edit-tab-footer .edit-global-tab {
+  padding: 15px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  text-decoration: none;
+}
+#product_tabs .tab-content-wrap .tab-container .wp-core-ui.wp-editor-wrap {
+  padding-bottom: 0;
+}
+#product_tabs .wp-editor-area {
+  border: 1px solid #ceced0;
+}
+#product_tabs p.form-field {
+  padding: 5px 0 0 !important;
+}
+#product_tabs .tab_icon {
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #2271b1;
+  border-radius: 3px;
+}
+#product_tabs .new-tab-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  top: -3px;
+}
+#product_tabs .icon-output {
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=tab.css.map*/

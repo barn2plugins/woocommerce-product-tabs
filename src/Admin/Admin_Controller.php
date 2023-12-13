@@ -24,11 +24,14 @@ class Admin_Controller implements Registerable, Service {
 	use Service_Container;
 
 	private $plugin;
+	private $plugin_name;
+	private $version;
 	private $settings_page;
 
 	public function __construct( Plugin $plugin ) {
 		$this->plugin = $plugin;
-
+		$this->plugin_name       = $plugin->get_slug();
+		$this->version           = $plugin->get_version();
 		$this->add_services();
 	}
 
@@ -51,6 +54,7 @@ class Admin_Controller implements Registerable, Service {
 		$this->add_service( 'settings_api', new Settings_API_Helper( $this->plugin ) );
 		$this->add_service( 'settings_page', new Settings_Page( $this->plugin ) );
 		$this->add_service( 'single_tab', new Single_Tab() );
+		$this->add_service( 'product_tabs', new Product_Tabs() );
 	}
 
 	/**
@@ -101,11 +105,17 @@ class Admin_Controller implements Registerable, Service {
 		// Main Settings Page
     // TODO: Check this condition later
 
-		if ( 'woo_product_tab' == $screen->id ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
+		if ( 'woo_product_tab' === $screen->id ) {
 			wp_enqueue_script( $this->plugin_name . '-debounce', plugin_dir_url( __DIR__ ) . '../assets/js/admin/jquery-throttle-debounce.js', [ 'jquery' ], $this->version, true );
-
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch', $this->plugin_name . '-debounce' ], $this->version, true );
+		}
+
+		if ( 'woo_product_tab' === $screen->id || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
+		
+		}
+		if( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
+			wp_enqueue_script( $this->plugin_name . '-product', plugin_dir_url( __DIR__ ) . '../assets/js/admin/product.js', [ 'jquery' ], $this->version, true );
 		}
 
 	}
