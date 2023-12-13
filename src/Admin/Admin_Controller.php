@@ -54,7 +54,7 @@ class Admin_Controller implements Registerable, Service {
 		$this->add_service( 'settings_api', new Settings_API_Helper( $this->plugin ) );
 		$this->add_service( 'settings_page', new Settings_Page( $this->plugin ) );
 		$this->add_service( 'single_tab', new Single_Tab() );
-		$this->add_service( 'product_tabs', new Product_Tabs() );
+		$this->add_service( 'product_editor_tabs', new Product_Editor_Tabs() );
 	}
 
 	/**

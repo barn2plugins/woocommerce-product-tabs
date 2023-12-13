@@ -81,6 +81,8 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 			$this->add_service( 'admin', new Admin\Admin_Controller( $this ) );
 		}
 
+		$this->add_service( 'product_tabs', new Product_Tabs() );
+
 	}
 
 	/**
