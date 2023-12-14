@@ -199,13 +199,8 @@
 .wta-component-search-field.disabled input {
   background-color: #f1f1f1;
 }
-.wta-component-search-field.disabled a {
-  margin-top: 10px;
-  font-weight: 500;
-  display: block;
-}
 
-/* product page */
+/* edit product page */
 #product_tabs {
   padding: 20px;
 }
@@ -325,6 +320,143 @@
 }
 #product_tabs .icon-output {
   margin-top: 10px;
+}
+
+/* Product Tabs Page Admin Header */
+.woocommerce-product-tabs-layout__header {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  width: calc(100% + 20px);
+  margin-left: -20px;
+}
+
+.woocommerce-product-tabs-layout__header .woocommerce-product-tabs-layout__header-wrapper {
+  align-items: center;
+  display: flex;
+  min-height: 60px;
+  padding-right: 20px;
+}
+
+.woocommerce-product-tabs-layout__header .woocommerce-product-tabs-layout__header-heading {
+  align-items: center;
+  background: #fff;
+  display: flex !important;
+  flex: 1 auto;
+  font-size: 14px;
+  font-weight: 600;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+}
+
+.woocommerce-product-tabs-nav-tab-wrapper {
+  border-bottom: 1px solid #c3c4c7;
+  margin-right: 20px;
+}
+
+.woocommerce-product-tabs-nav-tab-wrapper .nav-tab {
+  float: initial;
+  padding: 8px 10px;
+  line-height: 2.3;
+}
+
+/*Menu Page*/
+.tab-wrapper .tabs-nav {
+  display: flex;
+  border-bottom: 1px solid #c3c4c7;
+}
+
+.tab-wrapper .tabs-nav li {
+  margin-right: 10px;
+  margin-bottom: 0;
+  background: #dcdcde;
+  border: 1px solid #c3c4c7;
+  border-bottom: none;
+}
+
+.tab-wrapper .tabs-nav li.tab-active a {
+  background-color: #f0f0f1;
+  color: #000;
+  margin-bottom: -1px;
+  border-bottom: 1px solid #f0f0f1;
+}
+
+.tab-wrapper .tabs-nav li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #444;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab-wrapper .tabs-nav li:hover,
+.tab-wrapper .tabs-nav li a:hover {
+  background-color: #fff;
+}
+
+.tab-wrapper .tabs-nav li:hover a {
+  color: #3c434a;
+}
+
+.tab-wrapper .tabs-nav li.tab-active:hover,
+.tab-wrapper .tabs-nav li.tab-active a:hover {
+  background-color: transparent;
+}
+
+#poststuff .inside h2 {
+  font-size: 1.3em;
+  padding-left: 0;
+}
+
+.postbox table.form-table {
+  margin-bottom: 20px;
+}
+
+.wpt-options .icon-remove,
+.wpt-font-wrap .icon-remove {
+  font-size: small;
+}
+
+.wpt-options #poststuff {
+  padding: 0;
+}
+.wpt-options #poststuff #post-body-content {
+  display: flex;
+  width: 100%;
+  gap: 40px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1200px) {
+  .wpt-options #poststuff #post-body-content {
+    flex-wrap: wrap;
+  }
+}
+.wpt-options #poststuff #post-body-content .tabs-stage {
+  flex: 3 1 70%;
+}
+
+.normal-list {
+  list-style: disc;
+  padding-left: 1rem;
+}
+
+.upgrade-to-pro {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.pro-version-link {
+  margin-top: 10px;
+  font-weight: 500;
+  display: block;
+}
+
+#screen-meta-links {
+  display: none;
 }
 
 /*# sourceMappingURL=tab.css.map*/

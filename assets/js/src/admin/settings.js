@@ -82,10 +82,18 @@
 		var self = $(this);
 		self.closest('li').remove();
 	});
+
 	$('.barn2-remove-inclusions').on('click', function() {
 		const self = $(this);
 		const wrapper = self.closest('.wta-inclusion-selector');
 		wrapper.find('.barn2-search-list__selected_terms').empty();
 		wrapper.find('.barn2-search-list__selected').hide();
 	});
+
+	/**
+	 * Change the CPT filter status to a text field
+	 */
+	$('body.post-type-woo_product_tab .wrap .subsubsub').html(
+		'<p class="wta-sub-heading">Create additional tabs for your WooCommerce product pages and choose which categories they appear on. For more options, <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=wta-settings">upgrade to Pro.</a></p>'
+	);
 }( jQuery ) );

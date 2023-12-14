@@ -1,1 +1,1 @@
-{"admin/settings.js":{"dependencies":[],"version":"fb0510d8937d665ef6a2"},"admin/wizard.js":{"dependencies":["react","wp-components","wp-i18n"],"version":"cfe813f26d0766782a11"},"admin/product.js":{"dependencies":[],"version":"1fbb20702f51115f0511"}}
+{"admin/settings.js":{"dependencies":[],"version":"3573bd905a6055ae8bc7"},"admin/wizard.js":{"dependencies":["react","wp-components","wp-i18n"],"version":"cfe813f26d0766782a11"},"admin/product.js":{"dependencies":[],"version":"1fbb20702f51115f0511"}}

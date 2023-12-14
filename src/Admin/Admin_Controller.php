@@ -104,18 +104,23 @@ class Admin_Controller implements Registerable, Service {
 
 		// Main Settings Page
     // TODO: Check this condition later
-
-		if ( 'woo_product_tab' === $screen->id ) {
+		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'admin_page_wta_reorder', 'woo_product_tab' ]; 
+		if ( in_array( $screen->id, $screen_ids ) ) {
 			wp_enqueue_script( $this->plugin_name . '-debounce', plugin_dir_url( __DIR__ ) . '../assets/js/admin/jquery-throttle-debounce.js', [ 'jquery' ], $this->version, true );
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch', $this->plugin_name . '-debounce' ], $this->version, true );
 		}
-
-		if ( 'woo_product_tab' === $screen->id || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
 		
+		if ( in_array( $screen->id, $screen_ids ) || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
+
 		}
 		if( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
 			wp_enqueue_script( $this->plugin_name . '-product', plugin_dir_url( __DIR__ ) . '../assets/js/admin/product.js', [ 'jquery' ], $this->version, true );
+		}
+
+		// Manually enqueue the promo style for the reorder page
+		if( in_array( $screen->id, $screen_ids) ) {
+			wp_enqueue_style('barn2-plugins-promo', \plugins_url('dependencies/barn2/barn2-lib/build/css/plugin-promo-styles.css', $this->plugin->get_file()), [], $this->plugin->get_version(), 'all');
 		}
 
 	}

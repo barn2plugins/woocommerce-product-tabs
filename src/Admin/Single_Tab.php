@@ -85,14 +85,14 @@ class Single_Tab implements Registerable, Service {
 		</div>
     <div class="wta-component-search-field disabled">
 			<input disabled type="text" class="wta-component-search-field-control" placeholder="<?php _e( 'Search for products','woocommerce-product-tabs' ) ?>">
-      <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">
+      <a class="pro-version-link" target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">
           <?php _e( 'Pro version only', 'woocommerce-product-tabs' ); ?>
       </a>
     </div>
     
     <div class="wta-component-search-field disabled">
 			<input disabled type="text" class="wta-component-search-field-control" placeholder="<?php _e( 'Search for tags','woocommerce-product-tabs' ) ?>">
-      <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">
+      <a class="pro-version-link" target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">
         <?php _e( 'Pro version only', 'woocommerce-product-tabs' ); ?>
       </a>
     </div>
