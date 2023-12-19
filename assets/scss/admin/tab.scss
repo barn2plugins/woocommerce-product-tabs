@@ -436,3 +436,31 @@
 #screen-meta-links {
   display: none;
 }
+
+body.post-type-woo_product_tab .wrap #posts-filter .tablenav.bottom,
+body.post-type-woo_product_tab .wrap #posts-filter .search-box,
+body.post-type-woo_product_tab .wrap #posts-filter .tablenav.top .actions:not(.bulkactions) {
+  display: none;
+}
+body.post-type-woo_product_tab {
+  .wrap {
+    margin-top: 20px;
+    .wp-heading-inline {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    .wta-sub-heading {
+      margin-top: 0px;
+    }
+  }
+
+  .woocommerce-product-tabs-nav-tab-wrapper {
+    margin-top: 21px;
+  }
+}
+
+body.admin_page_wta_settings, body.admin_page_wta_reorder {
+  .woocommerce-product-tabs-nav-tab-wrapper {
+    margin-top: 21px;
+  }
+}

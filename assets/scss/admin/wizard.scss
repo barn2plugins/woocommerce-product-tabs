@@ -1,8 +1,8 @@
 .is-hidden {
-  display: none;
+  display: none!important;
 }
 .is-error, .is-success {
-  margin: 1rem 0;
+  margin: 1rem 0!important;
 }
 .mce-statusbar {
   display: none!important;

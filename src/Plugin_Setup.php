@@ -93,6 +93,7 @@ class Plugin_Setup implements Registerable {
 		}
 
 		$this->starter->delete_transient();
+		$this->starter->create_option(); 
 		$this->starter->redirect();
 	}
 }

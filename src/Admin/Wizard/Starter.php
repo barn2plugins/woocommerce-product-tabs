@@ -23,4 +23,13 @@ class Starter extends Setup_Wizard_Starter {
 		$setup_happened = get_option( 'woocommerce-product-tabs-setup-wizard_completed' ) ?: false;
 		return ! $setup_happened;
 	}
+
+	/** 
+	 * Add an option so the setup wizard doesn't run after reactivating 
+	 * 
+	 * @return void
+	 */ 
+	public function create_option() {
+		add_option( "woocommerce-product-tabs-setup-wizard_completed", true );
+	}
 }
