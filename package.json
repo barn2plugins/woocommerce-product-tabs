@@ -9,7 +9,6 @@
     "type": "git",
     "url": "https://github.com/Barn2Plugins/woocommerce-product-tabs.git"
   },
-
   "directories": {
     "lib": "lib"
   },
@@ -29,13 +28,17 @@
     "test:unit": "wp-scripts test-unit-js"
   },
   "bugs": {
-      "url": "https://github.com/Barn2Plugins/woocommerce-product-tabs/issues"
+    "url": "https://github.com/Barn2Plugins/woocommerce-product-tabs/issues"
   },
   "homepage": "https://github.com/Barn2Plugins/woocommerce-product-tabs#readme",
   "devDependencies": {
-      "@barn2plugins/webpack-config": "^2.0.0",
-      "@wordpress/dependency-extraction-webpack-plugin": "^4.8.0",
-      "@wordpress/scripts": "^26.4.0",
-      "gulp": "^4.0.2"
+    "@barn2plugins/webpack-config": "^2.0.0",
+    "@barn2plugins/components": "^0.9",
+    "@wordpress/dependency-extraction-webpack-plugin": "^4.8.0",
+    "@wordpress/scripts": "^26.4.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "@wordpress/api-fetch": "^6.45.0"
   }
 }

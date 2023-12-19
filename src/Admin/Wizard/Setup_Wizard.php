@@ -46,7 +46,6 @@ class Setup_Wizard implements Registerable {
 				'utm_id'      => 'wtaf',
 			]
 		);
-		wp_enqueue_editor();
 
     $wizard->add_custom_asset(
       $plugin->get_dir_url() . 'assets/js/admin/wizard/wizard.js',

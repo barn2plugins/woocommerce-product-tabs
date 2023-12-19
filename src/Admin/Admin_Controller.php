@@ -105,7 +105,7 @@ class Admin_Controller implements Registerable, Service {
     // TODO: Check this condition later
 		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'admin_page_wta_reorder', 'woo_product_tab' ]; 
 		if ( in_array( $screen->id, $screen_ids ) ) {
-			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch', $this->plugin_name . '-debounce' ], $this->version, true );
+			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch' ], $this->version, true );
 		}
 		
 		if ( in_array( $screen->id, $screen_ids ) || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
@@ -123,6 +123,7 @@ class Admin_Controller implements Registerable, Service {
 
 		if( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', array(), $this->version, 'all' );
+			wp_enqueue_editor();
 		}
 
 	}

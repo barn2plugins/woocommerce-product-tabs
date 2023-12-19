@@ -50,9 +50,11 @@ docs/
 build/
 deploy/
 node_modules/
+dist
 vendor/*
 !vendor/autoload.php
 !vendor/composer
 !vendor/ernilambar
 bin
 woocommerce-product-tabs.zip
+.npmrc
