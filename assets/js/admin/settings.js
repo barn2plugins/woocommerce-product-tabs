@@ -7,6 +7,18 @@ var __webpack_exports__ = {};
 
 
 (function ($) {
+  function debounce(fn, delay) {
+    var timer = null;
+    return function () {
+      var context = this,
+        args = arguments;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        fn.apply(context, args);
+      }, delay);
+    };
+  }
+
   /**
    * Search terms on typing keywords in Inclusions section
    */
@@ -47,7 +59,7 @@ var __webpack_exports__ = {};
       searchedTermsList.html(searchedTermsHTML).show();
     });
   }
-  $('#wta-category-search, #wta-tag-search').on('keyup', $.debounce(500, termSearch));
+  $('#wta-category-search, #wta-tag-search').on('keyup', debounce(termSearch, 500));
 
   /**
    * Display/Hide inclusions sections based on the visibility condition
@@ -77,7 +89,7 @@ var __webpack_exports__ = {};
     inclusionWrapper.find('.barn2-search-list__selected').show();
     inclusionWrapper.find('.barn2-search-list__selected_terms').append(termListHTML);
   }
-  $(document).on('click', '.barn2-search-list__list li', $.debounce(50, selectTerm));
+  $(document).on('click', '.barn2-search-list__list li', debounce(selectTerm, 50));
   $(document).on('click', '#barn2-remove-term', function () {
     var self = $(this);
     self.closest('li').remove();

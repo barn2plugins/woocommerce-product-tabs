@@ -211,6 +211,14 @@ class Single_Tab implements Registerable, Service {
 				'normal',
 				'high'
 			);
+			add_meta_box(
+				'woocommerce-product-tabs_icon_section',
+				__( 'Select Icon', 'woocommerce-product-tabs' ),
+				[ $this, 'wpt_icon_section' ],
+				$screen,
+				'side',
+				'high'
+			);
 		}
 	}
 
@@ -244,18 +252,26 @@ class Single_Tab implements Registerable, Service {
 			</table>
 
 			<table id="inclusions-list" class="form-table <?php echo ( $show_tabs_globally === 'no' ) ? '' : 'hide-section'; ?> ">
-			<tbody>
-				<tr>
-					<th><?php _e( 'Inclusions', 'woocommerce-product-tabs' ); ?></th>
-					<td class="wta-term-inclusions-section">
-						<?php 
-						$this->wta_inclusion_categories_selector( $post_id, $times_svg_icon );
-						?>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+				<tbody>
+					<tr>
+						<th><?php _e( 'Inclusions', 'woocommerce-product-tabs' ); ?></th>
+						<td class="wta-term-inclusions-section">
+							<?php 
+							$this->wta_inclusion_categories_selector( $post_id, $times_svg_icon );
+							?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		<?php 
 	}
 
+	public function wpt_icon_section() {
+		?>
+		<div class="icon-wrap">
+		<a href="#" class="tab_icon disabled button button-secondary"><?php esc_html_e( 'Select Icon', 'woocommerce-product-tabs' ); ?></a>
+		<a href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings" class="pro-version-link" target="_blank"><?php _e( 'Pro version only' ); ?></a>
+		</div>
+		<?php
+	}
 }

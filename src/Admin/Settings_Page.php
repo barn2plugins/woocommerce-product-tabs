@@ -187,7 +187,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 		<div id="tab-reorder" class="meta-box-sortables tab-ui-sortable">
 			<div>
 				<div class="inside">
-					<p> <?php _e( 'Easily drag and drop and reorder the tabs.' ); ?> 
+					<p> <?php _e( 'Easily change the order of your product page tabs.' ); ?> 
 						<a href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings" class="pro-version-link" target="_blank"><?php _e( 'Pro version only' ); ?></a>
 					</p>
 			</div>
@@ -272,7 +272,8 @@ class Settings_Page implements Service, Registerable, Conditional {
 					</form>
 
 					<div class="upgrade-to-pro">
-						<p>The free version of WooCommerce Product Tabs doesn’t have any settings, and you can access all the options when <a target="_blank" href="<?php echo get_admin_url( null, 'edit.php?post_type=woo_product_tab' ) ?>">creating and editing tabs</a>. For additional settings, you can upgrade to the <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">premium version</a> which has a range of advanced settings, including:</p>
+						<h3><?php _e( 'Advanced options for your product tabs', 'woocommerce-product-tabs' ); ?></h3>
+						<p>For additional settings, you can upgrade to the <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">premium version</a> which has a range of advanced settings, including:</p>
 						<ul class="normal-list">
 							<li><?php _e( 'Rename the default WooCommerce tabs (i.e. Description, Additional Information and Reviews).', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Add an icon to each of the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>

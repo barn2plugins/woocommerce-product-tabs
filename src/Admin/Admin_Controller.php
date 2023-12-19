@@ -105,7 +105,6 @@ class Admin_Controller implements Registerable, Service {
     // TODO: Check this condition later
 		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'admin_page_wta_reorder', 'woo_product_tab' ]; 
 		if ( in_array( $screen->id, $screen_ids ) ) {
-			wp_enqueue_script( $this->plugin_name . '-debounce', plugin_dir_url( __DIR__ ) . '../assets/js/admin/jquery-throttle-debounce.js', [ 'jquery' ], $this->version, true );
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch', $this->plugin_name . '-debounce' ], $this->version, true );
 		}
 		
