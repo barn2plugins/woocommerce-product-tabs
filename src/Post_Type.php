@@ -49,13 +49,16 @@ class Post_Type implements Registerable, Service {
 
     $args = array(
       'labels'             => $labels,
-      'public'             => FALSE,
-      'publicly_queryable' => FALSE,
-      'show_ui'            => TRUE,
-      'query_var'          => FALSE,
+      'public'             	=> FALSE,
+      'publicly_queryable' 	=> FALSE,
+      'show_ui'            	=> TRUE,
+      'query_var'          	=> FALSE,
       'capability_type'    => 'post',
       'has_archive'        => FALSE,
       'hierarchical'       => FALSE,
+			'show_in_rest'			 => true,
+			'rest_base'					 => 'woo_product_tab',
+			'rest_controller_class'	=>	'WP_REST_Posts_Controller',
       'show_in_menu'       => 'edit.php?post_type=product',
       'taxonomies'         => array(),
       'supports'           => array( 'title', 'editor' ),
@@ -106,11 +109,12 @@ class Post_Type implements Registerable, Service {
 				break;
 			case 'display-globally':
 				$flag_default_for_all = get_post_meta( $post_id,'_wpt_display_tab_globally', true );
-				if ( 'yes' == $flag_default_for_all) {
-					echo '<span class="dashicons dashicons-yes"></span>';
+				$tab_categories = get_post_meta( $post_id, '_wpt_conditions_category', true );
+				if ( 'no' === $flag_default_for_all && $tab_categories ) {
+					echo '<span class="dashicons dashicons-no-alt"></span>';
 				}
 				else{
-					echo '<span class="dashicons dashicons-no-alt"></span>';
+					echo '<span class="dashicons dashicons-yes"></span>';
 				}
 				break;
 			default:
