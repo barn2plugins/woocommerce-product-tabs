@@ -20,7 +20,7 @@
  * Requires at least: 6.0
  * Tested up to: 6.4
  * WC requires at least: 6.5
- * WC tested up to: 8.3.1
+ * WC tested up to: 8.4.0
  *
  * @package Woocommerce_Product_Tabs
  */

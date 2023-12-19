@@ -31,7 +31,7 @@ class Post_Type implements Registerable, Service {
   public function tab_post_type(){
 
 		$labels = array(
-      'name'               => _x( 'Tabs', 'post type general name', 'woocommerce-product-tabs' ),
+      'name'               => _x( 'Product Tabs', 'post type general name', 'woocommerce-product-tabs' ),
       'singular_name'      => _x( 'Tab', 'post type singular name', 'woocommerce-product-tabs' ),
       'menu_name'          => _x( 'WooCommerce Product Tabs', 'admin menu', 'woocommerce-product-tabs' ),
       'name_admin_bar'     => _x( 'Tab', 'add new on admin bar', 'woocommerce-product-tabs' ),
