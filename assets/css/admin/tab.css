@@ -453,6 +453,9 @@
   background-color: #fff;
   border: 1px solid #ccc;
 }
+.upgrade-to-pro h3 {
+  margin-top: 10px !important;
+}
 
 .pro-version-link {
   margin-top: 10px;

@@ -16,3 +16,16 @@ label, .barn2-form-label {
   display: block!important;
   margin-bottom: 8px!important;
 }
+.components-button.is-secondary {
+  display: none;
+}
+div.mce-toolbar-grp {
+  border: 0 solid #dcdcde!important;
+}
+.mce-tinymce > .mce-container-body.mce-stack-layout {
+  border: 1px solid #dcdcde!important;
+}
+
+.mce-container-body.mce-stack-layout > .mce-top-part.mce-container {
+  border-bottom: 1px solid #dcdcde;
+}

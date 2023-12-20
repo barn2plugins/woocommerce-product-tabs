@@ -45,11 +45,7 @@ const ContentStep = ( { goToNextStep, goToPreviousStep, nextButtonLabel } ) => {
                 status: 'publish',
             },
         } ).then( ( res ) => {
-            setNoticeContent( 'Your tab is published now! You can edit it and show it on specific categories.' );
-            setNoticeClass( 'success' );
-            setTimeout(() => {
-                goToNextStep();
-            }, 3000 ); 
+            goToNextStep();
         } );
         
     }

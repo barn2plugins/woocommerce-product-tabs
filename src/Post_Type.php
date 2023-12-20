@@ -26,6 +26,7 @@ class Post_Type implements Registerable, Service {
     add_filter( 'parent_file', [ $this, 'highlight_menu_item' ], 99 );
 		add_filter( 'custom_menu_order', '__return_true', 99 );
 		add_filter( 'menu_order', [ $this, 'tabs_menu_order' ] );
+		add_filter('use_block_editor_for_post_type', [ $this, 'disable_gutenberg_editor' ], 20, 2 );
   }
 
   public function tab_post_type(){
@@ -185,5 +186,12 @@ class Post_Type implements Registerable, Service {
 		}
 
 		return $menu_order;
+	}
+
+	public function disable_gutenberg_editor( $is_enabled, $post_type ) {
+		if ( 'woo_product_tab' === $post_type ) {
+			return false;
+		}
+		return $is_enabled;
 	}
 }

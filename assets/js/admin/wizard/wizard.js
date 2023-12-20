@@ -143,11 +143,7 @@ const ContentStep = ({
         status: 'publish'
       }
     }).then(res => {
-      setNoticeContent('Your tab is published now! You can edit it and show it on specific categories.');
-      setNoticeClass('success');
-      setTimeout(() => {
-        goToNextStep();
-      }, 3000);
+      goToNextStep();
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Card, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CardBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {

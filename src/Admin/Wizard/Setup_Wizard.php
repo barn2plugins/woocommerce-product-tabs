@@ -44,6 +44,20 @@ class Setup_Wizard implements Registerable {
 				'skip_url'    => admin_url( 'edit.php?post_type=woo_product_tab' ),
 				'premium_url' => 'https://barn2.com/wordpress-plugins/woocommerce-product-tabs/',
 				'utm_id'      => 'wtaf',
+				'signpost'	=>	[
+					[
+						'title'	=>	'Manage tabs',
+						'href'	=>	admin_url( 'edit.php?post_type=woo_product_tab' )
+					],
+					[
+						'title'	=>	'Create a new tab',
+						'href'	=>	admin_url( 'post-new.php?post_type=woo_product_tab' )
+					],
+					[
+						'title'	=>	'Tab settings',
+						'href'	=>	admin_url( 'admin.php?page=wta_settings' )
+					]
+				]
 			]
 		);
 

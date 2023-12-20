@@ -40,7 +40,7 @@ class Admin_Controller implements Registerable, Service {
 
 		// Extra links on Plugins page
 		add_filter( 'plugin_action_links_' . $this->plugin->get_basename(), [ $this, 'add_settings_link' ] );
-		add_filter( 'plugin_row_meta', [ $this, 'add_pro_version_link' ], 10, 2 );
+		add_filter( 'plugin_row_meta', [ $this, 'add_meta_links' ], 10, 2 );
 
 		// Admin scripts
 		add_action( 'admin_enqueue_scripts', [ $this, 'settings_page_scripts' ] );
@@ -82,12 +82,18 @@ class Admin_Controller implements Registerable, Service {
 	 * @param string $file
 	 * @return array
 	 */
-	public function add_pro_version_link( $links, $file ) {
+	public function add_meta_links( $links, $file ) {
 		if ( $file === $this->plugin->get_basename() ) {
+			$links[] = sprintf(
+				'<a href="%1$s" target="_blank">%2$s</a>',
+				esc_url( 'https://barn2.com/kb/woocommerce-product-tabs-free-documentation/' ),
+				esc_html__( 'Docs', 'woocommerce-product-tabs' )
+			);
+
 			$links[] = sprintf(
 				'<a href="%1$s" target="_blank"><strong>%2$s</strong></a>',
 				esc_url( 'https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=pluginsadmin&utm_content=wta-plugins' ),
-				esc_html__( 'Pro Version', 'woocommerce-product-tabs' )
+				esc_html__( 'Pro version', 'woocommerce-product-tabs' )
 			);
 		}
 

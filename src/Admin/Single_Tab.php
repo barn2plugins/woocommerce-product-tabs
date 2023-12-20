@@ -213,7 +213,7 @@ class Single_Tab implements Registerable, Service {
 			);
 			add_meta_box(
 				'woocommerce-product-tabs_icon_section',
-				__( 'Select Icon', 'woocommerce-product-tabs' ),
+				__( 'Select icon', 'woocommerce-product-tabs' ),
 				[ $this, 'wpt_icon_section' ],
 				$screen,
 				'side',

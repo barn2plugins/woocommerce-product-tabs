@@ -20,7 +20,7 @@ class Completed extends Ready {
 	public function __construct() {
 		parent::__construct();
 		$this->set_name( esc_html__( 'Ready', 'woocommerce-product-tabs' ) );
-		$this->set_title( esc_html__( 'Complete Setup', 'woocommerce-product-tabs' ) );
+		$this->set_title( esc_html__( 'Complete setup', 'woocommerce-product-tabs' ) );
 
 		$this->set_description( $this->get_custom_description() );
 	}
@@ -33,7 +33,7 @@ class Completed extends Ready {
 	private function get_custom_description() {
 		// $product_options_page =
 
-		return esc_html__( 'Congratulations, you have finished setting up the plugin. Now it’s time to start managing your product tabs.', 'woocommerce-product-tabs' );
+		return esc_html__( 'Congratulations, you have created your first product page tab. Now go to the Manage Tabs screen to choose which categories to display it on, create more tabs, and manage the plugin settings.', 'woocommerce-product-tabs' );
 	}
 
 }
