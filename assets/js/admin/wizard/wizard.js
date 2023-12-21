@@ -147,13 +147,13 @@ const ContentStep = ({
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Card, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CardBody, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-    label: "Tab Title",
+    label: "Tab title",
     value: tabTitle,
     onChange: value => setTabTitle(value),
     className: "barn2-wizard-input"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalText, {
     className: "barn2-form-label"
-  }, "Tab Content"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Fields_TinyMCE__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Tab content"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Fields_TinyMCE__WEBPACK_IMPORTED_MODULE_3__["default"], {
     value: tabContent,
     onChange: setTabContent
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Notice, {

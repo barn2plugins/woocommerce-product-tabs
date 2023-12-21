@@ -19,6 +19,7 @@ WooCommerce Product Tabs lets you add an unlimited number of extra tabs to any o
 Each tab has a WYSIWYG editor which you can use to add absolutely any type of information to the product page. You can add HTML code, shortcodes, images, videos, audio embeds - the possibilities are endless! 
 
 Adding extra tabs to product pages is an excellent way to provide more information to customers without adding clutter or affecting the layout. Here are some examples of popular uses for WooCommerce product tabs: 
+
 - **Extra product information** - Add a product specifications tab, downloads tab, FAQ tab, ingredients or materials tab, size guide, assembly/usage instructions, unboxing videos, demos, and 3D models. 
 - **Reassure customers** - Create WooCommerce product page tabs to showcase your certifications, warranty information, 
 - **Add social proof to the WooCommerce product page** - Add customers testimonials with photos and videos, or embed social media feeds.
@@ -33,6 +34,7 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 [Homepage](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) | [Documentation](https://barn2.com/kb/woocommerce-product-tabs-free-documentation/) | [Support](https://wordpress.org/support/plugin/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) | [Buy Pro](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg#pricing)
 
 ###WooCommerce Product Tabs (free) includes:###
+
 - Create an unlimited number of WooCommerce product page tabs. 
 - Add flexible tab content using the user-friendly WYSIWYG editor, including shortcodes and HTML. 
 - Assign tabs based on product category, or set them to appear globally on all products.
@@ -53,7 +55,8 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 See the premium version in action on the [plugin demo site](https://producttabs.barn2.com/), and view the plugin documentation in our [knowledge base](https://barn2.com/kb-categories/product-tabs-documentation/).
 
 ###Recommended integrations###
-Use WooCommerce Product Tabs with other Barn2 plugins to add extra features to your product page tabs: 
+Use WooCommerce Product Tabs with other Barn2 plugins to add extra features to your product page tabs:
+
 - [WooCommerce Quick View Pro](https://barn2.com/wordpress-plugins/woocommerce-quick-view-pro/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) - Add quick view buttons to your shop pages, with the extra tabs displayed in a product lightbox. No need for customers to visit separate product pages!
 - [Document Library Pro](https://barn2.com/wordpress-plugins/document-library-pro/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) - Add a structured list of product-related documents to your extra tabs, complete with download buttons and preview buttons.
 - [WooCommerce Product Table](https://barn2.com/wordpress-plugins/woocommerce-product-table/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) - Easily list related products in a quick order form within your extra product page tabs. 
@@ -120,6 +123,7 @@ Use the priority field to control the order of the tabs. The lowest number tab w
 == Changelog ==
 
 = 2.1.0 =
+Release date 21 December 2023
 
 * Fixed the error when pro version is activated
 * Updated assets
@@ -127,58 +131,94 @@ Use the priority field to control the order of the tabs. The lowest number tab w
 * Added HPOS compatibility
 * Tested up to WordPress 6.4 and WooCommerce 8.4
 
-= 2.0.23 - 2023-08-01 =
+= 2.0.23 =
+Release date 1 August 2023
+
 * Changed link to Pro Upgrade
 
-= 2.0.22 - 2023-07-20 =
+= 2.0.22 =
+Release date 20 July 2023
+
 * Fixed admin area crashing due to missing dependency library
 
-= 2.0.21 - 2023-07-20 =
+= 2.0.21 =
+Release date 20 July 2023
+
 * Change of plugin details
 
-= 2.0.20 - 2023-05-30 =
+= 2.0.20 =
+Release date 30 May 2023
+
 * Add option to disable the_content filter
 
-= 2.0.19 - 2023-05-25 =
+= 2.0.19 =
+Release date 25 May 2023
+
 * Update Admin Notice package
 
-= 2.0.18 - 2023-02-20 =
+= 2.0.18 =
+Release date 20 February 2023
+
 * Fix PHP 8 issue
 
-= 2.0.17 - 2022-12-15 =
+= 2.0.17 =
+Release date 20 December 2022
+
 * Fix admin links
 
-= 2.0.16 - 2022-10-10 =
+= 2.0.16 =
+Release date 10 October 2022
+
 * Update dashboard
 
-= 2.0.15 - 2022-09-05 =
+= 2.0.15 =
+Release date 5 November 2022
+
 * Minor bug fixes
 
-= 2.0.14 - 2022-07-04 =
+= 2.0.14 =
+Release date 4 July 2022
+
 * Minor bug fixes
 
-= 2.0.13 - 2022-04-19 =
+= 2.0.13 =
+Release date 19 April 2022
+
 * Minor bug fixes
 
-= 2.0.12 - 2022-04-19 =
+= 2.0.12 =
+Release date 17 April 2022
+
 * Minor bug fixes
 
-= 2.0.11 - 2022-02-17 =
+= 2.0.11 =
+Release date 17 February 2022
+
 * Fix multi site issue
 
-= 2.0.10 - 2022-01-31 =
+= 2.0.10 =
+Release date 31 January 2022
+
 * WP 5.9 compatibility
 
-= 2.0.8 - 2022-01-19 =
+= 2.0.8 =
+Release date 19 January 2022
+
 * Fix: PHP error
 
-= 2.0.7 - 2021-09-23 =
+= 2.0.7 =
+Release date 21 November 2021
+
 * Fix: PHP fatal error
 
-= 2.0.6 - 2021-07-15 =
+= 2.0.6 =
+Release date 15 July 2021 
+
 * Fix: PHP error in PHP 7.1
 
-= 2.0.5 - 2021-07-14 =
+= 2.0.5 =
+Release date 14 July 2021
+
 * Fix: Minor bug fixes
 
 = 2.0.3 =

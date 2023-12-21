@@ -54,14 +54,13 @@ const ContentStep = ( { goToNextStep, goToPreviousStep, nextButtonLabel } ) => {
         <Card>
             <CardBody>
                 <TextControl 
-                label="Tab Title"
+                label="Tab title"
                 value={ tabTitle }
                 onChange={ ( value ) => setTabTitle( value ) }
                 className="barn2-wizard-input"
                 />
-                <Text className="barn2-form-label">Tab Content</Text>
+                <Text className="barn2-form-label">Tab content</Text>
                 <TinyMCE value={ tabContent } onChange={ setTabContent } />
-
                 <Notice isDismissible={ false } status={noticeClass}>{noticeContent}</Notice>
             </CardBody>
             <CardFooter>

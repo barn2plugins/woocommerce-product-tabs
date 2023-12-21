@@ -4,6 +4,7 @@
 /.gitignore export-ignore
 /.gitmodules export-ignore
 /package.json export-ignore
+/package-lock.json export-ignore
 /pnpm-lock.yaml export-ignore
 /yarn.lock export-ignore
 /copy-files-from-to.json export-ignore
