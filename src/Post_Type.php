@@ -160,7 +160,7 @@ class Post_Type implements Registerable, Service {
   public function highlight_menu_item( $file ) {
 		global $plugin_page, $submenu_file;
 
-		if ( $plugin_page === 'wta_settings' || $plugin_page === 'wta_reorder' ) {
+		if ( $plugin_page === 'wta_settings' ) {
 			$plugin_page = 'edit.php?post_type=product';
 			$submenu_file = 'edit.php?post_type=woo_product_tab';
 		}

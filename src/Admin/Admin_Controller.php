@@ -109,7 +109,7 @@ class Admin_Controller implements Registerable, Service {
 		$screen = get_current_screen();
 		// Main Settings Page
     // TODO: Check this condition later
-		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'admin_page_wta_reorder', 'woo_product_tab' ]; 
+		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'woo_product_tab' ]; 
 		if ( in_array( $screen->id, $screen_ids ) ) {
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch' ], $this->version, true );
 		}
@@ -120,11 +120,6 @@ class Admin_Controller implements Registerable, Service {
 		}
 		if( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
 			wp_enqueue_script( $this->plugin_name . '-product', plugin_dir_url( __DIR__ ) . '../assets/js/admin/product.js', [ 'jquery' ], $this->version, true );
-		}
-
-		// Manually enqueue the promo style for the reorder page
-		if( in_array( $screen->id, $screen_ids) ) {
-			wp_enqueue_style('barn2-plugins-promo', \plugins_url('dependencies/barn2/barn2-lib/build/css/plugin-promo-styles.css', $this->plugin->get_file()), [], $this->plugin->get_version(), 'all');
 		}
 
 		if( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {

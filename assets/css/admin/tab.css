@@ -354,6 +354,7 @@
 .woocommerce-product-tabs-nav-tab-wrapper {
   border-bottom: 1px solid #c3c4c7;
   margin-right: 20px;
+  padding: 9px 0 0 !important;
 }
 
 .woocommerce-product-tabs-nav-tab-wrapper .nav-tab {
@@ -474,7 +475,7 @@ body.post-type-woo_product_tab .wrap #posts-filter .tablenav.top .actions:not(.b
 }
 
 body.post-type-woo_product_tab .wrap {
-  margin-top: 20px;
+  margin-top: 0;
 }
 body.post-type-woo_product_tab .wrap .wp-heading-inline {
   font-size: 1.3em;
@@ -489,6 +490,10 @@ body.post-type-woo_product_tab .woocommerce-product-tabs-nav-tab-wrapper {
 
 body.admin_page_wta_settings .woocommerce-product-tabs-nav-tab-wrapper, body.admin_page_wta_reorder .woocommerce-product-tabs-nav-tab-wrapper {
   margin-top: 21px;
+}
+
+.barn2-plugins-promo h2 {
+  font-size: 21px !important;
 }
 
 /*# sourceMappingURL=tab.css.map*/

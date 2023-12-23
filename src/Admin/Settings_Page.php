@@ -85,7 +85,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 		<h2 class="woocommerce-product-tabs-nav-tab-wrapper">
 			<a href="<?php echo admin_url( 'edit.php?post_type=woo_product_tab' ); ?>" class="nav-tab nav-tab-active">Product Tabs</a>
 			<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab">Settings</a>
-			<a href="<?php echo admin_url( 'admin.php?page=wta_reorder' ); ?>" class="nav-tab">Reorder</a>
 		</h2>
 	<?php
 	}
@@ -170,31 +169,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 			[ $this, 'admin_product_tabs_options_page' ]
 		);
 
-		add_submenu_page(
-			'wta-reorder',
-			__( 'Reorder - Product Tabs', 'woocommerce-product-tabs' ),
-			__( 'Reorder', 'woocommerce-product-tabs' ),
-			'manage_options',
-			'wta_reorder',
-			[ $this, 'admin_product_tabs_reorder_page' ]
-		);
-	}
-
-	public function admin_product_tabs_reorder_page()
-	{
-		$this->get_settings_page_header( 'wta_reorder' );
-		?>
-		<div id="tab-reorder" class="meta-box-sortables tab-ui-sortable">
-			<div>
-				<div class="inside">
-					<p> <?php _e( 'Easily change the order of your product page tabs.' ); ?> 
-						<a href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings" class="pro-version-link" target="_blank"><?php _e( 'Pro version only' ); ?></a>
-					</p>
-			</div>
-			</div><!-- .postbox -->
-		</div>
-		<?php
-		$this->get_settings_page_footer();
 	}
 
 	function register_plugin_option_fields()
@@ -240,12 +214,6 @@ class Settings_Page implements Service, Registerable, Conditional {
 				</div>
 			</div>
 		</div>
-
-		<h2 class="woocommerce-product-tabs-nav-tab-wrapper">
-			<a href="<?php echo admin_url( 'edit.php?post_type=woo_product_tab' ); ?>" class="nav-tab">Product Tabs</a>
-			<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab <?php echo $current === 'wta_settings' ? 'nav-tab-active' : '' ?>">Settings</a>
-			<a href="<?php echo admin_url( 'admin.php?page=wta_reorder' ); ?>" class="nav-tab <?php echo $current === 'wta_reorder' ? 'nav-tab-active' : '' ?>">Reorder</a>
-		</h2>
 		<div class="wrap wpt-options barn2-settings">
 
 		<div id="poststuff">
@@ -254,6 +222,10 @@ class Settings_Page implements Service, Registerable, Conditional {
 
 			<div id="post-body-content">
 				<div class="tabs-stage">
+				<h2 class="woocommerce-product-tabs-nav-tab-wrapper">
+					<a href="<?php echo admin_url( 'edit.php?post_type=woo_product_tab' ); ?>" class="nav-tab">Product Tabs</a>
+					<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab <?php echo $current === 'wta_settings' ? 'nav-tab-active' : '' ?>">Settings</a>
+				</h2>
 		<?php
 		echo $message;
 	}
@@ -273,13 +245,14 @@ class Settings_Page implements Service, Registerable, Conditional {
 
 					<div class="upgrade-to-pro">
 						<h3><?php _e( 'Advanced options for your product tabs', 'woocommerce-product-tabs' ); ?></h3>
-						<p>For additional settings, you can upgrade to the <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">premium version</a> which has a range of advanced settings, including:</p>
+						<p>For additional settings, you can upgrade to the <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">Pro version</a> which has a range of advanced settings, including:</p>
 						<ul class="normal-list">
 							<li><?php _e( 'Rename the default WooCommerce tabs (i.e. Description, Additional Information and Reviews).', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Add an icon to each of the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Hide or remove the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Change the layout of your product page tabs to display them as an accordion.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Allow customers to search by the title and content of your custom tabs.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Change the order of the product page tabs.', 'woocommerce-product-tabs' ); ?> </li>
 						</ul>
 					</div>
 				</div><!-- .inside -->
