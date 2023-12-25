@@ -57,7 +57,7 @@ class Product_Tabs implements Registerable, Service {
 			$wpt_tabs[$key]['title'] = esc_attr( $prd->post_title );
 			$wpt_tabs[$key]['priority'] = esc_attr( $prd->menu_order );
 			$wpt_tabs[$key]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
-			$wpt_tabs[$key]['use_default_for_all'] = esc_attr( get_post_meta( $prd->ID, '_wpt_option_use_default_for_all', true ) );
+			$wpt_tabs[$key]['display_globally'] = esc_attr( get_post_meta( $prd->ID, '_wpt_display_tab_globally', true ) );
 		}
 
 		$wpt_tabs = apply_filters( 'wpt_filter_product_tabs', $wpt_tabs );
@@ -95,25 +95,40 @@ class Product_Tabs implements Registerable, Service {
 
           $content_to_show = $tab_default_value;
 
-          if ( 'yes' != $tab['use_default_for_all'] ) {
-            $tab_value = get_post_meta( $product->get_id(), '_wpt_field_'.$key, true );
-            if ( ! empty( $tab_value ) ) {
-              $content_to_show = $tab_value;
-            }
-          }
+          if ( 'yes' === get_post_meta( $product->get_id(), '_wpt_override_' . $key, true ) ) {
+						$tab_value = get_post_meta( $product->get_id(), '_wpt_field_' . $key, true );
+						if ( ! empty( $tab_value ) ) {
+							$content_to_show = $tab_value;
+						}
+					}
 
           if ( empty( $content_to_show ) ) {
             unset( $tabs[ $tab_key ] );
           }
 
-          if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) ) {
+          if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) && $tab[ 'display_globally' ] === 'no' ) {
+						$child_categories = [];
+						foreach( $tab[ 'conditions_category' ] as $category ) {
+							$child_terms = get_terms( array(
+								'child_of'				=>	$category,
+								'hide_empty'			=>	true,
+								'taxonomy'				=>	'product_cat',
+								'fields'					=>	'ids'
+							) );
+
+							if( is_array( $child_terms ) ) {
+								$child_categories = array_unique( array_merge( $child_categories, $child_terms ) );
+							}
+						}
+
+						$conditions_category = array_unique( array_merge( $tab[ 'conditions_category' ], $child_categories ) );
+
             // check category condition
             $cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
 
-            if ( ! array_intersect( $cat_list, $tab['conditions_category'] ) ) {
+            if ( ! array_intersect( $cat_list, $conditions_category ) ) {
               unset( $tabs[ $tab_key ] );
             }
-
           }
         }
 
