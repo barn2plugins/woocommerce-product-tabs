@@ -114,6 +114,10 @@ There is no limitation on the number of tabs you can create. You can add as many
 = How can I set the order of the product page tabs? =
 
 Use the priority field to control the order of the tabs. The lowest number tab will appear first on product pages. Set the priorities bearing in mind that WooCommerce has already assigned a priority of 10 to the Description tab, 20 to the Additional Information tab, and 30 to the Reviews tab. For an easier way to sort the tabs, [upgrade to the premium version](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) which has drag-and-drop tab re-ordering.  
+
+= Where do I report security bugs found in this plugin? =
+Please report any security bugs through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/woocommerce-product-tabs). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 == Screenshots ==
 
 1. Admin panel : Listing Tabs
@@ -123,7 +127,7 @@ Use the priority field to control the order of the tabs. The lowest number tab w
 == Changelog ==
 
 = 2.1.0 =
-Release date 21 December 2023
+Release date 4 January 2024
 
 * Fixed the error when pro version is activated
 * Updated assets
