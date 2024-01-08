@@ -199,7 +199,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 	{
 		$message = '';
 		if( isset($_GET['settings-updated']) && $_GET['settings-updated'] === "true" ) {
-			$message = '<div id="message" class="updated inline"><p><strong>Your settings have been saved.</strong></p></div>';
+			$message = '<div id="message" class="notice notice-success updated inline is-dismissible"><p><strong>Your settings have been saved.</strong></p></div>';
 		}
 		do_action( 'barn2_before_plugin_settings', $this->plugin->get_id() );
 
@@ -247,12 +247,13 @@ class Settings_Page implements Service, Registerable, Conditional {
 						<h3><?php _e( 'Advanced options for your product tabs', 'woocommerce-product-tabs' ); ?></h3>
 						<p>For additional settings, you can upgrade to the <a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings">Pro version</a> which has a range of advanced settings, including:</p>
 						<ul class="normal-list">
-							<li><?php _e( 'Rename the default WooCommerce tabs (i.e. Description, Additional Information and Reviews).', 'woocommerce-product-tabs' ); ?></li>
-							<li><?php _e( 'Add an icon to each of the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Rename the default WooCommerce tabs (Description, Additional Information and Reviews).', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Hide or remove the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>
-							<li><?php _e( 'Change the layout of your product page tabs to display them as an accordion.', 'woocommerce-product-tabs' ); ?></li>
-							<li><?php _e( 'Allow customers to search by the title and content of your custom tabs.', 'woocommerce-product-tabs' ); ?></li>
-							<li><?php _e( 'Change the order of the product page tabs.', 'woocommerce-product-tabs' ); ?> </li>
+							<li><?php _e( 'Change the tab order.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Add tab icons.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Display tabs for specific products or tags.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Choose between a horizontal or vertical tab layout.', 'woocommerce-product-tabs' ); ?> </li>
+							<li><?php _e( 'Allow customers to search by tab title and tab content.', 'woocommerce-product-tabs' ); ?> </li>
 						</ul>
 					</div>
 				</div><!-- .inside -->

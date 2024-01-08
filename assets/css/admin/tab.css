@@ -410,6 +410,7 @@
 
 #poststuff .inside h2 {
   font-size: 1.3em;
+  padding-top: 1.6rem;
   padding-left: 0;
 }
 
@@ -494,6 +495,10 @@ body.admin_page_wta_settings .woocommerce-product-tabs-nav-tab-wrapper, body.adm
 
 .barn2-plugins-promo h2 {
   font-size: 21px !important;
+}
+
+#message {
+  margin-top: 15px;
 }
 
 /*# sourceMappingURL=tab.css.map*/

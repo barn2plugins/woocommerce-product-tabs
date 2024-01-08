@@ -43,13 +43,13 @@ class Tab_Content extends Step {
 				'label'       => __( 'Title', 'woocommerce-product-tabs' ),
 				'description' => __( 'Enter the tab title.', 'woocommerce-product-tabs' ),
 				'type'        => 'text',
-				'value'       => $this->values['title'],
+				'value'       => $this->values['title'] ?? '',
       ],
       'content' => [
 				'label'       => __( 'Content', 'woocommerce-product-tabs' ),
 				'description' => __( 'Enter the tab content', 'woocommerce-product-tabs' ),
 				'type'        => 'TinyMCE',
-				'value'       => $this->values['content'],
+				'value'       => $this->values['content'] ?? '',
 			]
 		];
 

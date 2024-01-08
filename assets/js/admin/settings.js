@@ -104,7 +104,7 @@ var __webpack_exports__ = {};
   /**
    * Change the CPT filter status to a text field
    */
-  $('body.post-type-woo_product_tab .wrap .subsubsub').html('<p class="wta-sub-heading">Create additional tabs for your WooCommerce product pages and choose which categories they appear on. For more options,<a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=wta-settings">upgrade to Pro.</a></p>');
+  $('body.post-type-woo_product_tab .wrap .subsubsub').html('<p class="wta-sub-heading">Create additional tabs for your product pages and choose which categories they appear on. For more options,<a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=wta-settings">upgrade to Pro.</a></p>');
 })(jQuery);
 /******/ })()
 ;

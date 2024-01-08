@@ -382,6 +382,7 @@
 
 #poststuff .inside h2 {
   font-size: 1.3em;
+  padding-top: 1.6rem;
   padding-left: 0;
 }
 
@@ -472,4 +473,7 @@ body.admin_page_wta_settings, body.admin_page_wta_reorder {
   h2 {
     font-size: 21px!important;
   }
+}
+#message {
+  margin-top: 15px;
 }
