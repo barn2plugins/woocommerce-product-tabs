@@ -68,12 +68,16 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 	 */
 	public function maybe_load_plugin() {
 		// Don't load plugin if Pro version active
-		if ( function_exists( '\Barn2\Plugin\WC_Product_Tabs_Pro\wta' ) ) {
+		if ( function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
 			return;
 		}
 	}
 
 	public function add_services() {
+		// Don't load plugin if Pro version active
+		if ( function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
+			return;
+		}
 		$this->add_service( 'wizard', new Setup_Wizard( $this ) );
 		$this->add_service( 'post_type', new Post_Type() );
 

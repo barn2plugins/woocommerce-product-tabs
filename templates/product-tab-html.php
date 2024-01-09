@@ -1,3 +1,6 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 <div id="product_tabs" class="panel woocommerce_options_panel">
 	<?php
 	$post_id  = get_the_ID();

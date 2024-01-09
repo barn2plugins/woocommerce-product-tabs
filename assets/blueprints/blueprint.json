@@ -1,0 +1,55 @@
+{
+  "landingPage": "/?post_type=product",
+  "preferredVersions": {
+      "php": "8.0",
+      "wp": "latest"
+  },
+  "phpExtensionBundles": [],
+  "steps": [
+      {
+        "step": "login",
+        "username": "admin",
+        "password": "password"
+      },
+      {
+        "step": "installPlugin",
+        "pluginZipFile": {
+            "resource": "wordpress.org\/plugins",
+            "slug": "woocommerce"
+        },
+        "options": {
+            "activate": true
+        }
+      },
+      {
+        "step": "installPlugin",
+        "pluginZipFile": {
+            "resource": "wordpress.org\/plugins",
+            "slug": "woocommerce-product-tabs"
+        },
+        "options": {
+            "activate": true
+        }
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_term( 'Hoodie', 'product_cat', array( 'slug' => 'hoodie'));\nwp_insert_term( 'Accessory', 'product_cat', array( 'slug' => 'accessory'));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 5,\n'post_type' => 'product',\n'post_title' => 'Hoodie',\n'post_content' => '<!-- wp:paragraph -->\n<p>This is a hoodie.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_author' => 1\n, 'post_category' => [17] ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 6,\n'post_type' => 'product',\n'post_title' => 'Mug',\n'post_content' => '<!-- wp:paragraph -->\n<p>This is a mug.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_author' => 1\n, 'post_category' => [18] ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 7,\n'post_type' => 'product',\n'post_title' => 'T-shirt',\n'post_content' => '<!-- wp:paragraph -->\n<p>This is a T-shirt.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_author' => 1\n, 'post_category' => [17] ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 100,\n'post_type' => 'woo_product_tab',\n'post_title' => 'Shipping',\n'post_content' => '<!-- wp:paragraph -->\n<p>There is some additional info about the product shipping.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_author' => 1\n,'meta_input' => array( '_wpt_conditions_category' => '17' ) ));"
+      }
+  ]
+}
