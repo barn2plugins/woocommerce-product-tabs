@@ -31,9 +31,8 @@ class Completed extends Ready {
 	 * @return string
 	 */
 	private function get_custom_description() {
-		// $product_options_page =
 
-		return esc_html__( 'Congratulations, you have created your first product page tab. Now go to the Manage Tabs screen to choose which categories to display it on, create more tabs, and manage the plugin settings.', 'woocommerce-product-tabs' );
+		return esc_html__( 'Congratulations, you have completed the setup wizard. You can now manage your tabs, choose a category to show them on, create more tabs, and manage the plugin settings.', 'woocommerce-product-tabs' );
 	}
 
 }

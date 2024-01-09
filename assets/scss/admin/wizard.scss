@@ -16,7 +16,7 @@ label, .barn2-form-label {
   display: block!important;
   margin-bottom: 8px!important;
 }
-.components-button.is-secondary {
+.components-button.is-secondary:not(.skip-button) {
   display: none;
 }
 div.mce-toolbar-grp {

@@ -125,6 +125,9 @@ const ContentStep = ({
   const [noticeContent, setNoticeContent] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   const [noticeClass, setNoticeClass] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('hidden');
   const [buttonBusy, setButtonBusy] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const handleSkipButton = function () {
+    goToNextStep();
+  };
   const handleNextButton = function () {
     setNoticeClass('hidden');
     setButtonBusy(true);
@@ -160,10 +163,14 @@ const ContentStep = ({
     isDismissible: false,
     status: noticeClass
   }, noticeContent)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.CardFooter, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    className: "skip-button",
+    isSecondary: true,
+    onClick: () => handleSkipButton()
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Skip')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     isPrimary: true,
     isBusy: buttonBusy,
     onClick: () => handleNextButton()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Next'))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create'))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentStep);
 

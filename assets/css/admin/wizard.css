@@ -23,7 +23,7 @@ label, .barn2-form-label {
   margin-bottom: 8px !important;
 }
 
-.components-button.is-secondary {
+.components-button.is-secondary:not(.skip-button) {
   display: none;
 }
 

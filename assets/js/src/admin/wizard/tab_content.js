@@ -26,7 +26,11 @@ const ContentStep = ( { goToNextStep, goToPreviousStep, nextButtonLabel } ) => {
     const [ noticeClass, setNoticeClass ] = useState( 'hidden' );
     const [ buttonBusy, setButtonBusy ] = useState( false );
 
-    const handleNextButton = function () {
+    const handleSkipButton = function() {
+        goToNextStep();
+    }
+
+    const handleNextButton = function() {
         setNoticeClass( 'hidden' );
         setButtonBusy( true );
         if( !tabTitle || !tabContent ) {
@@ -65,11 +69,18 @@ const ContentStep = ( { goToNextStep, goToPreviousStep, nextButtonLabel } ) => {
             </CardBody>
             <CardFooter>
                 <Button
+                    className="skip-button"
+                    isSecondary
+                    onClick={ () => handleSkipButton() }
+                >
+                    { __( 'Skip' ) }
+                </Button>
+                <Button
                     isPrimary
                     isBusy={ buttonBusy }
                     onClick={ () => handleNextButton() }
                 >
-                    { __( 'Next' ) }
+                    { __( 'Create' ) }
                 </Button>
             </CardFooter>
         </Card>
