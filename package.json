@@ -1,44 +1,44 @@
 {
-  "name": "woocommerce-product-tabs",
-  "title": "WooCommerce Product Tabs (Free)",
-  "version": "2.1.0",
-  "license": "GPL-2.0+",
-  "main_file": "woocommerce-product-tabs.php",
-  "author": "Barn2 Plugins <support@barn2.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Barn2Plugins/woocommerce-product-tabs.git"
-  },
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "build": "set BARN2_BUILD_ENV=production & wp-scripts build",
-    "check-engines": "wp-scripts check-engines",
-    "check-licenses": "wp-scripts check-licenses",
-    "format": "wp-scripts format",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "lint:md:docs": "wp-scripts lint-md-docs",
-    "lint:pkg-json": "wp-scripts lint-pkg-json",
-    "packages-update": "wp-scripts packages-update",
-    "plugin-zip": "wp-scripts plugin-zip",
-    "start": "set BARN2_BUILD_ENV=development & wp-scripts start",
-    "test:e2e": "wp-scripts test-e2e",
-    "test:unit": "wp-scripts test-unit-js"
-  },
-  "bugs": {
-    "url": "https://github.com/Barn2Plugins/woocommerce-product-tabs/issues"
-  },
-  "homepage": "https://github.com/Barn2Plugins/woocommerce-product-tabs#readme",
-  "devDependencies": {
-    "@barn2plugins/webpack-config": "^2.0.0",
-    "@barn2plugins/components": "^0.9",
-    "@wordpress/dependency-extraction-webpack-plugin": "^4.8.0",
-    "@wordpress/scripts": "^26.4.0",
-    "gulp": "^4.0.2"
-  },
-  "dependencies": {
-    "@wordpress/api-fetch": "^6.45.0"
-  }
+	"name": "woocommerce-product-tabs",
+	"title": "WooCommerce Product Tabs (Free)",
+	"version": "2.1.0.1",
+	"license": "GPL-2.0+",
+	"main_file": "woocommerce-product-tabs.php",
+	"author": "Barn2 Plugins <support@barn2.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Barn2Plugins/woocommerce-product-tabs.git"
+	},
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"build": "set BARN2_BUILD_ENV=production & wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "set BARN2_BUILD_ENV=development & wp-scripts start",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js"
+	},
+	"bugs": {
+		"url": "https://github.com/Barn2Plugins/woocommerce-product-tabs/issues"
+	},
+	"homepage": "https://github.com/Barn2Plugins/woocommerce-product-tabs#readme",
+	"devDependencies": {
+		"@barn2plugins/webpack-config": "^2.0.0",
+		"@barn2plugins/components": "^0.9",
+		"@wordpress/dependency-extraction-webpack-plugin": "^4.8.0",
+		"@wordpress/scripts": "^26.4.0",
+		"gulp": "^4.0.2"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^6.45.0"
+	}
 }
