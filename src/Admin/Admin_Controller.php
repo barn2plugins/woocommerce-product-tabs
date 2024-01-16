@@ -1,15 +1,13 @@
 <?php
+
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Setup_Wizard,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service_Container,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Plugin_Promo,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Settings_API_Helper;
-use Barn2\Plugin\WC_Product_Tabs_Free\Post_Type;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Plugin_Promo;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Settings_API_Helper;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service_Container;
 
 /**
  * Handles general admin functions.
@@ -29,9 +27,9 @@ class Admin_Controller implements Registerable, Service {
 	private $settings_page;
 
 	public function __construct( Plugin $plugin ) {
-		$this->plugin = $plugin;
-		$this->plugin_name       = $plugin->get_slug();
-		$this->version           = $plugin->get_version();
+		$this->plugin      = $plugin;
+		$this->plugin_name = $plugin->get_slug();
+		$this->version     = $plugin->get_version();
 		$this->add_services();
 	}
 
@@ -54,7 +52,7 @@ class Admin_Controller implements Registerable, Service {
 		$this->add_service( 'settings_api', new Settings_API_Helper( $this->plugin ) );
 		$this->add_service( 'settings_page', new Settings_Page( $this->plugin ) );
 		$this->add_service( 'single_tab', new Single_Tab() );
-		$this->add_service( 'product_editor_tabs', new Product_Editor_Tabs() );
+		$this->add_service( 'product_editor_tabs', new Product_Editor_Tabs( $this->plugin->get_dir_path() ) );
 	}
 
 	/**
@@ -78,7 +76,7 @@ class Admin_Controller implements Registerable, Service {
 	/**
 	 * Adds a Pro version link on the Plugins list.
 	 *
-	 * @param array $links
+	 * @param array  $links
 	 * @param string $file
 	 * @return array
 	 */
@@ -108,21 +106,21 @@ class Admin_Controller implements Registerable, Service {
 	public function settings_page_scripts( $hook ) {
 		$screen = get_current_screen();
 		// Main Settings Page
-    // TODO: Check this condition later
-		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'woo_product_tab' ]; 
+		// TODO: Check this condition later
+		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'woo_product_tab' ];
 		if ( in_array( $screen->id, $screen_ids ) ) {
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch' ], $this->version, true );
 		}
-		
+
 		if ( in_array( $screen->id, $screen_ids ) || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
 
 		}
-		if( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
+		if ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
 			wp_enqueue_script( $this->plugin_name . '-product', plugin_dir_url( __DIR__ ) . '../assets/js/admin/product.js', [ 'jquery' ], $this->version, true );
 		}
 
-		if( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
+		if ( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', array(), $this->version, 'all' );
 			wp_enqueue_editor();
 		}

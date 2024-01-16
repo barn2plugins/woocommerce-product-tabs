@@ -2,11 +2,11 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
 
 /**
- * Show the tabs on the single peoduct page
+ * Show the tabs on the single product page
  *
  * @package   Barn2/woocommerce-product-tabs
  * @author    Barn2 Plugins <info@barn2.com>
@@ -15,21 +15,21 @@ Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
  */
 class Product_Tabs implements Registerable, Service {
 
-  public function register() {
-    // Public custom hooks
-    add_filter( 'woocommerce_product_tabs', [ $this, 'custom_woocommerce_product_tabs' ], 20 );
-    add_filter( 'wc_quick_view_pro_quick_view_tabs_enabled', [ $this, 'custom_woocommerce_product_tabs' ], 20 );
+	public function register() {
+		// Public custom hooks
+		add_filter( 'woocommerce_product_tabs', [ $this, 'custom_woocommerce_product_tabs' ], 20 );
+		add_filter( 'wc_quick_view_pro_quick_view_tabs_enabled', [ $this, 'custom_woocommerce_product_tabs' ], 20 );
 
 		add_filter( 'wpt_filter_product_tabs', [ $this, 'tab_status_check' ] );
 
 
-    if ( $this->enable_the_content_filter() ) {
+		if ( $this->enable_the_content_filter() ) {
 			add_filter( 'wpt_use_the_content_filter', '__return_false' );
 			add_filter( 'wpt_filter_tab_content', array( $this, 'product_tabs_filter_content' ), 10, 1 );
 		}
-  }
+	}
 
-  public function custom_woocommerce_product_tabs( $tabs ){
+	public function custom_woocommerce_product_tabs( $tabs ) {
 		global $product;
 
 		$this->product_tabs_list = get_posts(
@@ -42,8 +42,8 @@ class Product_Tabs implements Registerable, Service {
 		);
 
 		if ( ! empty( $this->product_tabs_list ) ) {
-			foreach ($this->product_tabs_list as $key => $t) {
-				$this->product_tabs_list[$key]->post_meta = get_post_meta($this->product_tabs_list[$key]->ID);
+			foreach ( $this->product_tabs_list as $key => $t ) {
+				$this->product_tabs_list[ $key ]->post_meta = get_post_meta( $this->product_tabs_list[ $key ]->ID );
 			}
 		}
 
@@ -52,24 +52,24 @@ class Product_Tabs implements Registerable, Service {
 		}
 
 		$wpt_tabs = array();
-		foreach ($this->product_tabs_list as $key => $prd) {
-			$wpt_tabs[$key]['id'] = $prd->post_name;
-			$wpt_tabs[$key]['title'] = esc_attr( $prd->post_title );
-			$wpt_tabs[$key]['priority'] = esc_attr( $prd->menu_order );
-			$wpt_tabs[$key]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
-			$wpt_tabs[$key]['display_globally'] = esc_attr( get_post_meta( $prd->ID, '_wpt_display_tab_globally', true ) );
+		foreach ( $this->product_tabs_list as $key => $prd ) {
+			$wpt_tabs[ $key ]['id']                  = $prd->post_name;
+			$wpt_tabs[ $key ]['title']               = esc_attr( $prd->post_title );
+			$wpt_tabs[ $key ]['priority']            = esc_attr( $prd->menu_order );
+			$wpt_tabs[ $key ]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
+			$wpt_tabs[ $key ]['display_globally']    = esc_attr( get_post_meta( $prd->ID, '_wpt_display_tab_globally', true ) );
 		}
 
 		$wpt_tabs = apply_filters( 'wpt_filter_product_tabs', $wpt_tabs );
 
 		if ( ! empty( $wpt_tabs ) ) {
 
-			foreach ($wpt_tabs as $key => $tab) {
+			foreach ( $wpt_tabs as $key => $tab ) {
 				$tab_temp             = array();
 				$tab_temp['title']    = $tab['title'];
 				$tab_temp['priority'] = $tab['priority'];
 				$tab_temp['callback'] = array( $this, 'callback' );
-				$tabs[$tab['id']]     = $tab_temp;
+				$tabs[ $tab['id'] ]   = $tab_temp;
 			}
 
 		}
@@ -78,95 +78,103 @@ class Product_Tabs implements Registerable, Service {
 
 	}
 
-  public function tab_status_check( $tabs ){
+	public function tab_status_check( $tabs ) {
 
-    global $product;
+		global $product;
 
-    if ( ! empty( $tabs ) && is_array( $tabs ) ) {
+		if ( ! empty( $tabs ) && is_array( $tabs ) ) {
 
-      foreach ($tabs as $tab_key => $tab) {
-        $key = $tab['id'];
+			foreach ( $tabs as $tab_key => $tab ) {
+				$key = $tab['id'];
 
-        $tab_post = get_page_by_path( $key, OBJECT, 'woo_product_tab' );
+				$tab_post = get_page_by_path( $key, OBJECT, 'woo_product_tab' );
 
-        if ( ! empty( $tab_post ) ) {
-          //
-          $tab_default_value = $tab_post->post_content ;
+				if ( ! empty( $tab_post ) ) {
 
-          $content_to_show = $tab_default_value;
+					$tab_default_value = $tab_post->post_content;
 
-          if ( 'yes' === get_post_meta( $product->get_id(), '_wpt_override_' . $key, true ) ) {
+					$content_to_show = $tab_default_value;
+
+					if ( 'yes' === get_post_meta( $product->get_id(), '_wpt_override_' . $key, true ) ) {
 						$tab_value = get_post_meta( $product->get_id(), '_wpt_field_' . $key, true );
 						if ( ! empty( $tab_value ) ) {
 							$content_to_show = $tab_value;
 						}
 					}
 
-          if ( empty( $content_to_show ) ) {
-            unset( $tabs[ $tab_key ] );
-          }
+					if ( empty( $content_to_show ) ) {
+						unset( $tabs[ $tab_key ] );
+					}
 
-          if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) && $tab[ 'display_globally' ] === 'no' ) {
+					if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) && $tab['display_globally'] === 'no' ) {
 						$child_categories = [];
-						foreach( $tab[ 'conditions_category' ] as $category ) {
+						foreach ( $tab['conditions_category'] as $category ) {
 							$child_terms = get_terms( array(
-								'child_of'				=>	$category,
-								'hide_empty'			=>	true,
-								'taxonomy'				=>	'product_cat',
-								'fields'					=>	'ids'
+								'child_of'   => $category,
+								'hide_empty' => true,
+								'taxonomy'   => 'product_cat',
+								'fields'     => 'ids'
 							) );
 
-							if( is_array( $child_terms ) ) {
+							if ( is_array( $child_terms ) ) {
 								$child_categories = array_unique( array_merge( $child_categories, $child_terms ) );
 							}
 						}
 
-						$conditions_category = array_unique( array_merge( $tab[ 'conditions_category' ], $child_categories ) );
+						$conditions_category = array_unique( array_merge( $tab['conditions_category'], $child_categories ) );
 
-            // check category condition
-            $cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
+						// check category condition
+						$cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
 
-            if ( ! array_intersect( $cat_list, $conditions_category ) ) {
-              unset( $tabs[ $tab_key ] );
-            }
-          }
-        }
+						if ( ! array_intersect( $cat_list, $conditions_category ) ) {
+							unset( $tabs[ $tab_key ] );
+						}
+					}
+				}
 
-      } // end foreach
+			} // end foreach
 
-    }
-    return $tabs;
+		}
+		return $tabs;
 
-  }
+	}
 
 	public function callback( $key, $tab ) {
-
 		global $product;
 
 		$tab_post = get_page_by_path( $key, OBJECT, 'woo_product_tab' );
 		if ( empty( $tab_post ) ) {
 			return;
 		}
-		$override_content = metadata_exists( 'post', $product->get_id(), '_wpt_field_' . $key );
+
+		$override_meta = get_post_meta( $product->get_id(), '_wpt_override_' . $key, true );
+
+		// The _wpt_override key doesn't exist in the older version of the plugin and the best way
+		// to check it, is to check for the _wpt_field_ meta for the product
+		if ( empty( $override_meta ) && get_post_meta( $product->get_id(), '_wpt_field_' . $key, true ) ) {
+			$override_meta = 'yes';
+		}
+
+		$override_content = ( 'yes' === $override_meta );
+
 		if ( ! $override_content ) {
-			// Default content for all
+			// Display default tab content.
 			echo $this->get_filter_content( $tab_post->post_content );
 		} else {
 			$tab_value = get_post_meta( $product->get_id(), '_wpt_field_' . $key, true );
 			echo $this->get_filter_content( $tab_value );
 		}
-		return;
 	}
 
 	/**
 	 * Filter the tab content.
 	 *
-	 * @since 2.0.2
-	 *
 	 * @param string $content Content for the current tab.
 	 * @return string Tab content.
+	 * @since 2.0.2
+	 *
 	 */
-	public function product_tabs_filter_content( $content ){
+	public function product_tabs_filter_content( $content ) {
 		$content = function_exists( 'capital_P_dangit' ) ? capital_P_dangit( $content ) : $content;
 		$content = function_exists( 'wptexturize' ) ? wptexturize( $content ) : $content;
 		$content = function_exists( 'convert_smilies' ) ? convert_smilies( $content ) : $content;
@@ -177,7 +185,7 @@ class Product_Tabs implements Registerable, Service {
 		$content = function_exists( 'do_shortcode' ) ? do_shortcode( $content ) : $content;
 
 		if ( class_exists( 'WP_Embed' ) ) {
-			$embed = new WP_Embed;
+			$embed   = new WP_Embed;
 			$content = method_exists( $embed, 'autoembed' ) ? $embed->autoembed( $content ) : $content;
 		}
 
@@ -187,12 +195,12 @@ class Product_Tabs implements Registerable, Service {
 	/**
 	 * Get filter for the content.
 	 *
-	 * @since 2.0.2
-	 *
 	 * @param string $content Content to apply filter.
 	 * @return string $content Tab content.
+	 * @since 2.0.2
+	 *
 	 */
-	public function get_filter_content( $content ){
+	public function get_filter_content( $content ) {
 		$use_the_content_filter = apply_filters( 'wpt_use_the_content_filter', true );
 
 		if ( $use_the_content_filter === true ) {
@@ -210,13 +218,13 @@ class Product_Tabs implements Registerable, Service {
 	 */
 	public function enable_the_content_filter() {
 		$disable_the_content_filter = get_option( 'wpt_disable_content_filter' );
-		$output = false;
+		$output                     = false;
 
-		if ( empty( $disable_the_content_filter ) ){
+		if ( empty( $disable_the_content_filter ) ) {
 			$disable_the_content_filter = 'no';
 		}
 
-		if ( 'yes' === $disable_the_content_filter ){
+		if ( 'yes' === $disable_the_content_filter ) {
 			$output = true;
 		}
 

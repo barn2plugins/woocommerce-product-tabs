@@ -19,12 +19,11 @@ defined( 'ABSPATH' ) || exit;
 			$show = true;
 			if ( 'yes' === $tab->_wpt_display_tab_globally ) {
 				$show = true;
-			}
-			else {
+			} else {
 				if ( empty( $tab->_wpt_conditions_category ) ) {
 					$show = true;
 				} else {
-	
+
 					if ( ! empty( $tab->_wpt_conditions_category ) && is_array( $tab->_wpt_conditions_category ) && array_intersect( $cat_list, $tab->_wpt_conditions_category ) ) {
 						$show = true;
 					} else {
@@ -36,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 			if ( $show === false ) {
 				unset( $tab );
 			} elseif ( defined( 'ICL_SITEPRESS_VERSION' ) && $lang !== $tab_lang['language_code'] ) {
-					unset( $tab );
+				unset( $tab );
 			} else {
 
 				echo '<h4 class="wpt_accordion">' . esc_html( $tab->post_title ) . '</h4>';
@@ -49,32 +48,36 @@ defined( 'ABSPATH' ) || exit;
 				$settings = [
 					'textarea_name' => '_wpt_field_' . $tab->post_name,
 					'editor_height' => '150px',
-					'editor_class'	=> 'test-class'
+					'editor_class'  => 'test-class'
 				];
 				echo '<div class="tab-container hidden">';
-				
+
+				$override_value = get_post_meta( $post_id, '_wpt_override_' . $tab->post_name, true );
+
 				// The _wpt_override key doesn't exist in the older version of the plugin and the best way
 				// to check it, is to check for the _wpt_field_ meta for the product
-				if( get_post_meta( $post_id, '_wpt_override_' . $tab->post_name, true ) === 'yes' || metadata_exists( 'post', $post_id, '_wpt_field_' . $tab->post_name ) ) {
+				if ( empty( $override_value ) && get_post_meta( $post_id, '_wpt_field_' . $tab->post_name, true ) ) {
 					$override_value = 'yes';
-				} else {
-					$override_value = get_post_meta( $post_id, '_wpt_override_' . $tab->post_name, true ) ?? 'no';
+				}
+
+				if ( empty( $override_value ) ) {
+					$override_value = 'no';
 				}
 
 				// Checking this option would enable the content
 				$args = array(
-					'label' 						=> __( 'Override the default tab content for this product','woocommerce-product-tabs' ),
-					'id' 								=> '_wpt_override_'. $tab->post_name,
-					'name'							=> '_wpt_override_'. $tab->post_name,
-					'class'							=> 'override-tab-content',
-					'wrapper_class'			=> 'override-tab-content-label',
-					'value'							=> $override_value,
+					'label'         => __( 'Override the default tab content for this product', 'woocommerce-product-tabs' ),
+					'id'            => '_wpt_override_' . $tab->post_name,
+					'name'          => '_wpt_override_' . $tab->post_name,
+					'class'         => 'override-tab-content',
+					'wrapper_class' => 'override-tab-content-label',
+					'value'         => $override_value,
 				);
 				woocommerce_wp_checkbox( $args );
 
 				wp_editor( $tab_value, '_wpt_field_' . esc_attr( $tab->post_name ), $settings );
 				echo '<div class="edit-tab-product edit-tab-footer">';
-        echo '<a class="edit-global-tab" target="_blank" href="'. get_edit_post_link( $tab->ID ) .'"><span class="dashicons dashicons-edit"></span> '. __( 'Manage global tab', 'woocommerce-product-tabs' ) .'</a>';
+				echo '<a class="edit-global-tab" target="_blank" href="' . get_edit_post_link( $tab->ID ) . '"><span class="dashicons dashicons-edit"></span> ' . __( 'Manage global tab', 'woocommerce-product-tabs' ) . '</a>';
 				echo '</div></div><br />';
 			}
 		}
@@ -98,7 +101,7 @@ defined( 'ABSPATH' ) || exit;
 
 		woocommerce_wp_textarea_input(
 			[
-				'label'       => '',
+				'label' => '',
 				'id'    => 'hidden_duplicate_content',
 				'class' => 'tabs_content_field'
 			]

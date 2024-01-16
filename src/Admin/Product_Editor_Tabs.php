@@ -2,8 +2,8 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
 
 /**
  * Add metaboxes and handles their behavior for the singled edit tab page
@@ -15,12 +15,15 @@ Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
  */
 class Product_Editor_Tabs implements Registerable, Service {
 
-  /**
-   * List of the tabs related to the current product
-   */
-  private $product_tabs_list;
+	private $plugin_dir_path;
 
-  public function __construct() {
+	/**
+	 * List of the tabs related to the current product
+	 */
+	private $product_tabs_list;
+
+	public function __construct( $dir_path ) {
+		$this->plugin_dir_path   = $dir_path;
 		$this->product_tabs_list = get_posts(
 			[
 				'post_type'      => 'woo_product_tab',
@@ -34,16 +37,17 @@ class Product_Editor_Tabs implements Registerable, Service {
 				$this->product_tabs_list[ $key ]->post_meta = get_post_meta( $this->product_tabs_list[ $key ]->ID );
 			}
 		}
-  }
+	}
 
-  public function register() {
-    add_filter( 'woocommerce_product_data_tabs', [ $this, 'product_data_tab' ], 99, 1 );
+	public function register() {
+		add_filter( 'woocommerce_product_data_tabs', [ $this, 'product_data_tab' ], 99, 1 );
 		add_action( 'woocommerce_product_data_panels', [ $this, 'product_data_fields' ] );
 		add_action( 'save_post', [ $this, 'save_product_tab_data' ] );
 		add_filter( 'wp_insert_post_data', [ $this, 'insert_tab_menu_order' ], 99, 2 );
 		add_action( 'admin_head', [ $this, 'post_type_menu_active' ] );
-  }
-  /**
+	}
+
+	/**
 	 * Add Product Tabs in Product Page.
 	 *
 	 * @since 1.0.0
@@ -62,9 +66,7 @@ class Product_Editor_Tabs implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	function product_data_fields() {
-
-		include(WP_PLUGIN_DIR . '/woocommerce-product-tabs/templates/product-tab-html.php' );
-
+		include_once $this->plugin_dir_path . 'templates/product-tab-html.php';
 	}
 
 	/**
@@ -73,51 +75,47 @@ class Product_Editor_Tabs implements Registerable, Service {
 	 * @since 1.0.0
 	 */
 	function save_product_tab_data( $post_id ) {
+		$nonce = filter_input( INPUT_POST, '_wpt_product_data_nonce', FILTER_SANITIZE_SPECIAL_CHARS );
 
-		if ( ! isset( $_POST['_wpt_product_data_nonce'] ) ) {
-			return;
-		}
 		// Verify that the nonce is valid.
-		if ( ! wp_verify_nonce( $_POST['_wpt_product_data_nonce'], 'wpt_product_data' ) ) {
+		if ( empty( $nonce ) || ! wp_verify_nonce( $nonce, 'wpt_product_data' ) ) {
 			return;
 		}
 
-		if ( ( get_post_type( $post_id ) == 'product' ) ) {
+		if ( 'product' !== filter_input( INPUT_POST, 'post_type', FILTER_SANITIZE_SPECIAL_CHARS ) ) {
+			return;
+		}
 
-			$tabs = $this->product_tabs_list;
+		if ( empty( $this->product_tabs_list ) ) {
+			return;
+		}
 
-			if ( ! empty( $tabs ) ) {
-				foreach ( $_POST as $key => $p ) {
-					$str = substr( $key, 0, 11 );
-					if ( ( '_wpt_field_' === $str ) ) {
-						$tab_id = intval( substr( $key, 15 ) );
-						// Update the meta field in the database.
-						$override_value = $_POST[ '_wpt_override_wpt-' . $tab_id ] ?? 'no';
-						update_post_meta( $post_id, '_wpt_override_wpt-' . $tab_id, $override_value );
-						if( $override_value === 'yes' ) {
-							// Update the tab content
-							if ( empty( $p ) ) {
-								delete_post_meta( $post_id, $key );
-							} else {
-								update_post_meta( $post_id, $key, wp_kses_post( $p ) );	
-							}
+		$posted_tab_data = array_filter(
+			$_POST,
+			function ( $key ) {
+				return '_wpt_field_' === substr( $key, 0, 11 );
+			},
+			ARRAY_FILTER_USE_KEY
+		);
 
-							// Update the tab icon 
-							if( empty( $_POST[ '_wpt_icon_wpt-' . $tab_id ] ) ) {
-								delete_post_meta( $post_id, '_wpt_icon_wpt-' . $tab_id );
-							} else {
-								update_post_meta( $post_id, '_wpt_icon_wpt-' . $tab_id, $_POST[ '_wpt_icon_wpt-' . $tab_id ] );
-							}
-						} else {
-							// If the checkbox is not enabled, replace the content and icon with the default
-							delete_post_meta( $post_id, $key );
-							delete_post_meta( $post_id, '_wpt_icon_wpt-' . $tab_id );
-						}	
-					}
-				}
+		foreach ( $posted_tab_data as $post_key => $tab_content ) {
+			$tab_slug       = substr( $post_key, 11 );
+			$override_value = filter_input( INPUT_POST, '_wpt_override_' . $tab_slug, FILTER_SANITIZE_SPECIAL_CHARS );
+
+			if ( 'yes' !== $override_value ) {
+				$override_value = 'no';
+			}
+
+			update_post_meta( $post_id, '_wpt_override_' . $tab_slug, $override_value );
+
+			if ( 'yes' === $override_value ) {
+				// Update the tab content.
+				update_post_meta( $post_id, $post_key, wp_kses_post( $tab_content ) );
+			} else {
+				// If the checkbox is not enabled, delete the tab content post meta.
+				delete_post_meta( $post_id, $post_key, '' );
 			}
 		}
-
 	}
 
 	function insert_tab_menu_order( $data, $postarr ) {
@@ -139,11 +137,11 @@ class Product_Editor_Tabs implements Registerable, Service {
 		$screen = get_current_screen();
 		if ( $screen->post_type === 'woo_product_tab' ) {
 			?>
-		<script type="text/javascript">
-			jQuery(document).ready(function(){
-			jQuery('ul.wp-submenu li a[href*="edit.php?post_type=woo_product_tab"]').parent().addClass('current');
-			});
-		</script>
+			<script type="text/javascript">
+				jQuery( document ).ready( function() {
+					jQuery( 'ul.wp-submenu li a[href*="edit.php?post_type=woo_product_tab"]' ).parent().addClass( 'current' );
+				} );
+			</script>
 			<?php
 		}
 	}
