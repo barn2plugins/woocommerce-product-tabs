@@ -3,7 +3,8 @@
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+		Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service,
+		Barn2\Plugin\WC_Product_Tabs_Free\Util;
 
 /**
  * Add metaboxes and handles their behavior for the singled edit tab page
@@ -227,7 +228,7 @@ class Single_Tab implements Registerable, Service {
 
 		// Add an nonce field so we can check for it later.
 		wp_nonce_field( 'wpt_tab_meta_box', 'wpt_meta_box_tab_nonce' );
-		$show_tabs_globally = get_post_meta( $post_id, '_wpt_display_tab_globally', true );
+		$is_tab_global = Util::is_tab_global( $post_id );
 		$times_svg_icon = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="clear-icon" aria-hidden="true" focusable="false"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM15.5303 8.46967C15.8232 8.76256 15.8232 9.23744 15.5303 9.53033L13.0607 12L15.5303 14.4697C15.8232 14.7626 15.8232 15.2374 15.5303 15.5303C15.2374 15.8232 14.7626 15.8232 14.4697 15.5303L12 13.0607L9.53033 15.5303C9.23744 15.8232 8.76256 15.8232 8.46967 15.5303C8.17678 15.2374 8.17678 14.7626 8.46967 14.4697L10.9393 12L8.46967 9.53033C8.17678 9.23744 8.17678 8.76256 8.46967 8.46967C8.76256 8.17678 9.23744 8.17678 9.53033 8.46967L12 10.9393L14.4697 8.46967C14.7626 8.17678 15.2374 8.17678 15.5303 8.46967Z"></path></svg>';
 		?>
 			<table class="form-table visibility-form">
@@ -238,11 +239,11 @@ class Single_Tab implements Registerable, Service {
 							<fieldset>
 								<legend class="screen-reader-text"><span><?php _e( 'Visibility', 'woocommerce-product-tabs' ); ?></span></legend>
 								<label>
-									<input type="radio" id="_wpt_display_tab_globally" name="_wpt_display_tab_globally" class="wta-visibility_condition" checked="checked" value="yes" <?php checked( 'yes', $show_tabs_globally, true ); ?>>
+									<input type="radio" id="_wpt_display_tab_globally" name="_wpt_display_tab_globally" class="wta-visibility_condition" checked="checked" value="yes" <?php checked( 'yes', $is_tab_global, true ); ?>>
 										<?php _e( 'Display globally on all products', 'woocommerce-product-tabs' ); ?>
 								</label><br>
 								<label>
-									<input type="radio" id="_wpt_display_tab_globally" name="_wpt_display_tab_globally" class="wta-visibility_condition" value="no" <?php checked( 'no', $show_tabs_globally, true ); ?>>
+									<input type="radio" id="_wpt_display_tab_globally" name="_wpt_display_tab_globally" class="wta-visibility_condition" value="no" <?php checked( 'no', $is_tab_global, true ); ?>>
 										<?php _e( 'Show on specific categories', 'woocommerce-product-tabs'); ?>
 								</label><br>
 							</fieldset>
@@ -251,7 +252,7 @@ class Single_Tab implements Registerable, Service {
 				</tbody>
 			</table>
 
-			<table id="inclusions-list" class="form-table <?php echo ( $show_tabs_globally === 'no' ) ? '' : 'hide-section'; ?> ">
+			<table id="inclusions-list" class="form-table <?php echo ( $is_tab_global === 'no' ) ? '' : 'hide-section'; ?> ">
 				<tbody>
 					<tr>
 						<th><?php _e( 'Inclusions', 'woocommerce-product-tabs' ); ?></th>

@@ -57,7 +57,7 @@ class Product_Tabs implements Registerable, Service {
 			$wpt_tabs[ $key ]['title']               = esc_attr( $prd->post_title );
 			$wpt_tabs[ $key ]['priority']            = esc_attr( $prd->menu_order );
 			$wpt_tabs[ $key ]['conditions_category'] = get_post_meta( $prd->ID, '_wpt_conditions_category', true );
-			$wpt_tabs[ $key ]['display_globally']    = esc_attr( get_post_meta( $prd->ID, '_wpt_display_tab_globally', true ) );
+			$wpt_tabs[ $key ]['display_globally']    = esc_attr( Util::is_tab_global( $prd->ID ) );
 		}
 
 		$wpt_tabs = apply_filters( 'wpt_filter_product_tabs', $wpt_tabs );
