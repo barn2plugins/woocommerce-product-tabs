@@ -1,11 +1,12 @@
 <?php
+use Barn2\Plugin\WC_Product_Tabs_Free\Util;
+
 defined( 'ABSPATH' ) || exit;
 ?>
 <div id="product_tabs" class="panel woocommerce_options_panel">
 	<?php
 	$post_id  = get_the_ID();
 	$cat_list = wp_get_post_terms( $post_id, 'product_cat', [ 'fields' => 'ids' ] );
-	$tag_list = wp_get_post_terms( $post_id, 'product_tag', [ 'fields' => 'ids' ] );
 
 	$required_tabs = $this->product_tabs_list;
 	if ( ! empty( $required_tabs ) ) {
@@ -24,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 					$show = true;
 				} else {
 
-					if ( ! empty( $tab->_wpt_conditions_category ) && is_array( $tab->_wpt_conditions_category ) && array_intersect( $cat_list, $tab->_wpt_conditions_category ) ) {
+					if ( ! empty( $tab->_wpt_conditions_category ) && is_array( $tab->_wpt_conditions_category ) && array_intersect( $cat_list, Util::get_all_categories( $tab->_wpt_conditions_category ) ) ) {
 						$show = true;
 					} else {
 						$show = false;

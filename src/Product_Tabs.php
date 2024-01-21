@@ -107,26 +107,13 @@ class Product_Tabs implements Registerable, Service {
 					}
 
 					if ( ! empty( $tab['conditions_category'] ) && isset( $tabs[ $tab_key ] ) && $tab['display_globally'] === 'no' ) {
-						$child_categories = [];
-						foreach ( $tab['conditions_category'] as $category ) {
-							$child_terms = get_terms( array(
-								'child_of'   => $category,
-								'hide_empty' => true,
-								'taxonomy'   => 'product_cat',
-								'fields'     => 'ids'
-							) );
 
-							if ( is_array( $child_terms ) ) {
-								$child_categories = array_unique( array_merge( $child_categories, $child_terms ) );
-							}
-						}
-
-						$conditions_category = array_unique( array_merge( $tab['conditions_category'], $child_categories ) );
+						$conditions_categories = Util::get_all_categories( $tab['conditions_category'] );
 
 						// check category condition
 						$cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
 
-						if ( ! array_intersect( $cat_list, $conditions_category ) ) {
+						if ( ! array_intersect( $cat_list, $conditions_categories ) ) {
 							unset( $tabs[ $tab_key ] );
 						}
 					}

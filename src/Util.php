@@ -23,4 +23,31 @@ final class Util {
       return get_post_meta( $tab_id, '_wpt_display_tab_globally', true );
     }
   }
+
+  public static function get_all_categories( $conditions_categories ) {
+
+    if( ! $conditions_categories || ! is_array( $conditions_categories ) ) {
+      return array();
+    }
+
+    if( is_array( $conditions_categories ) && empty( $conditions_categories ) ) {
+      return array();
+    }
+
+    $child_categories = [];
+    foreach ( $conditions_categories as $category ) {
+      $child_terms = get_terms( array(
+        'child_of'   => $category,
+        'hide_empty' => true,
+        'taxonomy'   => 'product_cat',
+        'fields'     => 'ids'
+      ) );
+
+      if ( is_array( $child_terms ) ) {
+        $child_categories = array_unique( array_merge( $child_categories, $child_terms ) );
+      }
+    }
+    return array_unique( array_merge( $conditions_categories, $child_categories ) );
+  }
+  
 }
