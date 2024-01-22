@@ -43,7 +43,7 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 				'version'            => $version,
 				'file'               => $file,
 				'is_woocommerce'		 => true,
-				'settings_path'      => 'admin.php?page=wta_settings',
+				'settings_path'      => 'edit.php?post_type=woo_product_tab',
 				'documentation_path' => 'kb/woocommerce-product-tabs-free-documentation/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=dlw-settings'
 			]
 		);

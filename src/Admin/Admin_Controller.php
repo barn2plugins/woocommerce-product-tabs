@@ -105,8 +105,7 @@ class Admin_Controller implements Registerable, Service {
 	 */
 	public function settings_page_scripts( $hook ) {
 		$screen = get_current_screen();
-		// Main Settings Page
-		// TODO: Check this condition later
+
 		$screen_ids = [ 'edit-woo_product_tab', 'admin_page_wta_settings', 'woo_product_tab' ];
 		if ( in_array( $screen->id, $screen_ids ) ) {
 			wp_enqueue_script( $this->plugin_name . '-settings', plugin_dir_url( __DIR__ ) . '../assets/js/admin/settings.js', [ 'jquery', 'wp-element', 'wp-api-fetch' ], $this->version, true );
@@ -123,6 +122,11 @@ class Admin_Controller implements Registerable, Service {
 		if ( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', array(), $this->version, 'all' );
 			wp_enqueue_editor();
+		}
+
+		// Manually enqueue the promo style for the settings page
+		if( $screen->id === 'admin_page_wta_settings' ) {
+			wp_enqueue_style('barn2-plugins-promo', \plugins_url('dependencies/barn2/barn2-lib/build/css/plugin-promo-styles.css', $this->plugin->get_file()), [], $this->plugin->get_version(), 'all');
 		}
 
 	}
