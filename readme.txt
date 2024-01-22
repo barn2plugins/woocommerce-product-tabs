@@ -5,7 +5,7 @@ Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom t
 Requires PHP: 7.4
 Requires at least: 6.0
 Tested up to: 6.4.2
-Stable tag: 2.1.0.1
+Stable tag: 2.1.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -125,6 +125,13 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.1.1 =
+Release date 22 January 2024
+
+* Fix: Wrong categories in the tab edit page
+* Dev: Change the tab key structure
+* Dev: Tested up to WooCommerce 8.5.1
 
 = 2.1.0.1 =
 Release date 16 January 2024

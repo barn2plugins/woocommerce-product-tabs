@@ -7,6 +7,7 @@
 /package-lock.json export-ignore
 /pnpm-lock.yaml export-ignore
 /yarn.lock export-ignore
+/vendor/bin export-ignore
 /copy-files-from-to.json export-ignore
 /easy-replace-in-files.json export-ignore
 /composer.json export-ignore
