@@ -11,6 +11,13 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free;
  */
 final class Util {
 
+  /**
+   * Checks the tab against the old version to see if it's global or not.
+   * 
+   * @param int $tab_id
+   * 
+   * @return string 
+   */
   public static function is_tab_global( $tab_id ) {
     // In the older versions of the plugin, the _wpt_display_tab_globally meta doesn't exist 
     if( ! metadata_exists( 'post', $tab_id, '_wpt_display_tab_globally' ) ) {
@@ -24,6 +31,12 @@ final class Util {
     }
   }
 
+  /**
+   * Combines the list of the categories with their child categories
+   * @param array $conditions_categories
+   * 
+   * @return array
+   */
   public static function get_all_categories( $conditions_categories ) {
 
     if( ! $conditions_categories || ! is_array( $conditions_categories ) ) {
