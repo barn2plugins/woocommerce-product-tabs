@@ -16,15 +16,16 @@ class Plugin_Factory {
 	/**
 	 * Return the shared instance of the plugin.
 	 *
-	 * @param string $file
-	 * @param float $version
+	 * @param  string $file
+	 * @param  float $version
 	 * @return Plugin
 	 */
-	public static function create( $file, $version ) {
+	public static function create( $file, $version )
+	{
 		if ( null === self::$plugin ) {
 			self::$plugin = new Plugin( $file, $version );
 		}
 		return self::$plugin;
 	}
 
-}
+}
