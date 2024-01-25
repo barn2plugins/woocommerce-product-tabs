@@ -127,7 +127,7 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.1 =
-Release date 22 January 2024
+Release date 25 January 2024
 
 * Fix: Wrong categories in the tab edit page
 * Dev: Change the tab key structure

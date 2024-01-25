@@ -18,9 +18,10 @@ class Single_Tab implements Registerable, Service {
 
     public function register()
     {
-    add_action( 'add_meta_boxes', array( $this, 'add_tab_meta_boxes' ) );
+        add_action( 'add_meta_boxes', array( $this, 'add_tab_meta_boxes' ) );
         add_action( 'save_post', array( $this, 'save_visibility_condition' ) );
         add_action( 'save_post', array( $this, 'save_category_selector' ) );
+        add_action( 'save_post', array( $this, 'save_tab_priority' ) );
     }
 
     /**
@@ -198,6 +199,35 @@ class Single_Tab implements Registerable, Service {
 
     }
 
+    public function save_tab_priority( $post_id ) {
+        // Check if our nonce is set.
+        if ( ! isset( $_POST['wpt_meta_box_tab_nonce'] ) ) {
+            return;
+        }
+            // Verify that the nonce is valid.
+        if ( ! wp_verify_nonce( $_POST['wpt_meta_box_tab_nonce'], 'wpt_tab_meta_box' ) ) {
+            return;
+        }
+            // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return;
+        }
+
+        if ( 'woo_product_tab' != $_POST['post_type'] ) {
+            return;
+        }
+        // priority
+		$priority = $_POST['_wpt_option_priority'];
+		$priority = absint( $priority );
+
+        global $wpdb;
+		$sql = $wpdb->prepare('UPDATE '. $wpdb->posts.' SET `menu_order`=%d WHERE ID=%d',
+			$priority,
+			$post_id
+		);
+		$wpdb->query($sql);
+    }
+
     /**
      * Add meta box in product tabs.
      *
@@ -225,6 +255,13 @@ class Single_Tab implements Registerable, Service {
                 $screen,
                 'side',
                 'high'
+            );
+            add_meta_box(
+                'woocommerce-product-tabs_priority_section',
+                __( 'Priority', 'woocommerce-product-tabs' ),
+                array( $this, 'wpt_priority_section' ),
+                $screen,
+                'side',
             );
         }
     }
@@ -282,5 +319,13 @@ class Single_Tab implements Registerable, Service {
         <a href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&amp;utm_content=wta-settings" class="pro-version-link" target="_blank"><?php _e( 'Pro version only' ); ?></a>
         </div>
         <?php
+    }
+
+    public function wpt_priority_section( $post ) {
+        $priority = $post->menu_order;
+		echo '<p><label for="_wpt_option_priority"><strong>';
+        echo __( 'Priority', 'woocommerce-product-tabs' );
+		echo '</strong></label></p>';
+        echo '<input type="number" name="_wpt_option_priority" id="_wpt_option_priority" value="'.$priority.'" min="0" style="max-width:70px;"/>';
     }
 }

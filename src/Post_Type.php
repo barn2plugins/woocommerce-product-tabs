@@ -23,6 +23,7 @@ class Post_Type implements Registerable, Service {
 		add_action( 'manage_woo_product_tab_posts_custom_column', [ $this, 'custom_columns_in_tab_listing' ], 10, 2  );
 	  add_filter( 'post_updated_messages', [ $this, 'tab_post_updated_messages' ], 10, 2 );
 		add_filter( 'post_row_actions', [ $this, 'tab_post_row_actions' ], 10, 2 );
+		add_filter( 'manage_edit-woo_product_tab_sortable_columns', [ $this, 'sortable_tab_columns' ] );
     add_filter( 'parent_file', [ $this, 'highlight_menu_item' ], 99 );
 		add_filter( 'custom_menu_order', '__return_true', 99 );
 		add_filter( 'menu_order', [ $this, 'tabs_menu_order' ] );
@@ -92,6 +93,7 @@ class Post_Type implements Registerable, Service {
   public function add_columns_in_tab_listing( $columns ){
 
 		unset($columns['date']);
+		$columns['priority'] = __( 'Priority', 'woocommerce-product-tabs' );
 		$columns['display-globally'] = __('Display globally','woocommerce-product-tabs');
 		$columns['tab-key']         = __('Tab Key','woocommerce-product-tabs');
 
@@ -236,5 +238,12 @@ class Post_Type implements Registerable, Service {
 		wp_update_post( $new_data );
 
 		add_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20, 3 );
+	}
+
+	public function sortable_tab_columns( $columns ){
+
+		$columns['priority'] = 'menu_order';
+		return $columns;
+
 	}
 }
