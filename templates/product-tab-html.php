@@ -53,17 +53,7 @@ defined( 'ABSPATH' ) || exit;
 				];
 				echo '<div class="tab-container hidden">';
 
-				$override_value = get_post_meta( $post_id, '_wpt_override_' . $tab->post_name, true );
-
-				// The _wpt_override key doesn't exist in the older version of the plugin and the best way
-				// to check it, is to check for the _wpt_field_ meta for the product
-				if ( empty( $override_value ) && get_post_meta( $post_id, '_wpt_field_' . $tab->post_name, true ) ) {
-					$override_value = 'yes';
-				}
-
-				if ( empty( $override_value ) ) {
-					$override_value = 'no';
-				}
+				$override_value = Util::is_tab_overridden( $tab->post_name, $post_id ) ? 'yes' : 'no';
 
 				// Checking this option would enable the content
 				$args = array(

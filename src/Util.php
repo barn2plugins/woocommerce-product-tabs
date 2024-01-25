@@ -62,5 +62,29 @@ final class Util {
     }
     return array_unique( array_merge( $conditions_categories, $child_categories ) );
   }
+
+  /**
+   * Determines if a tab has a custom content
+   * @param string $tab_key
+   * @param int $product_id
+   * 
+   * @return boolean
+   */
+  public static function is_tab_overridden( $tab_key, $product_id ) {
+    
+    if( ! $tab_key || ! $product_id ) {
+      return false;
+    }
+
+    $override_meta = get_post_meta( $product_id, '_wpt_override_' . $tab_key, true );
+
+		// The _wpt_override key doesn't exist in the older version of the plugin and the best way
+		// to check it, is to check for the _wpt_field_ meta for the product
+		if ( empty( $override_meta ) && get_post_meta( $product_id, '_wpt_field_' . $tab_key, true ) ) {
+			$override_meta = 'yes';
+		}
+
+		return 'yes' === $override_meta;
+  }
   
 }
