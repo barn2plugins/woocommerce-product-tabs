@@ -18,6 +18,8 @@ WooCommerce Product Tabs lets you add an unlimited number of extra tabs to any o
 
 Each tab has a WYSIWYG editor which you can use to add absolutely any type of information to the product page. You can add HTML code, shortcodes, images, videos, audio embeds - the possibilities are endless!
 
+https://youtu.be/kH3HtsMyE4Y?si=vXIgnKviIaIwAIAW
+
 Adding extra tabs to product pages is an excellent way to provide more information to customers without adding clutter or affecting the layout. Here are some examples of popular uses for WooCommerce product tabs:
 
 - **Extra product information** - Add a product specifications tab, downloads tab, FAQ tab, ingredients or materials tab, size guide, assembly/usage instructions, unboxing videos, demos, and 3D models.
@@ -125,6 +127,14 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.1.2 =
+Release date 30 January 2024
+
+* Dev: Added the priority field
+* Dev: Tested up to WooCommerce 8.5.2
+* Dev: Change the visibility to global when there are no categories selected
+* Fix: The custom tabs with empty global content don't show in the product page
 
 = 2.1.1 =
 Release date 25 January 2024

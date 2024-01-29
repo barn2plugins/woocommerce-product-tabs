@@ -1,1 +1,40 @@
-(()=>{"use strict";!function(e){const t=document.getElementsByClassName("wpt_accordion");if(t){let e;for(e=0;e<t.length;e++){const n=t[e].nextElementSibling;n.querySelector(".override-tab-content").checked||n.querySelector(".wp-editor-wrap").classList.add("hidden"),t[e].addEventListener("click",(function(){this.classList.toggle("active"),n.classList.toggle("hidden")}))}}const n=e(".override-tab-content");n&&n.each((function(t){let n=e(this).parents(".tab-container").find(".wp-editor-wrap");e(this).on("change",(function(e){n.toggleClass("hidden")}))}))}(jQuery)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!****************************************!*\
+  !*** ./assets/js/src/admin/product.js ***!
+  \****************************************/
+
+
+(function ($) {
+  //Accordion
+  const acc = document.getElementsByClassName('wpt_accordion');
+  if (acc) {
+    let i;
+    for (i = 0; i < acc.length; i++) {
+      const panel = acc[i].nextElementSibling;
+      if (!panel.querySelector('.override-tab-content').checked) {
+        panel.querySelector('.wp-editor-wrap').classList.add('hidden');
+      }
+      acc[i].addEventListener('click', function () {
+        this.classList.toggle('active');
+        panel.classList.toggle('hidden');
+      });
+    }
+  }
+
+  // Show the editor field
+  const overrideInputs = $('.override-tab-content');
+  if (overrideInputs) {
+    overrideInputs.each(function (i) {
+      let editor = $(this).parents('.tab-container').find('.wp-editor-wrap');
+      $(this).on('change', function (e) {
+        editor.toggleClass('hidden');
+      });
+    });
+  }
+  ;
+})(jQuery);
+/******/ })()
+;
+//# sourceMappingURL=product.js.map

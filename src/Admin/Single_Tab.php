@@ -155,6 +155,7 @@ class Single_Tab implements Registerable, Service {
         }
         if ( ! isset( $_POST['wpt_category_list'] ) ) {
             delete_post_meta( $post_id, '_wpt_conditions_category' );
+            update_post_meta( $post_id, '_wpt_display_tab_globally', 'yes' );
             return;
         }
         update_post_meta( $post_id, '_wpt_conditions_category', $wpt_conditions_category );

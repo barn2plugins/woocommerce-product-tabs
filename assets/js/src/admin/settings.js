@@ -92,7 +92,11 @@
 	
 	$(document).on('click', '#barn2-remove-term', function() {
 		var self = $(this);
-		self.closest('li').remove();
+    let parent_list = $(this).parents('ul');
+    self.closest('li').remove();
+    if (parent_list.find('li').length === 0) {
+      $('.barn2-remove-inclusions').click();
+    }
 	});
 
 	$('.barn2-remove-inclusions').on('click', function() {

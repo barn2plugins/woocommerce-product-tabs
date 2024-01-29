@@ -20,7 +20,7 @@
  * Requires at least: 6.0
  * Tested up to: 6.4.2
  * WC requires at least: 6.5
- * WC tested up to: 8.5.1
+ * WC tested up to: 8.5.2
  *
  * Copyright:       Barn2 Media Ltd
  * License:         GNU General Public License v3.0
