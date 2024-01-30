@@ -34,7 +34,7 @@ const ContentStep = ( { goToNextStep, goToPreviousStep, nextButtonLabel } ) => {
         setNoticeClass( 'hidden' );
         setButtonBusy( true );
         if( !tabTitle || !tabContent ) {
-            setNoticeContent( 'The title or content can not be empty' );
+            setNoticeContent( 'The title or content cannot be empty' );
             setButtonBusy( false );
             setNoticeClass( 'error' );
             return;

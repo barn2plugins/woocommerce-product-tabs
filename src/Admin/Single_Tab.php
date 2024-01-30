@@ -259,7 +259,7 @@ class Single_Tab implements Registerable, Service {
             );
             add_meta_box(
                 'woocommerce-product-tabs_priority_section',
-                __( 'Priority', 'woocommerce-product-tabs' ),
+                __( 'Settings', 'woocommerce-product-tabs' ),
                 array( $this, 'wpt_priority_section' ),
                 $screen,
                 'side',
