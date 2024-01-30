@@ -95,7 +95,7 @@ class Product_Tabs implements Registerable, Service {
 
 					$content_to_show = $tab_default_value;
 
-					if ( 'yes' === get_post_meta( $product->get_id(), '_wpt_override_' . $key, true ) ) {
+					if ( Util::is_tab_overridden( $key, $product->get_id() ) ) {
 						$tab_value = get_post_meta( $product->get_id(), '_wpt_field_' . $key, true );
 						if ( ! empty( $tab_value ) ) {
 							$content_to_show = $tab_value;
@@ -134,15 +134,7 @@ class Product_Tabs implements Registerable, Service {
 			return;
 		}
 
-		$override_meta = get_post_meta( $product->get_id(), '_wpt_override_' . $key, true );
-
-		// The _wpt_override key doesn't exist in the older version of the plugin and the best way
-		// to check it, is to check for the _wpt_field_ meta for the product
-		if ( empty( $override_meta ) && get_post_meta( $product->get_id(), '_wpt_field_' . $key, true ) ) {
-			$override_meta = 'yes';
-		}
-
-		$override_content = ( 'yes' === $override_meta );
+		$override_content = Util::is_tab_overridden( $key, $product->get_id() );
 
 		if ( ! $override_content ) {
 			// Display default tab content.

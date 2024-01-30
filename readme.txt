@@ -5,7 +5,7 @@ Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom t
 Requires PHP: 7.4
 Requires at least: 6.0
 Tested up to: 6.4.2
-Stable tag: 2.1.1
+Stable tag: 2.1.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -17,6 +17,8 @@ Discover the easy way to add extra tabs to your WooCommerce product pages.
 WooCommerce Product Tabs lets you add an unlimited number of extra tabs to any or all of your product pages.
 
 Each tab has a WYSIWYG editor which you can use to add absolutely any type of information to the product page. You can add HTML code, shortcodes, images, videos, audio embeds - the possibilities are endless!
+
+https://youtu.be/kH3HtsMyE4Y?si=vXIgnKviIaIwAIAW
 
 Adding extra tabs to product pages is an excellent way to provide more information to customers without adding clutter or affecting the layout. Here are some examples of popular uses for WooCommerce product tabs:
 
@@ -125,6 +127,14 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.1.2 =
+Release date 30 January 2024
+
+* Dev: Added the priority field
+* Dev: Tested up to WooCommerce 8.5.2
+* Dev: Change the visibility to global when there are no categories selected
+* Fix: The custom tabs with empty global content don't show in the product page
 
 = 2.1.1 =
 Release date 25 January 2024
