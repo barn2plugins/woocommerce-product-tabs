@@ -250,7 +250,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 						<ul class="normal-list">
 							<li><?php _e( 'Rename the default WooCommerce tabs (Description, Additional Information and Reviews).', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Hide or remove the default WooCommerce tabs.', 'woocommerce-product-tabs' ); ?></li>
-							<li><?php _e( 'Change the tab order.', 'woocommerce-product-tabs' ); ?></li>
+							<li><?php _e( 'Change the tab order by drag and drop.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Add tab icons.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Display tabs for specific products or tags.', 'woocommerce-product-tabs' ); ?></li>
 							<li><?php _e( 'Choose between a horizontal or vertical tab layout.', 'woocommerce-product-tabs' ); ?> </li>
