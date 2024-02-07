@@ -1,1 +1,42 @@
-.is-hidden{display:none!important}.is-error,.is-success{margin:1rem 0!important}.mce-statusbar{display:none!important}.barn2-form-label,label{display:block!important;font-size:13px!important;font-weight:600!important;margin-bottom:8px!important;text-transform:none!important}.components-button.is-secondary:not(.skip-button){display:none}div.mce-toolbar-grp{border:0 solid #dcdcde!important}.mce-tinymce>.mce-container-body.mce-stack-layout{border:1px solid #dcdcde!important}.mce-container-body.mce-stack-layout>.mce-top-part.mce-container{border-bottom:1px solid #dcdcde}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./assets/scss/admin/wizard.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.is-hidden {
+  display: none !important;
+}
+
+.is-error, .is-success {
+  margin: 1rem 0 !important;
+}
+
+.mce-statusbar {
+  display: none !important;
+}
+
+label, .barn2-form-label {
+  text-transform: none !important;
+  font-size: 13px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+.components-button.is-secondary:not(.skip-button) {
+  display: none;
+}
+
+div.mce-toolbar-grp {
+  border: 0 solid #dcdcde !important;
+}
+
+.mce-tinymce > .mce-container-body.mce-stack-layout {
+  border: 1px solid #dcdcde !important;
+}
+
+.mce-container-body.mce-stack-layout > .mce-top-part.mce-container {
+  border-bottom: 1px solid #dcdcde;
+}
+
+/*# sourceMappingURL=wizard.css.map*/
