@@ -47,7 +47,6 @@ npm-debug.log
 
 # Project folders
 docs/
-build/
 deploy/
 node_modules/
 dist
