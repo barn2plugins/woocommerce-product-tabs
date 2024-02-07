@@ -33,7 +33,7 @@ class Post_Type implements Registerable, Service {
 
   public function tab_post_type(){
 
-		$labels = array(
+		$labels = [
       'name'               => _x( 'Product Tabs', 'post type general name', 'woocommerce-product-tabs' ),
       'singular_name'      => _x( 'Tab', 'post type singular name', 'woocommerce-product-tabs' ),
       'menu_name'          => _x( 'WooCommerce Product Tabs', 'admin menu', 'woocommerce-product-tabs' ),
@@ -48,9 +48,9 @@ class Post_Type implements Registerable, Service {
       'parent_item_colon'  => __( 'Parent Tabs:', 'woocommerce-product-tabs' ),
       'not_found'          => __( 'No tabs found.', 'woocommerce-product-tabs' ),
       'not_found_in_trash' => __( 'No tabs found in Trash.', 'woocommerce-product-tabs' )
-    );
+    ];
 
-    $args = array(
+    $args = [
       'labels'             => $labels,
       'public'             	=> FALSE,
       'publicly_queryable' 	=> FALSE,
@@ -63,9 +63,9 @@ class Post_Type implements Registerable, Service {
 			'rest_base'					 => 'woo_product_tab',
 			'rest_controller_class'	=>	'WP_REST_Posts_Controller',
       'show_in_menu'       => 'edit.php?post_type=product',
-      'taxonomies'         => array(),
-      'supports'           => array( 'title', 'editor' ),
-    );
+      'taxonomies'         => [],
+      'supports'           => [ 'title', 'editor' ],
+    ];
 
     register_post_type( 'woo_product_tab', $args );
 	}
@@ -130,7 +130,7 @@ class Post_Type implements Registerable, Service {
 
 		$post = get_post();
 
-		$messages['woo_product_tab'] = array(
+		$messages['woo_product_tab'] = [
 
 			0 => '', // Unused. Messages start at index 1.
 			1 => __( 'Tab updated.', 'woocommerce-product-tabs' ),
@@ -146,7 +146,7 @@ class Post_Type implements Registerable, Service {
 						date_i18n( __( 'M j, Y @ G:i', 'woocommerce-product-tabs' ), strtotime( $post->post_date ) )
 					),
 			10 => __( 'Tab draft updated.', 'woocommerce-product-tabs' )
-			);
+			];
 		return $messages;
 
 	}

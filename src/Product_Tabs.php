@@ -25,7 +25,7 @@ class Product_Tabs implements Registerable, Service {
 
 		if ( $this->enable_the_content_filter() ) {
 			add_filter( 'wpt_use_the_content_filter', '__return_false' );
-			add_filter( 'wpt_filter_tab_content', array( $this, 'product_tabs_filter_content' ), 10, 1 );
+			add_filter( 'wpt_filter_tab_content', [ $this, 'product_tabs_filter_content' ], 10, 1 );
 		}
 	}
 
@@ -33,12 +33,12 @@ class Product_Tabs implements Registerable, Service {
 		global $product;
 
 		$this->product_tabs_list = get_posts(
-			array(
+			[
 				'post_type'      => 'woo_product_tab',
 				'posts_per_page' => -1,
 				'orderby'        => 'menu_order',
 				'order'          => 'asc',
-			)
+			]
 		);
 
 		if ( ! empty( $this->product_tabs_list ) ) {
@@ -51,7 +51,7 @@ class Product_Tabs implements Registerable, Service {
 			return $tabs;
 		}
 
-		$wpt_tabs = array();
+		$wpt_tabs = [];
 		foreach ( $this->product_tabs_list as $key => $prd ) {
 			$wpt_tabs[ $key ]['id']                  = $prd->post_name;
 			$wpt_tabs[ $key ]['title']               = esc_attr( $prd->post_title );
@@ -65,10 +65,10 @@ class Product_Tabs implements Registerable, Service {
 		if ( ! empty( $wpt_tabs ) ) {
 
 			foreach ( $wpt_tabs as $key => $tab ) {
-				$tab_temp             = array();
+				$tab_temp             = [];
 				$tab_temp['title']    = $tab['title'];
 				$tab_temp['priority'] = $tab['priority'];
-				$tab_temp['callback'] = array( $this, 'callback' );
+				$tab_temp['callback'] = [ $this, 'callback' ];
 				$tabs[ $tab['id'] ]   = $tab_temp;
 			}
 
@@ -111,7 +111,7 @@ class Product_Tabs implements Registerable, Service {
 						$conditions_categories = Util::get_all_categories( $tab['conditions_category'] );
 
 						// check category condition
-						$cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'ids' ) );
+						$cat_list = wp_get_post_terms( $product->get_id(), 'product_cat', [ 'fields' => 'ids' ] );
 
 						if ( ! array_intersect( $cat_list, $conditions_categories ) ) {
 							unset( $tabs[ $tab_key ] );

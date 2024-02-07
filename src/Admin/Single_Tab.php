@@ -18,10 +18,10 @@ class Single_Tab implements Registerable, Service {
 
     public function register()
     {
-        add_action( 'add_meta_boxes', array( $this, 'add_tab_meta_boxes' ) );
-        add_action( 'save_post', array( $this, 'save_visibility_condition' ) );
-        add_action( 'save_post', array( $this, 'save_category_selector' ) );
-        add_action( 'save_post', array( $this, 'save_tab_priority' ) );
+        add_action( 'add_meta_boxes', [ $this, 'add_tab_meta_boxes' ] );
+        add_action( 'save_post', [ $this, 'save_visibility_condition' ] );
+        add_action( 'save_post', [ $this, 'save_category_selector' ] );
+        add_action( 'save_post', [ $this, 'save_tab_priority' ] );
     }
 
     /**
@@ -237,14 +237,14 @@ class Single_Tab implements Registerable, Service {
     public function add_tab_meta_boxes()
     {
 
-        $screens = array( 'woo_product_tab' );
+        $screens = [ 'woo_product_tab' ];
 
         foreach ( $screens as $screen ) {
             // Settings Metabox
             add_meta_box(
                 'woocommerce-product-tabs_conditions_section',
                 __( 'Conditions', 'woocommerce-product-tabs' ),
-                array( $this, 'wpt_conditions_section' ),
+                [ $this, 'wpt_conditions_section' ],
                 $screen,
                 'normal',
                 'high'
@@ -252,7 +252,7 @@ class Single_Tab implements Registerable, Service {
             add_meta_box(
                 'woocommerce-product-tabs_icon_section',
                 __( 'Select icon', 'woocommerce-product-tabs' ),
-                array( $this, 'wpt_icon_section' ),
+                [ $this, 'wpt_icon_section' ],
                 $screen,
                 'side',
                 'high'
@@ -260,7 +260,7 @@ class Single_Tab implements Registerable, Service {
             add_meta_box(
                 'woocommerce-product-tabs_priority_section',
                 __( 'Settings', 'woocommerce-product-tabs' ),
-                array( $this, 'wpt_priority_section' ),
+                [ $this, 'wpt_priority_section' ],
                 $screen,
                 'side',
             );

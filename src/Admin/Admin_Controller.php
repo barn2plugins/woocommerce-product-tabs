@@ -112,7 +112,7 @@ class Admin_Controller implements Registerable, Service {
 		}
 
 		if ( in_array( $screen->id, $screen_ids ) || ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/tab.css', [], $this->version, 'all' );
 
 		}
 		if ( $screen->id === 'product' && ! isset( $_GET['page'] ) ) {
@@ -120,7 +120,7 @@ class Admin_Controller implements Registerable, Service {
 		}
 
 		if ( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
-			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', [], $this->version, 'all' );
 			wp_enqueue_editor();
 		}
 

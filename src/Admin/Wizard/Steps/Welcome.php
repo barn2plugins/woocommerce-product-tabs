@@ -31,19 +31,19 @@ class Welcome extends Welcome_Free {
      */
     public function setup_fields()
     {
-        $fields = array(
-            'welcome_messages' => array(
+        $fields = [
+            'welcome_messages' => [
                 'type'  => 'heading',
                 'raw'   => TRUE,
                 'label' => esc_html__( 'Use this setup wizard to create your first tab. After that, you’ll be ready to manage your tabs and create more!
         ', 'woocommerce-product-tabs' ),
                 'size'  => 'p',
-                'style' => array(
+                'style' => [
                     'textAlign' => 'center',
                     'color'     => '#757575'
-                )
-            )
-        );
+                ]
+            ]
+        ];
 
         return $fields;
     }

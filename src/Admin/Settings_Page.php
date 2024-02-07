@@ -115,25 +115,25 @@ class Settings_Page implements Service, Registerable, Conditional {
 	 * @return array Add custom settings for product tabs.
 	 */
 	public function wpt_get_settings() {
-		$settings = array(
-			'tab_section' => array(
+		$settings = [
+			'tab_section' => [
 				'name'      => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
 				'type'      => 'title',
 				'id'        => 'wpt_tab_section',
-			),
-			'wpt_disable_content_filter'  => array(
+			],
+			'wpt_disable_content_filter'  => [
 				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
 				'type'    => 'checkbox',
 				'desc'    => esc_html__( 'Enable this checkbox if you are using a page builder and have problems with the content preview.', 'woocommerce-product-tabs' ),
 				'default' => 'no',
 				'class'   => 'wpt_disable_content_filter',
 				'id'      => 'wpt_disable_content_filter',
-			),
-			'tab_section_end' => array(
+			],
+			'tab_section_end' => [
 				'type'          => 'sectionend',
 				'id'            => 'wpt_tab_section_end',
-			),
-		);
+			],
+		];
 
 		return $settings;
 	}
