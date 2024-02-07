@@ -4,6 +4,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use WP_Embed;
 
 /**
  * Show the tabs on the single product page
@@ -164,7 +165,7 @@ class Product_Tabs implements Registerable, Service {
 		$content = function_exists( 'do_shortcode' ) ? do_shortcode( $content ) : $content;
 
 		if ( class_exists( 'WP_Embed' ) ) {
-			$embed   = new WP_Embed;
+			$embed   = new \WP_Embed();
 			$content = method_exists( $embed, 'autoembed' ) ? $embed->autoembed( $content ) : $content;
 		}
 
@@ -196,14 +197,12 @@ class Product_Tabs implements Registerable, Service {
 	 * @since 2.0.2
 	 */
 	public function enable_the_content_filter() {
-		$disable_the_content_filter = get_option( 'wpt_disable_content_filter' );
+		$disable_the_content_filter = Util::get_option( 'disable_content_filter' );
 		$output                     = false;
 
-		if ( empty( $disable_the_content_filter ) ) {
-			$disable_the_content_filter = 'no';
-		}
-
-		if ( 'yes' === $disable_the_content_filter ) {
+		if ( empty( $disable_the_content_filter ) || $disable_the_content_filter !== '1' ) {
+			$output = false;
+		} else {
 			$output = true;
 		}
 

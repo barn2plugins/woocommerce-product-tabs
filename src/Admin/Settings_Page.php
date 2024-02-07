@@ -6,7 +6,8 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Conditional;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Util;
 
 /**
  * The settings page.
@@ -45,7 +46,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 	 * {@inheritdoc}
 	 */
 	public function is_required() {
-		return Util::is_admin();
+		return Lib_Util::is_admin();
 	}
 
 	/**
@@ -96,8 +97,8 @@ class Settings_Page implements Service, Registerable, Conditional {
 		printf(
 			'<p>%s | %s | %s</p>',
             // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-			Util::format_link( $this->plugin->get_documentation_url(), __( 'Documentation', 'woocommerce-product-tabs' ), true ),
-			Util::format_link( $this->plugin->get_support_url(), __( 'Support', 'woocommerce-product-tabs' ), true ),
+			Lib_Util::format_link( $this->plugin->get_documentation_url(), __( 'Documentation', 'woocommerce-product-tabs' ), true ),
+			Lib_Util::format_link( $this->plugin->get_support_url(), __( 'Support', 'woocommerce-product-tabs' ), true ),
 			sprintf(
 				'<a class="barn2-wiz-restart-btn" href="%s">%s</a>',
 				add_query_arg( [ 'page' => $this->plugin->get_slug() . '-setup-wizard' ], admin_url( 'admin.php' ) ),
@@ -185,7 +186,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 	 */
 	function disable_content_filter()
 	{
-		$disable_content_filter = $this->get_option( 'disable_content_filter' );
+		$disable_content_filter = Util::get_option( 'disable_content_filter' );
 		?>
 		<label for="disable_content_filter">
 		<input type="checkbox" name="wpt_options[disable_content_filter]" id="disable_content_filter" value="1" <?php checked( 1, $disable_content_filter ); ?> />
@@ -263,25 +264,4 @@ class Settings_Page implements Service, Registerable, Conditional {
 		$this->get_settings_page_footer();
 	}
 
-	/**
-	 * Get plugin option.
-	 *
-	 * @since 1.0.0
-	 */
-	function get_option( $key )
-	{
-		if ( empty( $key ) ) {
-			return;
-		}
-
-		$plugin_options = wp_parse_args( (array) get_option( 'wpt_options' ), [ 'description', 'hide_description', 'info', 'hide_info', 'review', 'hide_review', 'search_by_tabs', 'enable_accordion', 'accordion_shown_size', 'description_priority', 'info_priority', 'review_priority', 'license' ] );
-
-		$value = null;
-
-		if ( isset( $plugin_options[ $key ] ) ) {
-			$value = $plugin_options[ $key ];
-		}
-
-		return $value;
-	}
 }

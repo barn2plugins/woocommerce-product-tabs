@@ -87,4 +87,25 @@ final class Util {
 		return 'yes' === $override_meta;
   }
   
+  /**
+	 * Get plugin option.
+	 *
+	 * @since 1.0.0
+	 */
+	public static function get_option( $key )
+	{
+		if ( empty( $key ) ) {
+			return;
+		}
+
+		$plugin_options = wp_parse_args( (array) get_option( 'wpt_options' ), [ 'description', 'hide_description', 'info', 'hide_info', 'review', 'hide_review', 'search_by_tabs', 'enable_accordion', 'accordion_shown_size', 'description_priority', 'info_priority', 'review_priority', 'license' ] );
+
+		$value = null;
+
+		if ( isset( $plugin_options[ $key ] ) ) {
+			$value = $plugin_options[ $key ];
+		}
+
+		return $value;
+	}
 }
