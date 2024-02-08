@@ -129,7 +129,7 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.3 =
-Release date 7 February 2024
+Release date 8 February 2024
 
 * Fix: Added the use statement for WP_Embed
 * Fix: disable_content_filter was not fetched correctly

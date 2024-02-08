@@ -24,4 +24,4 @@
 /phpcs.xml.dist export-ignore
 /.phpcs.xml export-ignore
 /phpcs.ruleset.dist export-ignore
-/phpdoc.dist.xml export-ignore
+/phpcs.xml export-ignore
