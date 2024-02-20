@@ -110,7 +110,7 @@ class Product_Editor_Tabs implements Registerable, Service {
 
 			if ( 'yes' === $override_value ) {
 				// Update the tab content.
-				update_post_meta( $post_id, $post_key, wp_kses_post( $tab_content ) );
+				update_post_meta( $post_id, $post_key, wp_kses( $tab_content, $this->get_allowed_tags() ) );
 			} else {
 				// If the checkbox is not enabled, delete the tab content post meta.
 				delete_post_meta( $post_id, $post_key, '' );
@@ -144,6 +144,21 @@ class Product_Editor_Tabs implements Registerable, Service {
 			</script>
 			<?php
 		}
+	}
+
+	public function get_allowed_tags() {
+		$allowed_tags = wp_kses_allowed_html( 'post' );
+		$allowed_tags[ 'iframe' ] = [
+			'src'             => true,
+			'height'          => true,
+			'width'           => true,
+			'title'			  		=> true, 
+			'allow'			  		=> true,
+			'frameborder'     => true,
+			'allowfullscreen' => true,
+		];
+
+		return apply_filters( 'wt_allowed_kses_tags', $allowed_tags );
 	}
 
 
