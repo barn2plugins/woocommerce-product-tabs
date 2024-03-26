@@ -59,3 +59,10 @@ vendor-bin
 bin
 woocommerce-product-tabs.zip
 .npmrc
+wp
+wp-content
+.phpunit.result.cache
+artifacts
+.wp-env.override.json
+playwright-report
+tests/coverage

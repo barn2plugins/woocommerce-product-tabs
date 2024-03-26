@@ -1,7 +1,7 @@
 === WooCommerce Product Tabs ===
 
 Contributors: barn2media, andykeith
-Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
+Tags: woocommerce product tabs, woocommerce custom tabs, woocommerce tabs, woocommerce tab manager, woocommerce tabs plugin
 Requires PHP: 7.4
 Requires at least: 6.0
 Tested up to: 6.4.3
