@@ -1,0 +1,78 @@
+{
+  "landingPage": "/?product=soap",
+  "preferredVersions": {
+      "php": "8.0",
+      "wp": "latest"
+  },
+  "phpExtensionBundles": [],
+  "steps": [
+      {
+          "step": "login",
+          "username": "admin",
+          "password": "password"
+      },
+
+      {
+        "step": "installPlugin",
+        "pluginZipFile": {
+            "resource": "wordpress.org\/plugins",
+            "slug": "woocommerce"
+        },
+        "options": {
+            "activate": true
+        }
+      },
+      {
+          "step": "installPlugin",
+          "pluginZipFile": {
+              "resource": "wordpress.org\/plugins",
+              "slug": "woocommerce-product-tabs"
+          },
+          "options": {
+              "activate": true
+          }
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 5,\n'post_title' => 'Soap','post_excerpt' => 'Welcome to the WooCommerce Product Tabs preview. Scroll down to see the extra tabs that we have added to this product.',\n\n'post_content' => '<!-- wp:paragraph -->\n<p>Welcome to the WooCommerce Product Tabs preview. This is the description.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_type' => 'product',\n'post_author' => 1 ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 10,\n'post_title' => 'Ingredients',\n'post_content' => '<h2>All-Natural Ingredients</h2> <p><strong>Base Oils/Fats:</strong></p> <ul> <li>Olive Oil: Moisturizes and nourishes the skin, high in antioxidants and Vitamin E.</li> <li>Coconut Oil: Produces a rich lather, has antimicrobial properties, and helps cleanse the skin.</li> <li>Shea Butter: Moisturizes and soothes dry or irritated skin, rich in vitamins and fatty acids.</li> <li>Cocoa Butter: Adds hardness to the soap, hydrates the skin, and enhances the soap’s fragrance.</li> </ul> <p><strong><span>Lye (Sodium Hydroxide):</span></strong></p> <ul> <li>Lye is used to saponify the oils and create soap. During the soap-making process, lye reacts with oils to form soap and glycerin. When the soap is cured, no lye remains in the final product.</li> </ul> <p><strong><span>Essential Oils or Fragrance Oils:</span></strong></p> <ul> <li>Essential Oils: Derived from plants, they add natural scents and often have aromatherapeutic properties (e.g., lavender for relaxation, tea tree for its antimicrobial properties).</li> <li>Fragrance Oils: Synthetic scents that offer a wide range of fragrance options.</li> </ul> <p><strong><span>Botanicals and Herbs:</span></strong></p> <ul> <li>Chamomile: Soothes irritated skin and promotes relaxation.</li> <li>Calendula: Known for its anti-inflammatory and healing properties, great for sensitive skin.</li> <li>Lavender Buds: Offers exfoliation and has a calming aroma.</li> </ul>',\n'post_status' => 'publish',\n'post_type' => 'woo_product_tab',\n'post_author' => 1 ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 11,\n'post_title' => 'FAQ',\n'post_content' => '<p><strong>1. What is handmade soap, and how is it different from commercial soap?</strong><br />Handmade soap is crafted in small batches using natural ingredients and traditional soap-making methods. Unlike commercial soap, it usually contains glycerin, a natural moisturizer, and is free from synthetic additives and harsh chemicals that can strip the skin’s natural oils.</p><p><strong>2. Are handmade soaps suitable for all skin types?</strong><br />Yes, handmade soaps are generally suitable for all skin types. They can be formulated to cater to specific skin concerns, such as dryness, sensitivity, or acne-prone skin. However, it’s essential to check the soap’s ingredients and consult with the soap maker if you have specific allergies or skin conditions.</p><p><strong>3. How do I store handmade soap to prolong its shelf life?</strong><br />To extend the shelf life of handmade soap, store it in a cool, dry place away from direct sunlight and moisture. Using a soap dish with drainage will help keep the soap dry between uses. Avoid leaving the soap in standing water, as it may cause the soap to become mushy.</p><p><strong>4. Does handmade soap lather as well as commercial soap?</strong> Handmade soap can produce a rich and creamy lather comparable to commercial soap, especially if it contains coconut oil or other lathering agents. The lather may vary depending on the soap’s ingredients and the hardness of the water used.</p>',\n'post_status' => 'publish',\n'post_type' => 'woo_product_tab',\n'post_author' => 1 ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 12,\n'post_title' => 'Sustainability',\n'post_content' => '<p>We are committed to crafting high-quality handmade soaps while minimizing our environmental impact and promoting sustainability. Our dedication to sustainability is rooted in our passion for providing natural and eco-friendly skincare products that benefit both our customers and the planet.</p><p><strong>1. Natural and Biodegradable Ingredients:</strong> We carefully select natural and biodegradable ingredients for our handmade soaps, avoiding harmful chemicals and additives commonly found in mass-produced commercial soaps. By using plant-based oils, essential oils, and botanicals, we ensure that our products are gentle on the skin and safe for the environment.</p><p><strong>2. Eco-Friendly Packaging:</strong> We prioritize eco-friendly packaging solutions to reduce waste and minimize our carbon footprint. Our handmade soaps are often wrapped in recyclable or compostable materials, and we encourage our customers to recycle or reuse the packaging whenever possible.</p><p><strong>3. Sustainable Sourcing:</strong> We source our ingredients responsibly, prioritizing suppliers who share our commitment to sustainable practices. Whenever feasible, we support local producers to reduce transportation-related emissions and to promote the growth of regional economies.</p>',\n'post_status' => 'publish',\n'post_type' => 'woo_product_tab',\n'post_author' => 1 ));"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_delete_post(6, true);"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_delete_post(7, true);"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_delete_post(8, true);"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_delete_post(2, true);"
+      },
+      {
+        "step": "runPHP",
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_delete_post(5, true);"
+      },
+      {
+        "step": "setSiteOptions",
+        "options": {
+          "blogname": "WooCommerce Product Tabs (Free)"
+        }
+      }
+    ]
+}
