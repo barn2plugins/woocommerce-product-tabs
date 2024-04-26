@@ -48,7 +48,10 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 			]
 		);
 
-		$this->add_service( 'plugin_setup', new Plugin_Setup( $this->get_file(), $this ), true );
+		// Don't load the setup wizard if the pro version is active
+		if ( ! function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
+			$this->add_service( 'plugin_setup', new Plugin_Setup( $this->get_file(), $this ), true );
+		}
 	}
 
 	/**
