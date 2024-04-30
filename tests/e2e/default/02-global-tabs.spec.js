@@ -11,12 +11,18 @@ test.describe('global tabs', (props) => {
 		page,
 		admin,
 	}, testInfo) => {
-    // Maybe reset the environment by deleting posts
+    await admin.visitAdminPage( 'edit.php?post_type=woo_product_tab' );
 
+    // Delete old tabs if we have them
+    if( await page.locator( "#bulk-action-selector-top" ).isVisible() ) {
+      await page.locator( "#cb-select-all-1" ).check();
+      await page.locator( "#bulk-action-selector-top" ).selectOption( {value: 'trash'} );
+      await page.locator( "#doaction" ).click();
+    }
 		await admin.visitAdminPage( 'post-new.php?post_type=woo_product_tab' );
     await page.getByLabel( 'Add title' ).fill( 'First Tab' );
-    await page.locator( '.mce-content-body' ).fill( 'Global content for the first tab.' );
-    await page.getByRole( 'button', {name: 'Publish'} ).click();
+    await page.frameLocator('iframe#content_ifr').locator('#tinymce').fill( 'Global content for the first tab.' );
+    await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     await page.goto( '/product/shoes' );
     let tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
@@ -38,16 +44,16 @@ test.describe('global tabs', (props) => {
 	}, testInfo) => {
     await admin.visitAdminPage( 'post-new.php?post_type=woo_product_tab' );
     await page.getByLabel( 'Add title' ).fill( 'Second Tab' );
-    await page.locator( '.mce-content-body' ).fill( 'Global content for the second tab.' );
+    await page.frameLocator('iframe#content_ifr').locator('#tinymce').fill( 'Global content for the second tab.' );
     await page.getByLabel( /Show on specific categories/i ).click();
 
     // Search for a category that doesn't exist to see the error
-    await page.getByPlaceholder( /Search for categories/i ).fill( 'Wrong category' );
-    await page.waitForTimeout( 2000 );
+    await page.getByPlaceholder( /Search for categories/i ).pressSequentially( 'Wrong category' );
+    await page.waitForTimeout( 4000 );
     await expect( page.locator( '.wta-component-no-results' ) ).toBeVisible();
 
-    await page.getByPlaceholder( /Search for categories/i ).fill( 'Shirts' );
-    await page.waitForTimeout( 2000 );
+    await page.getByPlaceholder( /Search for categories/i ).pressSequentially( 'Shirts' );
+    await page.waitForTimeout( 4000 );
     await page.locator( '.barn2-search-list__item-input' ).click();
     await page.getByRole( 'button', {name: 'Publish'} ).click();
 
