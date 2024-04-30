@@ -37,7 +37,7 @@
     "homepage": "https://github.com/Barn2Plugins/woocommerce-product-tabs#readme",
     "devDependencies": {
         "@barn2plugins/components": "^0.9",
-        "@barn2plugins/playwright-utils": "^0.1.0",
+        "@barn2plugins/playwright-utils": "^0.2.0",
         "@barn2plugins/webpack-config": "^2.0.0",
         "@playwright/test": "^1.42.1",
         "@wordpress/dependency-extraction-webpack-plugin": "^4.8.0",
