@@ -28,13 +28,13 @@ test.describe('global tabs', (props) => {
     let tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
     await expect( tabTitle ).toBeVisible();
     await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab' ) ).toHaveText( /Global content for the first tab./i );
+    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the first tab./i );
     
     await page.goto( '/product/jacket/' );
     tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
     await expect( tabTitle ).toBeVisible();
     await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab' ) ).toHaveText( /Global content for the first tab./i );
+    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the first tab./i );
     
   });
 
@@ -52,19 +52,20 @@ test.describe('global tabs', (props) => {
     await page.waitForTimeout( 4000 );
     await expect( page.locator( '.wta-component-no-results' ) ).toBeVisible();
 
+    await page.getByPlaceholder( /Search for categories/i ).fill( '' );
     await page.getByPlaceholder( /Search for categories/i ).pressSequentially( 'Shirts' );
     await page.waitForTimeout( 4000 );
     await page.locator( '.barn2-search-list__item-input' ).click();
-    await page.getByRole( 'button', {name: 'Publish'} ).click();
+    await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     await page.goto( '/product/blouse/' );
-    let tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
+    let tabTitle = page.getByRole( 'link', {name: 'Second Tab'} );
     await expect( tabTitle ).toBeVisible();
     await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab' ) ).toHaveText( /Global content for the first tab./i );
+    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the second tab./i );
     
     await page.goto( '/product/sweater' );
-    tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
+    tabTitle = page.getByRole( 'link', {name: 'Second Tab'} );
     await expect( tabTitle ).not.toBeVisible();
 
 	});
