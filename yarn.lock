@@ -1086,10 +1086,10 @@
     react-table "^7.7.0"
     react-tiny-popover "^7.1.0"
 
-"@barn2plugins/playwright-utils@^0.1.0":
-  version "0.1.0"
-  resolved "https://npm.pkg.github.com/download/@barn2plugins/playwright-utils/0.1.0/cdc82d6b20096b803f5c025c7b318da9e1ea0274#cdc82d6b20096b803f5c025c7b318da9e1ea0274"
-  integrity sha512-YokiV6ZqD0g6H3ReYlOVHVR0EA2/4kCAeqTU7yjAPX1JkWTY9WXSIPlNBZ5YkqEJYS7/ZOLQnab9NMksNyu0MQ==
+"@barn2plugins/playwright-utils@^0.2.0":
+  version "0.2.0"
+  resolved "https://npm.pkg.github.com/download/@barn2plugins/playwright-utils/0.2.0/3b9053b3a4f0a05246d4cb284645c417026ef1c6#3b9053b3a4f0a05246d4cb284645c417026ef1c6"
+  integrity sha512-8Yak2qZ7WXxYawdiV+HWHzt2OfC7lx1X+vtprytHTLeYcCvyPD5tXFWyBNtDyDmtx9wIq6KUoJP0cfhapsTBQw==
   dependencies:
     "@playwright/test" "^1.29.2"
     "@wordpress/e2e-test-utils-playwright" "^0.21.0"

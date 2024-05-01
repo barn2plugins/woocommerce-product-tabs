@@ -4,6 +4,9 @@
 		".",
 		"./wp/src/wp-content/plugins/woocommerce"
 	],
+	"themes": [
+		"./wp/src/wp-content/themes/storefront"
+	],
 	"config": {
 		"WP_DEBUG": true,
 		"WP_DEBUG_LOG": true,
