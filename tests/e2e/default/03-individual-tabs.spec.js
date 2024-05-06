@@ -27,7 +27,9 @@ test.describe('individual tabs', (props) => {
     await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     // Edit the tab content for one product
-    await admin.visitAdminPage( "post.php?post=22&action=edit" );
+    await admin.visitAdminPage( "edit.php?post_type=product" );
+    await page.getByRole( 'link', {name: 'Shoes', exact: true} ).click();
+    await page.waitForLoadState( 'domcontentloaded' );
     await page.locator( ".product-tab_tab" ).click();
     await page.getByRole( "heading", {name: "First Tab"} ).click();
     await page.locator( "input.override-tab-content" ).check();
@@ -65,12 +67,16 @@ test.describe('individual tabs', (props) => {
     await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     // Check if the tab is showing in the product edit screen
-    await admin.visitAdminPage( 'post.php?post=16&action=edit' );
+    await admin.visitAdminPage( "edit.php?post_type=product" );
+    await page.getByRole( 'link', {name: 'Blouse', exact: true} ).click();
+    await page.waitForLoadState( 'domcontentloaded' );
     await page.locator( ".product-tab_tab" ).click();
     await expect( page.getByRole( "heading", {name: "Second Tab"} ) ).toBeVisible();
 
     // Produts in other categories should not have this tab
-    await admin.visitAdminPage( "post.php?post=22&action=edit" );
+    await admin.visitAdminPage( "edit.php?post_type=product" );
+    await page.getByRole( 'link', {name: 'Shoes', exact: true} ).click();
+    await page.waitForLoadState( 'domcontentloaded' );
     await page.locator( ".product-tab_tab" ).click();
     await expect( page.getByRole( "heading", {name: "Second Tab"} ) ).not.toBeVisible();
 
