@@ -11,7 +11,7 @@
     ],
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.5",
-        "barn2/barn2-lib": "^1.1",
+        "barn2/barn2-lib": "1.1.17",
         "barn2/php-scoper-excludes": "^0.2.0",
         "barn2/php-standards": "dev-master",
         "barn2/setup-wizard": "^1.0.0",
@@ -69,7 +69,7 @@
         "install-scoper": [
             "composer bin php-scoper config minimum-stability dev",
             "composer bin php-scoper config prefer-stable true",
-            "composer bin php-scoper require --dev humbug/php-scoper:0.18.0"
+            "composer bin php-scoper require --dev humbug/php-scoper"
         ],
         "scoper": "php-scoper add-prefix --config .scoper.inc.php --output-dir dependencies/",
         "test": "composer test:unit && composer test:integration",

@@ -4,12 +4,13 @@
 import {
 	test,
 	expect
-} from '@wordpress/e2e-test-utils-playwright';
+} from '../fixtures';
 
 test.describe('individual tabs', (props) => {
 	test('an individual tab should have the right content', async ({
 		page,
 		admin,
+    pluginUtil
 	}, testInfo) => {
     await admin.visitAdminPage( 'edit.php?post_type=woo_product_tab' );
 
@@ -38,18 +39,12 @@ test.describe('individual tabs', (props) => {
 
     // check if the individual content is showing in the product we edited
     await page.goto( '/product/shoes' );
-    let tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
-    await expect( tabTitle ).toBeVisible();
-    await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Individual content for the first tab./i );
-    
+    expect( await pluginUtil.isProductTabVisible( 'First Tab', 'Individual content for the first tab.' ) ).toBe( true );
+        
     // Other products should have the global content
     await page.goto( '/product/jacket/' );
-    tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
-    await expect( tabTitle ).toBeVisible();
-    await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the first tab./i );
-    
+    expect( await pluginUtil.isProductTabVisible( 'First Tab', 'Global content for the first tab.' ) ).toBe( true );
+
   });
 
   test('correct tabs should be shown in the product edit page', async ({

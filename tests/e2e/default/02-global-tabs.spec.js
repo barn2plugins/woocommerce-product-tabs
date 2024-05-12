@@ -4,12 +4,13 @@
 import {
 	test,
 	expect
-} from '@wordpress/e2e-test-utils-playwright';
+} from '../fixtures';
 
 test.describe('global tabs', (props) => {
 	test('a tab should be displayed globally', async ({
 		page,
 		admin,
+    pluginUtil
 	}, testInfo) => {
     await admin.visitAdminPage( 'edit.php?post_type=woo_product_tab' );
 
@@ -25,22 +26,17 @@ test.describe('global tabs', (props) => {
     await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     await page.goto( '/product/shoes' );
-    let tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
-    await expect( tabTitle ).toBeVisible();
-    await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the first tab./i );
-    
+    expect( await pluginUtil.isProductTabVisible( 'First Tab', 'Global content for the first tab.' ) ).toBe( true );
+   
     await page.goto( '/product/jacket/' );
-    tabTitle = page.getByRole( 'link', {name: 'First Tab'} );
-    await expect( tabTitle ).toBeVisible();
-    await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the first tab./i );
+    expect( await pluginUtil.isProductTabVisible( 'First Tab', "Global content for the first tab." ) ).toBe( true );    
     
   });
 
   test('a tab should be displayed on a category', async ({
 		page,
 		admin,
+    pluginUtil
 	}, testInfo) => {
     await admin.visitAdminPage( 'post-new.php?post_type=woo_product_tab' );
     await page.getByLabel( 'Add title' ).fill( 'Second Tab' );
@@ -59,14 +55,10 @@ test.describe('global tabs', (props) => {
     await page.getByRole('button', { name: 'Publish', exact: true }).click();
 
     await page.goto( '/product/blouse/' );
-    let tabTitle = page.getByRole( 'link', {name: 'Second Tab'} );
-    await expect( tabTitle ).toBeVisible();
-    await tabTitle.click();
-    await expect( page.locator( '.woocommerce-Tabs-panel.wc-tab:visible' ) ).toHaveText( /Global content for the second tab./i );
-    
+    expect( await pluginUtil.isProductTabVisible( 'Second Tab', 'Global content for the second tab.' ) ).toBe( true );
+
     await page.goto( '/product/sweater' );
-    tabTitle = page.getByRole( 'link', {name: 'Second Tab'} );
-    await expect( tabTitle ).not.toBeVisible();
+    expect( await pluginUtil.isProductTabVisible( 'Second Tab', 'Second Tab', 'Global content for the second tab.' ) ).toBe( false );
 
 	});
 });
