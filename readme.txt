@@ -3,9 +3,9 @@
 Contributors: barn2media, andykeith
 Tags: woocommerce product tabs, woocommerce custom tabs, woocommerce tabs, woocommerce tab manager, woocommerce tabs plugin
 Requires PHP: 7.4
-Requires at least: 6.0
-Tested up to: 6.4.3
-Stable tag: 2.1.3
+Requires at least: 6.1
+Tested up to: 6.5.3
+Stable tag: 2.1.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -127,6 +127,17 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 3. Tabs in front end Product detail page
 
 == Changelog ==
+
+= 2.1.4 =
+Release date 6 May 2024
+
+* Fix: Prevent the setup wizard if the Pro version is activated
+* Fix: Hide the previous category results on the tab page if the current result is empty
+* Fix: Show the meta screen links in the product edit page
+* Dev: Don't strip the IFrame tags out of the tab content
+* Dev: Added playwright tests
+
+<!-- more -->
 
 = 2.1.3 =
 Release date 8 February 2024
