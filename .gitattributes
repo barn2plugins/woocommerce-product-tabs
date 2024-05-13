@@ -25,3 +25,5 @@
 /.phpcs.xml export-ignore
 /phpcs.ruleset.dist export-ignore
 /phpcs.xml export-ignore
+/.wp-env.json export-ignore
+/tests export-ignore
