@@ -477,3 +477,8 @@ body.admin_page_wta_settings, body.admin_page_wta_reorder {
 #message {
   margin-top: 15px;
 }
+
+/* Make more padding in the tab edit page */ 
+.post-type-woo_product_tab #wpbody-content > div.wrap > h1 {
+  padding-top: 25px;
+}

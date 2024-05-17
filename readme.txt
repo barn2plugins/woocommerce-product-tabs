@@ -129,7 +129,7 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.4 =
-Release date 6 May 2024
+Release date 17 May 2024
 
 * Fix: Prevent the setup wizard if the Pro version is activated
 * Fix: Hide the previous category results on the tab page if the current result is empty

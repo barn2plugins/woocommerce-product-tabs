@@ -31,3 +31,4 @@
 /phpstan.neon export-ignore
 /playwright.config.js export-ignore
 /export.json export-ignore
+/phpunit.xml export-ignore
