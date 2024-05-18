@@ -122,9 +122,11 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 
 == Screenshots ==
 
-1. Admin panel : Listing Tabs
-2. Tab content in Product editing page
-3. Tabs in front end Product detail page
+1. Create unlimited extra tabs for your WooCommerce products
+2. Add extra product tabs and either display them globally or per category
+3. Create tabs for individual products on the Add Product screen
+4. The tabs appear with the default tabs on the WooCommerce product page
+5. Add any type of content to the product page tabs, including embedded videos
 
 == Changelog ==
 
