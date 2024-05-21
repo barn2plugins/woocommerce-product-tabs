@@ -16,6 +16,7 @@
  * Author URI: https://barn2.com
  * Text Domain: woocommerce-product-tabs
  * Domain Path: /languages
+ * Requires Plugins: woocommerce
  * Requires PHP: 7.4
  * Requires at least: 6.1
  * Tested up to: 6.5.3

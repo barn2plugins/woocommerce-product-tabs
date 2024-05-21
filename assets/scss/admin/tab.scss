@@ -327,7 +327,7 @@
 .woocommerce-product-tabs-nav-tab-wrapper {
   border-bottom: 1px solid #c3c4c7;
   margin-right: 20px;
-  padding: 9px 0 0!important;
+  padding: 0!important;
 }
 .woocommerce-product-tabs-nav-tab-wrapper .nav-tab {
     float: initial;
@@ -466,7 +466,7 @@ body.post-type-woo_product_tab {
 
 body.admin_page_wta_settings, body.admin_page_wta_reorder {
   .woocommerce-product-tabs-nav-tab-wrapper {
-    margin-top: 21px;
+    margin-top: 11px!important;
   }
 }
 .barn2-plugins-promo {
@@ -479,6 +479,9 @@ body.admin_page_wta_settings, body.admin_page_wta_reorder {
 }
 
 /* Make more padding in the tab edit page */ 
-.post-type-woo_product_tab #wpbody-content > div.wrap > h1 {
-  padding-top: 25px;
-}
+.post-type-woo_product_tab.post-new-php,
+.post-type-woo_product_tab.post-php {
+  #wpbody-content > div.wrap > h1 {
+    padding-top: 25px;
+  }
+} 

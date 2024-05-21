@@ -40,6 +40,7 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 - Create an unlimited number of WooCommerce product page tabs.
 - Add flexible tab content using the user-friendly WYSIWYG editor, including shortcodes and HTML.
 - Assign tabs based on product category, or set them to appear globally on all products.
+- Add tabs to individual products.
 - Re-order tabs by setting priorities.
 
 [**WooCommerce Product Tabs**](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) **(Pro)** – our premium version adds lots more functionality to take your product tabs to the next level:
@@ -49,7 +50,6 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 - Easily re-order tabs using drag-and-drop (both your own custom tabs and the default tabs).
 - Add an icon to each tab name.
 - Hide or rename the default WooCommerce tabs (Description, Reviews and Additional Information), and add an icon.
-- Add tabs to individual products.
 - Add tabs based on product tags.
 - Create tabs centrally or directly on the ‘Edit Product’ screen for individual products.
 - Allow the names and content of your extra product page tabs to appear in the onsite WooCommerce product search results.
@@ -87,7 +87,7 @@ Absolutely! You can see the WooCommerce Product Tabs Pro plugin in action on the
 
 = How can I choose which products to display each tab on? =
 
-The free plugin lets you set tabs to appear globally on all products; or assign tabs to all products in a specific category or sub-category. The [premium version](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) also lets you add tabs directly to individual products, or assign tabs based on product tags.
+The free plugin lets you set tabs to appear globally on all products, or per category. You can also override the content of global tabs for individual products. In addition, the premium version lets you assign tabs based on product tags, and select specific products to display each tab on.
 
 = Is there a premium version with more features? =
 
@@ -131,7 +131,7 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.4 =
-Release date 17 May 2024
+Release date 21 May 2024
 
 * Fix: Prevent the setup wizard if the Pro version is activated
 * Fix: Hide the previous category results on the tab page if the current result is empty
