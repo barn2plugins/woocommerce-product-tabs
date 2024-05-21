@@ -32,7 +32,7 @@ class Completed extends Ready {
 	 */
 	private function get_custom_description() {
 
-		return esc_html__( 'Congratulations, you have completed the setup wizard. You can now manage your tabs, choose a category to show them on, create more tabs, and manage the plugin settings.', 'woocommerce-product-tabs' );
+		return esc_html__( 'Congratulations, you have finished setting up the plugin. You can create additional tabs and choose which categories to display them on.', 'woocommerce-product-tabs' );
 	}
 
 }

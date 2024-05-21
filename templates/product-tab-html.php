@@ -24,7 +24,6 @@ defined( 'ABSPATH' ) || exit;
 				if ( empty( $tab->_wpt_conditions_category ) ) {
 					$show = true;
 				} else {
-
 					if ( ! empty( $tab->_wpt_conditions_category ) && is_array( $tab->_wpt_conditions_category ) && array_intersect( $cat_list, Util::get_all_categories( $tab->_wpt_conditions_category ) ) ) {
 						$show = true;
 					} else {
@@ -35,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 
 			if ( $show === false ) {
 				unset( $tab );
-			} elseif ( defined( 'ICL_SITEPRESS_VERSION' ) && $lang !== $tab_lang['language_code'] ) {
+			} elseif ( defined( 'ICL_SITEPRESS_VERSION' ) && strlen( $tab_lang['language_code'] ) > 0 && $lang !== $tab_lang['language_code'] ) {
 				unset( $tab );
 			} else {
 

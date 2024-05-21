@@ -98,7 +98,7 @@ class Settings_Page implements Service, Registerable, Conditional {
 			'<p>%s | %s | %s</p>',
             // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 			Lib_Util::format_link( $this->plugin->get_documentation_url(), __( 'Documentation', 'woocommerce-product-tabs' ), true ),
-			Lib_Util::format_link( $this->plugin->get_support_url(), __( 'Support', 'woocommerce-product-tabs' ), true ),
+			Lib_Util::format_link( 'https://wordpress.org/support/plugin/woocommerce-product-tabs/', __( 'Support', 'woocommerce-product-tabs' ), true ),
 			sprintf(
 				'<a class="barn2-wiz-restart-btn" href="%s">%s</a>',
 				add_query_arg( [ 'page' => $this->plugin->get_slug() . '-setup-wizard' ], admin_url( 'admin.php' ) ),

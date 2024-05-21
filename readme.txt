@@ -1,11 +1,11 @@
 === WooCommerce Product Tabs ===
 
 Contributors: barn2media, andykeith
-Tags: tabs, custom tabs, product tabs, woocommerce product tab, product custom tabs, multiple product tabs, woocommerce custom tabs, woocommerce product custom tabs, multiple product tabs, woocommerce tabs, tabs for woocommerce, product tab, woocommerce, product, woocommerce product tabs, custom tab, woo product custom tabs, change tab, product page tabs, woocommerce custom tab, woocommerce tab, tabs plugin, woocommerce tabs plugin
+Tags: woocommerce product tabs, woocommerce custom tabs, woocommerce tabs, woocommerce tab manager, woocommerce tabs plugin
 Requires PHP: 7.4
-Requires at least: 6.0
-Tested up to: 6.4.3
-Stable tag: 2.1.3
+Requires at least: 6.1
+Tested up to: 6.5.3
+Stable tag: 2.1.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -40,6 +40,7 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 - Create an unlimited number of WooCommerce product page tabs.
 - Add flexible tab content using the user-friendly WYSIWYG editor, including shortcodes and HTML.
 - Assign tabs based on product category, or set them to appear globally on all products.
+- Add tabs to individual products.
 - Re-order tabs by setting priorities.
 
 [**WooCommerce Product Tabs**](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) **(Pro)** – our premium version adds lots more functionality to take your product tabs to the next level:
@@ -49,7 +50,6 @@ Whatever type of extra tabs you want to create, you’ll find that Product Tabs 
 - Easily re-order tabs using drag-and-drop (both your own custom tabs and the default tabs).
 - Add an icon to each tab name.
 - Hide or rename the default WooCommerce tabs (Description, Reviews and Additional Information), and add an icon.
-- Add tabs to individual products.
 - Add tabs based on product tags.
 - Create tabs centrally or directly on the ‘Edit Product’ screen for individual products.
 - Allow the names and content of your extra product page tabs to appear in the onsite WooCommerce product search results.
@@ -87,7 +87,7 @@ Absolutely! You can see the WooCommerce Product Tabs Pro plugin in action on the
 
 = How can I choose which products to display each tab on? =
 
-The free plugin lets you set tabs to appear globally on all products; or assign tabs to all products in a specific category or sub-category. The [premium version](https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=wporg&utm_medium=freeplugin&utm_campaign=freepluginwporg&amp;utm_content=wta-wporg) also lets you add tabs directly to individual products, or assign tabs based on product tags.
+The free plugin lets you set tabs to appear globally on all products, or per category. You can also override the content of global tabs for individual products. In addition, the premium version lets you assign tabs based on product tags, and select specific products to display each tab on.
 
 = Is there a premium version with more features? =
 
@@ -122,11 +122,24 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 
 == Screenshots ==
 
-1. Admin panel : Listing Tabs
-2. Tab content in Product editing page
-3. Tabs in front end Product detail page
+1. Create unlimited extra tabs for your WooCommerce products
+2. Add extra product tabs and either display them globally or per category
+3. Create tabs for individual products on the Add Product screen
+4. The tabs appear with the default tabs on the WooCommerce product page
+5. Add any type of content to the product page tabs, including embedded videos
 
 == Changelog ==
+
+= 2.1.4 =
+Release date 21 May 2024
+
+* Fix: Prevent the setup wizard if the Pro version is activated
+* Fix: Hide the previous category results on the tab page if the current result is empty
+* Fix: Show the meta screen links in the product edit page
+* Dev: Don't strip the IFrame tags out of the tab content
+* Dev: Added playwright tests
+
+<!-- more -->
 
 = 2.1.3 =
 Release date 8 February 2024

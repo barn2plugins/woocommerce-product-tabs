@@ -25,3 +25,10 @@
 /.phpcs.xml export-ignore
 /phpcs.ruleset.dist export-ignore
 /phpcs.xml export-ignore
+/.wp-env.json export-ignore
+/tests export-ignore
+/*.lock export-ignore
+/phpstan.neon export-ignore
+/playwright.config.js export-ignore
+/export.json export-ignore
+/phpunit.xml export-ignore

@@ -23,8 +23,9 @@
 		let inclusionType = self.attr( 'data-type' );
 		// display the loader
 		wrapperSelector.find('.wta-loader').show();
-		// hide no results message initially
+		// hide the previous results and messages
 		wrapperSelector.find('.wta-component-no-results').hide();
+		wrapperSelector.find('.barn2-search-list__list').hide();
 		let searchedTermsList = wrapperSelector.find('.barn2-search-list__list');
 		const searchTerm = self.val();
 		if ( ! searchTerm && !searchTerm.length ) {
