@@ -2,7 +2,9 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\License;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Scheduled_Task, Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Schedulable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Schedulable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Scheduled_Task;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Core_Service;
 /**
  * A scheduled task to periodically check the status of the plugin license.
  *
@@ -11,7 +13,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Scheduled_Task, Barn2\Plu
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class License_Checker extends Scheduled_Task implements Schedulable
+class License_Checker extends Scheduled_Task implements Schedulable, Core_Service
 {
     /**
      * The plugin license.
@@ -23,6 +25,13 @@ class License_Checker extends Scheduled_Task implements Schedulable
     {
         parent::__construct($plugin_file);
         $this->license = $license;
+    }
+    public function schedule()
+    {
+        if (\apply_filters('barn2_plugin_disable_license_key_check', \false, $this->license)) {
+            return;
+        }
+        parent::schedule();
     }
     public function run()
     {

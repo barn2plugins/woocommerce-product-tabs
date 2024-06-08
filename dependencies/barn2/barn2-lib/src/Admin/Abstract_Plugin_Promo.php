@@ -3,6 +3,7 @@
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util;
 /**
  * Abstract class to handle the plugin promo sidebar used in most Barn2 plugins.
@@ -11,9 +12,9 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util;
  * @author    Barn2 Plugins <support@barn2.com>
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
- * @version   1.0
+ * @version   1.0.1
  */
-abstract class Abstract_Plugin_Promo
+abstract class Abstract_Plugin_Promo implements Standard_Service
 {
     /**
      * The plugin object.

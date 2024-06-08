@@ -4,7 +4,6 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\WooCommerce\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Abstract_Plugin_Promo;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Settings_Util;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Plugin_Promo as OG_Promo;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
 /**
