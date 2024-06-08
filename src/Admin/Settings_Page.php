@@ -4,6 +4,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Conditional;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Settings_Util;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
@@ -56,6 +57,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		add_filter( 'in_admin_header', [ $this, 'in_admin_header' ] );
 		add_action( 'admin_menu', [ $this, 'register_product_tab_menu' ] );
 		add_action( 'admin_init', [ $this, 'register_plugin_option_fields' ] );
+		add_filter( 'barn2_plugin_settings_help_links', [ $this, 'change_support_url' ], 10, 2 );
 	}
 
 	public function in_admin_header( $actions )
@@ -95,16 +97,9 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 */
 	public function support_links(): void {
 		printf(
-			'<p>%s | %s | %s</p>',
-            // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
-			Lib_Util::format_link( $this->plugin->get_documentation_url(), __( 'Documentation', 'woocommerce-product-tabs' ), true ),
-			Lib_Util::format_link( 'https://wordpress.org/support/plugin/woocommerce-product-tabs/', __( 'Support', 'woocommerce-product-tabs' ), true ),
-			sprintf(
-				'<a class="barn2-wiz-restart-btn" href="%s">%s</a>',
-				add_query_arg( [ 'page' => $this->plugin->get_slug() . '-setup-wizard' ], admin_url( 'admin.php' ) ),
-				__( 'Setup wizard', 'woocommerce-product-tabs' )
-			)
-            // phpcs:enable
+			'<p>%s %s</p>',
+			Settings_Util::get_help_links( $this->plugin ),
+			''
 		);
 	}
 
@@ -262,6 +257,16 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		</div>
 		<?php
 		$this->get_settings_page_footer();
+	}
+
+	/**
+	 * Change the default support link to the WordPress repository
+	 */
+	public function change_support_url( $links, $plugin ) {
+		if( $plugin->get_id() === $this->plugin->get_id() ) {
+			$links[ 'support' ][ 'url' ] = 'https://wordpress.org/support/plugin/woocommerce-product-tabs/';
+		}
+		return $links;
 	}
 
 }

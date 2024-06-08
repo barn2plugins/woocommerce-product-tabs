@@ -67,6 +67,8 @@ class Setup_Wizard implements Registerable, Standard_Service {
       Lib_Util::get_script_dependencies( $this->plugin, 'admin/wizard/wizard.js' )
     );
 
+		$wizard->add_restart_link( '', '' );
+
 		$this->wizard = $wizard;
 	}
 
