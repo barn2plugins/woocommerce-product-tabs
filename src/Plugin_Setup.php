@@ -2,11 +2,12 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Starter,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin_Activation_Listener,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Starter;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin_Activation_Listener;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 
 /**
  * Plugin Setup
@@ -16,7 +17,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Starter,
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Plugin_Setup implements Registerable {
+class Plugin_Setup implements Registerable, Standard_Service, Plugin_Activation_Listener {
 	/**
 	 * Plugin's entry file
 	 *

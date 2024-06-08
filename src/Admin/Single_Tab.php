@@ -2,9 +2,9 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-        Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service,
-        Barn2\Plugin\WC_Product_Tabs_Free\Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Util;
 
 /**
  * Add metaboxes and handles their behavior for the singled edit tab page
@@ -14,7 +14,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Single_Tab implements Registerable, Service {
+class Single_Tab implements Registerable, Standard_Service {
 
     public function register()
     {

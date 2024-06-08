@@ -6,8 +6,8 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Plugin_Promo;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Admin\Settings_API_Helper;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service_Container;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Service_Container;
 
 /**
  * Handles general admin functions.
@@ -17,7 +17,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service_Container;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Admin_Controller implements Registerable, Service {
+class Admin_Controller implements Registerable, Standard_Service {
 
 	use Service_Container;
 
@@ -30,12 +30,11 @@ class Admin_Controller implements Registerable, Service {
 		$this->plugin      = $plugin;
 		$this->plugin_name = $plugin->get_slug();
 		$this->version     = $plugin->get_version();
-		$this->add_services();
 	}
 
 	public function register() {
 		$this->register_services();
-
+		$this->start_all_services();
 		// Extra links on Plugins page
 		add_filter( 'plugin_action_links_' . $this->plugin->get_basename(), [ $this, 'add_settings_link' ] );
 		add_filter( 'plugin_row_meta', [ $this, 'add_meta_links' ], 10, 2 );
@@ -49,7 +48,6 @@ class Admin_Controller implements Registerable, Service {
 	 */
 	public function add_services() {
 		$this->add_service( 'plugin_promo', new Plugin_Promo( $this->plugin ) );
-		$this->add_service( 'settings_api', new Settings_API_Helper( $this->plugin ) );
 		$this->add_service( 'settings_page', new Settings_Page( $this->plugin ) );
 		$this->add_service( 'single_tab', new Single_Tab() );
 		$this->add_service( 'product_editor_tabs', new Product_Editor_Tabs( $this->plugin->get_dir_path() ) );

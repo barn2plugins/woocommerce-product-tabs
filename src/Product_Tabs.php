@@ -3,7 +3,7 @@
 namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 use WP_Embed;
 
 /**
@@ -14,7 +14,7 @@ use WP_Embed;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Product_Tabs implements Registerable, Service {
+class Product_Tabs implements Registerable, Standard_Service {
 
 	public function register() {
 		// Public custom hooks

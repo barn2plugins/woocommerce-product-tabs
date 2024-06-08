@@ -2,11 +2,12 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Steps,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util,
-  Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Setup_Wizard as Wizard;
+use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Steps;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
+use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Setup_Wizard as Wizard;
 
 /**
  * Main Setup Wizard Loader
@@ -16,7 +17,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Steps,
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Setup_Wizard implements Registerable {
+class Setup_Wizard implements Registerable, Standard_Service {
 
 	private $plugin;
 	private $wizard;

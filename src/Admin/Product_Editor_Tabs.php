@@ -3,7 +3,7 @@
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 
 /**
  * Add metaboxes and handles their behavior for the singled edit tab page
@@ -13,7 +13,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Product_Editor_Tabs implements Registerable, Service {
+class Product_Editor_Tabs implements Registerable, Standard_Service {
 
 	private $plugin_dir_path;
 

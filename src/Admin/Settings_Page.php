@@ -5,7 +5,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Conditional;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
 use Barn2\Plugin\WC_Product_Tabs_Free\Util;
 
@@ -17,7 +17,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Util;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Settings_Page implements Service, Registerable, Conditional {
+class Settings_Page implements Standard_Service, Registerable, Conditional {
 
 	/**
 	 * Plugin handling the page.

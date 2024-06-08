@@ -17,7 +17,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Setup_Wizard;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
+class Plugin extends Simple_Plugin {
 
 	const NAME    = 'WooCommerce Product Tabs Free';
 	const ITEM_ID = 559044;
@@ -47,23 +47,6 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 				'documentation_path' => 'kb/woocommerce-product-tabs-free-documentation/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=wta-settings'
 			]
 		);
-
-		// Don't load the setup wizard if the pro version is active
-		if ( ! function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
-			$this->add_service( 'plugin_setup', new Plugin_Setup( $this->get_file(), $this ), true );
-		}
-	}
-
-	/**
-	 * {@inheritdoc}
-	 */
-	public function register() {
-		parent::register();
-
-		add_action( 'plugins_loaded', [ $this, 'add_services' ] );
-
-		add_action( 'init', [ $this, 'register_services' ] );
-		add_action( 'init', [ $this, 'load_textdomain' ], 5 );
 	}
 
 	/**
@@ -71,33 +54,16 @@ class Plugin extends Simple_Plugin implements Registerable, Service_Provider {
 	 */
 	public function maybe_load_plugin() {
 		// Don't load plugin if Pro version active
-		if ( function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
-			return;
+		if ( ! function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
+			add_action('after_setup_theme', [$this, 'start_standard_services']);
 		}
 	}
 
 	public function add_services() {
-		// Don't load plugin if Pro version active
-		if ( function_exists( '\\Barn2\\Plugin\\WC_Product_Tabs_Pro\\wta' ) ) {
-			return;
-		}
+		$this->add_service( 'plugin_setup', new Plugin_Setup( $this->get_file(), $this ), true );
 		$this->add_service( 'wizard', new Setup_Wizard( $this ) );
 		$this->add_service( 'post_type', new Post_Type() );
-
-		// Admin only services
-		if ( Util::is_admin() ) {
-			$this->add_service( 'admin', new Admin\Admin_Controller( $this ) );
-		}
-
+		$this->add_service( 'admin', new Admin\Admin_Controller( $this ) );
 		$this->add_service( 'product_tabs', new Product_Tabs() );
-
 	}
-
-	/**
-	 * Load the textdomain.
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'woocommerce-product-tabs', false, $this->get_slug() . '/languages' );
-	}
-
 }

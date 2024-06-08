@@ -2,8 +2,8 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable,
-Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 
 /**
  * Registering the post type
@@ -13,7 +13,7 @@ Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  */
-class Post_Type implements Registerable, Service {
+class Post_Type implements Registerable, Standard_Service {
 
   public function register() {
     add_action( 'init', [ $this, 'tab_post_type' ], 99 );
