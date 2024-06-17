@@ -16,6 +16,8 @@ use WP_Embed;
  */
 class Product_Tabs implements Registerable, Standard_Service {
 
+	private $product_tabs_list;
+
 	public function register() {
 		// Public custom hooks
 		add_filter( 'woocommerce_product_tabs', [ $this, 'custom_woocommerce_product_tabs' ], 20 );

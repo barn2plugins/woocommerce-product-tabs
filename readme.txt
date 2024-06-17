@@ -131,7 +131,7 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.5 =
-Release date 10 June 2024
+Release date 17 June 2024
 
 * Dev: Updated the internal libraries
 * Dev: Updated the classes to use barn2-lib 2.0
