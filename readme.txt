@@ -4,7 +4,7 @@ Contributors: barn2media, andykeith
 Tags: woocommerce product tabs, woocommerce custom tabs, woocommerce tabs, woocommerce tab manager, woocommerce tabs plugin
 Requires PHP: 7.4
 Requires at least: 6.1
-Tested up to: 6.5.4
+Tested up to: 6.6
 Stable tag: 2.1.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
