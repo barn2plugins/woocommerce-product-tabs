@@ -12,6 +12,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Api;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Step;
 /**
  * Handles the welcome step of the wizard for free plugins.
+ * @internal
  */
 class Welcome_Free extends Step
 {

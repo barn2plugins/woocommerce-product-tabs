@@ -10,6 +10,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard;
 
 /**
  * Determine if the setup wizard should be displayed after plugin's activation.
+ * @internal
  */
 class Starter
 {

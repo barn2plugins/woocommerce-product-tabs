@@ -19,7 +19,6 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
         "wpackagist-plugin/woocommerce": "^8.6",
         "wpackagist-theme/storefront": "^4.5"
-
     },
     "repositories": [
         {

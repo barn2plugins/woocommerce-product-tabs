@@ -11,6 +11,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.1
+ * @internal
  */
 class Settings_Util
 {

@@ -11,6 +11,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\WooCommerce\Admin;
  * @copyright  Barn2 Media Ltd
  * @version    1.1
  * @deprecated Replaced by Barn2\Lib\Admin\Settings_Util
+ * @internal
  */
 class Settings_Util
 {

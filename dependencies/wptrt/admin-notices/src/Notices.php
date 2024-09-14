@@ -20,6 +20,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\WPTRT\AdminNotices;
  * Each notice is a new instance of the object.
  *
  * @since 1.0.0
+ * @internal
  */
 class Notices
 {

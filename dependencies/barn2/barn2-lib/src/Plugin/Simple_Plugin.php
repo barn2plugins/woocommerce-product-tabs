@@ -18,6 +18,7 @@ use Exception;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   2.0
+ * @internal
  */
 class Simple_Plugin implements Plugin, Registerable, Service_Provider
 {

@@ -12,6 +12,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib;
  * can be easily used with php-scoper.
  *
  * @package Barn2\barn2-lib
+ * @internal
  */
 class Cache
 {

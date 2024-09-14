@@ -10,6 +10,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\License;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.1
+ * @internal
  */
 interface License extends License_Summary
 {

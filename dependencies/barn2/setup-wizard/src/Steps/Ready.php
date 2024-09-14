@@ -11,6 +11,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Steps;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Step;
 /**
  * Handles the last step of the wizard.
+ * @internal
  */
 class Ready extends Step
 {

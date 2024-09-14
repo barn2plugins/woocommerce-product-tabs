@@ -15,6 +15,7 @@ use WC_Admin_Settings;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.2
+ * @internal
  */
 class License_Key_Setting implements Registerable, License_Setting, Core_Service
 {

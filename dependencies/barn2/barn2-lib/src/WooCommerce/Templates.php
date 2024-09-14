@@ -11,6 +11,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Template_Loader;
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   1.2
+ * @internal
  */
 class Templates implements Template_Loader
 {

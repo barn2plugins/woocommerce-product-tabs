@@ -12,6 +12,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Interfaces
  * Implement this interface with steps to indicate
  * that the details of a step should be loaded via the rest api
  * instead of being loaded when the class is initialized.
+ * @internal
  */
 interface Deferrable
 {

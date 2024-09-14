@@ -12,6 +12,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Interfaces\Boota
 use JsonSerializable;
 /**
  * Create a setup wizard for a given plugin.
+ * @internal
  */
 class Setup_Wizard implements Bootable, JsonSerializable
 {

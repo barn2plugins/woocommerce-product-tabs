@@ -16,6 +16,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\License\Plugin_Lic
  * @license   GPL-3.0
  * @copyright Barn2 Media Ltd
  * @version   2.0
+ * @internal
  */
 class Premium_Plugin extends Simple_Plugin implements Licensed_Plugin
 {

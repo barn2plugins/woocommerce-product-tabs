@@ -13,6 +13,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Util;
 /**
  * Handles the welcome step of the wizard.
  * Displays a license validation field and validates the license.
+ * @internal
  */
 class Welcome extends Step
 {

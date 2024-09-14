@@ -10,6 +10,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Interfaces
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Setup_Wizard;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Step;
+/** @internal */
 interface Pluggable
 {
     /**
