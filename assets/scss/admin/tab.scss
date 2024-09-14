@@ -17,7 +17,7 @@
   display: table;
 }
 
-.wta-loader, 
+.wta-loader,
 .wta-component-no-results {
   display: none;
 }
@@ -411,7 +411,7 @@
       }
     }
   }
-  
+
 }
 
 .normal-list {
@@ -443,7 +443,6 @@ body.post-type-woo_product_tab #screen-meta-links {
 }
 
 body.post-type-woo_product_tab .wrap #posts-filter .tablenav.bottom,
-body.post-type-woo_product_tab .wrap #posts-filter .search-box,
 body.post-type-woo_product_tab .wrap #posts-filter .tablenav.top .actions:not(.bulkactions) {
   display: none;
 }
@@ -478,10 +477,10 @@ body.admin_page_wta_settings, body.admin_page_wta_reorder {
   margin-top: 15px;
 }
 
-/* Make more padding in the tab edit page */ 
+/* Make more padding in the tab edit page */
 .post-type-woo_product_tab.post-new-php,
 .post-type-woo_product_tab.post-php {
   #wpbody-content > div.wrap > h1 {
     padding-top: 25px;
   }
-} 
+}

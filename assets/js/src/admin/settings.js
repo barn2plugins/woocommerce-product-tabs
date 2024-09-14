@@ -35,7 +35,7 @@
 		let searchParam = new URLSearchParams( {
 			search: searchTerm
 		} );
-		
+
 		// Make WooCommerce REST API call to get terms
 		wp.apiFetch({path: `/wc/v3/products/${ taxonomy }/?${ searchParam.toString() }`})
 			.then((terms) => {
@@ -90,7 +90,7 @@
 	}
 
 	$(document).on('click', '.barn2-search-list__list li', debounce( selectTerm, 50 ));
-	
+
 	$(document).on('click', '#barn2-remove-term', function() {
 		var self = $(this);
     let parent_list = $(this).parents('ul');
@@ -110,7 +110,7 @@
 	/**
 	 * Change the CPT filter status to a text field
 	 */
-	$('body.post-type-woo_product_tab .wrap .subsubsub').html(
+	$('body.post-type-woo_product_tab .wrap .subsubsub').prepend(
 		'<p class="wta-sub-heading">Create additional tabs for your product pages and choose which categories they appear on. For more options,<a target="_blank" href="https://barn2.com/wordpress-plugins/woocommerce-product-tabs/?utm_source=settings&utm_medium=settings&utm_campaign=settingsinline&utm_content=wta-settings">upgrade to Pro.</a></p>'
 	);
 }( jQuery ) );
