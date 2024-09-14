@@ -123,10 +123,8 @@ class Admin_Controller implements Registerable, Standard_Service {
 		}
 
 		// Manually enqueue the promo style for the settings page
-		if( $screen->id === 'admin_page_wta_settings' ) {
-			wp_enqueue_style('barn2-plugins-promo', \plugins_url('dependencies/barn2/barn2-lib/build/css/plugin-promo-styles.css', $this->plugin->get_file()), [], $this->plugin->get_version(), 'all');
+		if ( $screen->id === 'admin_page_wta_settings' ) {
+			wp_enqueue_style( 'barn2-plugins-promo', \plugins_url( 'dependencies/barn2/barn2-lib/build/css/plugin-promo-styles.css', $this->plugin->get_file() ), [], $this->plugin->get_version(), 'all' );
 		}
-
 	}
-
 }

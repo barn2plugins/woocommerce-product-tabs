@@ -40,7 +40,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 * @param Plugin $plugin
 	 */
 	public function __construct( Plugin $plugin ) {
-		$this->plugin              = $plugin;
+		$this->plugin = $plugin;
 	}
 
 	/**
@@ -60,8 +60,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		add_filter( 'barn2_plugin_settings_help_links', [ $this, 'change_support_url' ], 10, 2 );
 	}
 
-	public function in_admin_header( $actions )
-	{        
+	public function in_admin_header( $actions ) {
 		$current_screen = get_current_screen();
 
 		if ( $current_screen->id !== 'edit-woo_product_tab' ) {
@@ -71,13 +70,12 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		echo $this->get_wta_admin_header_html();
 	}
 
-	public function get_wta_admin_header_html()
-	{
+	public function get_wta_admin_header_html() {
 		?>
 		<div class="woocommerce-product-tabs-layout__header">
 			<div class="woocommerce-product-tabs-layout__header-wrapper">
 				<h3 class="woocommerce-product-tabs-layout__header-heading">
-					Product Tabs                
+					Product Tabs
 				</h3>
 				<div class="links-area">
 					<?php $this->support_links(); ?>
@@ -89,7 +87,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 			<a href="<?php echo admin_url( 'edit.php?post_type=woo_product_tab' ); ?>" class="nav-tab nav-tab-active">Product Tabs</a>
 			<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab">Settings</a>
 		</h2>
-	<?php
+		<?php
 	}
 
 	/**
@@ -112,12 +110,12 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 */
 	public function wpt_get_settings() {
 		$settings = [
-			'tab_section' => [
-				'name'      => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
-				'type'      => 'title',
-				'id'        => 'wpt_tab_section',
+			'tab_section'                => [
+				'name' => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
+				'type' => 'title',
+				'id'   => 'wpt_tab_section',
 			],
-			'wpt_disable_content_filter'  => [
+			'wpt_disable_content_filter' => [
 				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
 				'type'    => 'checkbox',
 				'desc'    => esc_html__( 'Enable this checkbox if you are using a page builder and have problems with the content preview.', 'woocommerce-product-tabs' ),
@@ -125,17 +123,16 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 				'class'   => 'wpt_disable_content_filter',
 				'id'      => 'wpt_disable_content_filter',
 			],
-			'tab_section_end' => [
-				'type'          => 'sectionend',
-				'id'            => 'wpt_tab_section_end',
+			'tab_section_end'            => [
+				'type' => 'sectionend',
+				'id'   => 'wpt_tab_section_end',
 			],
 		];
 
 		return $settings;
 	}
 
-	public function get_settings_page_footer()
-	{
+	public function get_settings_page_footer() {
 		do_action( 'barn2_after_plugin_settings', $this->plugin->get_id() );
 		?>
 		</div><!-- .tabs-stage -->
@@ -154,8 +151,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 *
 	 * @since 1.0.0
 	 */
-	function register_product_tab_menu()
-	{
+	function register_product_tab_menu() {
 		add_submenu_page(
 			'wpt-options',
 			__( 'Settings - Product Tabs', 'woocommerce-product-tabs' ),
@@ -164,11 +160,9 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 			'wta_settings',
 			[ $this, 'admin_product_tabs_options_page' ]
 		);
-
 	}
 
-	function register_plugin_option_fields()
-	{
+	function register_plugin_option_fields() {
 		register_setting( 'wpt_group', 'wpt_options', 'validate_plugin_options' );
 		add_settings_section( 'wpt_option_section', __( 'Tab options', 'woocommerce-product-tabs' ), [], 'wpt-options' );
 		add_settings_field( 'disable_content_filter', __( 'Page builder support', 'woocommerce-product-tabs' ), [ $this, 'disable_content_filter' ], 'wpt-options', 'wpt_option_section' );
@@ -179,22 +173,20 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 *
 	 * @since 1.0.0
 	 */
-	function disable_content_filter()
-	{
+	function disable_content_filter() {
 		$disable_content_filter = Util::get_option( 'disable_content_filter' );
 		?>
 		<label for="disable_content_filter">
 		<input type="checkbox" name="wpt_options[disable_content_filter]" id="disable_content_filter" value="1" <?php checked( 1, $disable_content_filter ); ?> />
-		<?php esc_html_e( "Enable compatibility mode for page builders", 'woocommerce-product-tabs' ); ?>
+		<?php esc_html_e( 'Enable compatibility mode for page builders', 'woocommerce-product-tabs' ); ?>
 		<span data-tip="<?php _e( 'Enable this if you have problems displaying tab content correctly using a page builder', 'woocommerce-product-tabs' ); ?>" class="barn2-help-tip"></span>
 		</label>
 		<?php
 	}
 
-	public function get_settings_page_header( $current )
-	{
+	public function get_settings_page_header( $current ) {
 		$message = '';
-		if( isset($_GET['settings-updated']) && $_GET['settings-updated'] === "true" ) {
+		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] === 'true' ) {
 			$message = '<div id="message" class="notice notice-success updated inline is-dismissible"><p><strong>Your settings have been saved.</strong></p></div>';
 		}
 		do_action( 'barn2_before_plugin_settings', $this->plugin->get_id() );
@@ -203,7 +195,7 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		<div class="woocommerce-product-tabs-layout__header">
 			<div class="woocommerce-product-tabs-layout__header-wrapper">
 				<h3 class="woocommerce-product-tabs-layout__header-heading">
-					<?php _e( 'Product Tabs', 'woocommerce-product-tabs') ?>
+					<?php _e( 'Product Tabs', 'woocommerce-product-tabs' ); ?>
 				</h3>
 				<div class="links-area">
 					<?php $this->support_links(); ?>
@@ -220,14 +212,13 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 				<div class="tabs-stage">
 				<h2 class="woocommerce-product-tabs-nav-tab-wrapper">
 					<a href="<?php echo admin_url( 'edit.php?post_type=woo_product_tab' ); ?>" class="nav-tab">Product Tabs</a>
-					<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab <?php echo $current === 'wta_settings' ? 'nav-tab-active' : '' ?>">Settings</a>
+					<a href="<?php echo admin_url( 'admin.php?page=wta_settings' ); ?>" class="nav-tab <?php echo $current === 'wta_settings' ? 'nav-tab-active' : ''; ?>">Settings</a>
 				</h2>
 		<?php
 		echo $message;
 	}
 
-	function admin_product_tabs_options_page()
-	{
+	function admin_product_tabs_options_page() {
 		$this->get_settings_page_header( 'wta_settings' );
 		?>
 		<div id="tab-settings" class="meta-box-sortables tab-ui-sortable">
@@ -263,10 +254,9 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 	 * Change the default support link to the WordPress repository
 	 */
 	public function change_support_url( $links, $plugin ) {
-		if( $plugin->get_id() === $this->plugin->get_id() ) {
-			$links[ 'support' ][ 'url' ] = 'https://wordpress.org/support/plugin/woocommerce-product-tabs/';
+		if ( $plugin->get_id() === $this->plugin->get_id() ) {
+			$links['support']['url'] = 'https://wordpress.org/support/plugin/woocommerce-product-tabs/';
 		}
 		return $links;
 	}
-
 }

@@ -2,9 +2,9 @@
 
 namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Steps;
 
-use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Api,
-    Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Step,
-	  Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Api;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Setup_Wizard\Step;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
 
 /**
  * Layout Settings Step.
@@ -39,22 +39,21 @@ class Tab_Content extends Step {
 	public function setup_fields() {
 
 		$fields = [
-			'title' => [
+			'title'   => [
 				'label'       => __( 'Title', 'woocommerce-product-tabs' ),
 				'description' => __( 'Enter the tab title.', 'woocommerce-product-tabs' ),
 				'type'        => 'text',
 				'value'       => $this->values['title'] ?? '',
-      ],
-      'content' => [
+			],
+			'content' => [
 				'label'       => __( 'Content', 'woocommerce-product-tabs' ),
 				'description' => __( 'Enter the tab content', 'woocommerce-product-tabs' ),
 				'type'        => 'TinyMCE',
 				'value'       => $this->values['content'] ?? '',
-			]
+			],
 		];
 
 		return $fields;
-
 	}
 
 	/**
@@ -62,9 +61,6 @@ class Tab_Content extends Step {
 	 */
 	public function submit( array $values ) {
 
-
 		return Api::send_success_response();
-
 	}
-
 }

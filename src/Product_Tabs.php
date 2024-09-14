@@ -25,7 +25,6 @@ class Product_Tabs implements Registerable, Standard_Service {
 
 		add_filter( 'wpt_filter_product_tabs', [ $this, 'tab_status_check' ] );
 
-
 		if ( $this->enable_the_content_filter() ) {
 			add_filter( 'wpt_use_the_content_filter', '__return_false' );
 			add_filter( 'wpt_filter_tab_content', [ $this, 'product_tabs_filter_content' ], 10, 1 );
@@ -74,11 +73,9 @@ class Product_Tabs implements Registerable, Standard_Service {
 				$tab_temp['callback'] = [ $this, 'callback' ];
 				$tabs[ $tab['id'] ]   = $tab_temp;
 			}
-
 		}
 
 		return $tabs;
-
 	}
 
 	public function tab_status_check( $tabs ) {
@@ -121,12 +118,9 @@ class Product_Tabs implements Registerable, Standard_Service {
 						}
 					}
 				}
-
 			} // end foreach
-
 		}
 		return $tabs;
-
 	}
 
 	public function callback( $key, $tab ) {
@@ -154,7 +148,6 @@ class Product_Tabs implements Registerable, Standard_Service {
 	 * @param string $content Content for the current tab.
 	 * @return string Tab content.
 	 * @since 2.0.2
-	 *
 	 */
 	public function product_tabs_filter_content( $content ) {
 		$content = function_exists( 'capital_P_dangit' ) ? capital_P_dangit( $content ) : $content;
@@ -180,7 +173,6 @@ class Product_Tabs implements Registerable, Standard_Service {
 	 * @param string $content Content to apply filter.
 	 * @return string $content Tab content.
 	 * @since 2.0.2
-	 *
 	 */
 	public function get_filter_content( $content ) {
 		$use_the_content_filter = apply_filters( 'wpt_use_the_content_filter', true );
@@ -210,5 +202,4 @@ class Product_Tabs implements Registerable, Standard_Service {
 
 		return $output;
 	}
-
 }

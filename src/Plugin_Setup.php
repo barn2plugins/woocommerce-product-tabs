@@ -3,11 +3,11 @@
 namespace Barn2\Plugin\WC_Product_Tabs_Free;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Starter;
-use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
-use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin_Activation_Listener;
-use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
-use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
-use	Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Plugin\Plugin_Activation_Listener;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Util as Lib_Util;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
+use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
 
 /**
  * Plugin Setup
@@ -65,13 +65,12 @@ class Plugin_Setup implements Registerable, Standard_Service, Plugin_Activation_
 	 * @param mixed $network_wide
 	 */
 	public function on_activate( $network_wide ) {
-    /**
-     * Determine if setup wizard should run.
-     */
-    if ( $this->starter->should_start() ) {
-      $this->starter->create_transient();
-    }
-
+		/**
+		 * Determine if setup wizard should run.
+		 */
+		if ( $this->starter->should_start() ) {
+			$this->starter->create_transient();
+		}
 	}
 
 	/**
@@ -94,7 +93,7 @@ class Plugin_Setup implements Registerable, Standard_Service, Plugin_Activation_
 		}
 
 		$this->starter->delete_transient();
-		$this->starter->create_option(); 
+		$this->starter->create_option();
 		$this->starter->redirect();
 	}
 }

@@ -147,19 +147,17 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 	}
 
 	public function get_allowed_tags() {
-		$allowed_tags = wp_kses_allowed_html( 'post' );
-		$allowed_tags[ 'iframe' ] = [
+		$allowed_tags           = wp_kses_allowed_html( 'post' );
+		$allowed_tags['iframe'] = [
 			'src'             => true,
 			'height'          => true,
 			'width'           => true,
-			'title'			  		=> true, 
-			'allow'			  		=> true,
+			'title'           => true,
+			'allow'           => true,
 			'frameborder'     => true,
 			'allowfullscreen' => true,
 		];
 
 		return apply_filters( 'wt_allowed_kses_tags', $allowed_tags );
 	}
-
-
 }
