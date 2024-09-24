@@ -131,9 +131,9 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 == Changelog ==
 
 = 2.1.6 =
-Release date 16 September 2024
+Release date 24 September 2024
 
-* Dev: Tested up to WordPress 6.6.2 and WooCommerce 9.3.1
+* Dev: Tested up to WordPress 6.6.2 and WooCommerce 9.3.2
 * Dev: Added the search and trash functionality for tabs
 
 <!-- more -->

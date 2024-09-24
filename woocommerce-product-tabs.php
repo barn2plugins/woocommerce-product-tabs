@@ -21,7 +21,7 @@
  * Requires at least: 6.1
  * Tested up to: 6.6.2
  * WC requires at least: 7.2
- * WC tested up to: 9.3.1
+ * WC tested up to: 9.3.2
  *
  * Copyright:       Barn2 Media Ltd
  * License:         GNU General Public License v3.0
