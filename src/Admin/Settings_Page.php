@@ -101,37 +101,6 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		);
 	}
 
-	/**
-	 * Product Tab setting lists.
-	 *
-	 * @since 2.0.2
-	 *
-	 * @return array Add custom settings for product tabs.
-	 */
-	public function wpt_get_settings() {
-		$settings = [
-			'tab_section'                => [
-				'name' => esc_html__( 'Product Tab Settings', 'woocommerce-product-tabs' ),
-				'type' => 'title',
-				'id'   => 'wpt_tab_section',
-			],
-			'wpt_disable_content_filter' => [
-				'name'    => esc_html__( 'Disable the_content Filter', 'woocommerce-product-tabs' ),
-				'type'    => 'checkbox',
-				'desc'    => esc_html__( 'Enable this checkbox if you are using a page builder and have problems with the content preview.', 'woocommerce-product-tabs' ),
-				'default' => 'no',
-				'class'   => 'wpt_disable_content_filter',
-				'id'      => 'wpt_disable_content_filter',
-			],
-			'tab_section_end'            => [
-				'type' => 'sectionend',
-				'id'   => 'wpt_tab_section_end',
-			],
-		];
-
-		return $settings;
-	}
-
 	public function get_settings_page_footer() {
 		do_action( 'barn2_after_plugin_settings', $this->plugin->get_id() );
 		?>
@@ -166,6 +135,13 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		register_setting( 'wpt_group', 'wpt_options', 'validate_plugin_options' );
 		add_settings_section( 'wpt_option_section', __( 'Tab options', 'woocommerce-product-tabs' ), [], 'wpt-options' );
 		add_settings_field( 'disable_content_filter', __( 'Page builder support', 'woocommerce-product-tabs' ), [ $this, 'disable_content_filter' ], 'wpt-options', 'wpt_option_section' );
+		add_settings_field(
+			'delete_data',
+			__( 'Uninstalling ' . $this->plugin->get_name(), 'woocommerce-product-tabs' ),
+			[ $this, 'delete_data' ],
+			'wpt-options',
+			'wpt_option_section'
+		);
 	}
 
 	/**
@@ -248,6 +224,17 @@ class Settings_Page implements Standard_Service, Registerable, Conditional {
 		</div>
 		<?php
 		$this->get_settings_page_footer();
+	}
+
+	public function delete_data() {
+		echo '<fieldset>';
+		$delete_data = Util::get_option( 'delete_data' );
+		echo '<label class="checkbox-row" for="delete_data">';
+		?>
+		<input type="checkbox" name="wpt_options[delete_data]" id="delete_data" value="1" <?php checked( 1, $delete_data ); ?> />
+		<?php
+		_e( 'Permanently delete all ' . $this->plugin->get_name() . ' settings and data when uninstalling the plugin', 'woocommerce-product-tabs' );
+		echo ' </label><br /></fieldset>';
 	}
 
 	/**
