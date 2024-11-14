@@ -141,6 +141,9 @@ class Plugin_License implements Registerable, License, Core_Service
             if ('valid' === $response->license) {
                 $license_data['status'] = 'active';
                 $result = \true;
+                if (isset($response->bonus_downloads)) {
+                    $license_data['bonus_downloads'] = $response->bonus_downloads;
+                }
                 \do_action('barn2_license_activated_' . $this->item_id, $license_key, $url_to_activate);
             } else {
                 // Invalid license.
@@ -232,6 +235,9 @@ class Plugin_License implements Registerable, License, Core_Service
             if ('valid' === $response->license) {
                 // Valid (and active) license.
                 $license_data['status'] = 'active';
+                if (isset($response->bonus_downloads)) {
+                    $license_data['bonus_downloads'] = $response->bonus_downloads;
+                }
             } else {
                 // Invalid license - $response->license will contain the reason for the invalid license - e.g. expired, inactive, site_inactive, etc.
                 $license_data['error_code'] = $response->license;
@@ -536,5 +542,10 @@ class Plugin_License implements Registerable, License, Core_Service
             Util::format_link_open($this->get_renewal_url(\false), \true),
             '</a>'
         );
+    }
+    public function get_bonus_downloads()
+    {
+        $license_data = $this->get_license_data();
+        return $license_data['bonus_downloads'] ?? [];
     }
 }

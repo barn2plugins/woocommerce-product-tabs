@@ -70,7 +70,6 @@ class ComposerStaticInitdf4e5f2eb664b9ee609626af6b1cda76
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Util' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Util.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WP_Scoped_Hooks' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WP_Scoped_Hooks.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WooCommerce\\Admin\\Custom_Settings_Fields' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WooCommerce/Admin/Custom_Settings_Fields.php',
-        'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WooCommerce\\Admin\\Navigation' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WooCommerce/Admin/Navigation.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WooCommerce\\Admin\\Plugin_Promo' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WooCommerce/Admin/Plugin_Promo.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WooCommerce\\Admin\\Settings_Util' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WooCommerce/Admin/Settings_Util.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\WooCommerce\\Compatibility' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/WooCommerce/Compatibility.php',
