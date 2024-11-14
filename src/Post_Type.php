@@ -28,7 +28,6 @@ class Post_Type implements Registerable, Standard_Service {
 		add_filter( 'custom_menu_order', '__return_true', 99 );
 		add_filter( 'menu_order', [ $this, 'tabs_menu_order' ] );
 		add_filter( 'use_block_editor_for_post_type', [ $this, 'disable_gutenberg_editor' ], 20, 2 );
-		add_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20, 3 );
 	}
 
 	public function tab_post_type() {
@@ -191,48 +190,6 @@ class Post_Type implements Registerable, Standard_Service {
 			return false;
 		}
 		return $is_enabled;
-	}
-
-	/**
-	 * Change the tab slug and start it with wpt prefix
-	 *
-	 * @param int     $post_id Post ID.
-	 * @param WP_Post $post WP_Post object.
-	 * @param bool    $update Whether this is update or not.
-	 */
-	public function woo_product_tab_override_tab_slug( $post_id, $post, $update ) {
-		// Only want to set if this is a new post.
-		if ( $update ) {
-			return;
-		}
-
-		// Bail out if this is an autosave.
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-			return;
-		}
-
-		// Bail out if this is not an event item.
-		if ( 'woo_product_tab' !== $post->post_type ) {
-			return;
-		}
-
-		// Bail out if no permission.
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-
-		remove_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20 );
-
-		$unique_slug = 'wpt-' . $post_id;
-
-		$new_data = [
-			'ID'        => $post_id,
-			'post_name' => $unique_slug,
-		];
-
-		wp_update_post( $new_data );
-
-		add_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20, 3 );
 	}
 
 	public function sortable_tab_columns( $columns ) {
