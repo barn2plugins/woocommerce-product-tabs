@@ -1,0 +1,17 @@
+<wpml-config>
+	<admin-texts>
+		<key name="wpt_options">
+			<key name="description"/>
+			<key name="info"/>
+			<key name="review"/>
+		</key>
+	</admin-texts>
+	<custom-fields>
+		<custom-field action="copy">_wpt_display_tab_globally</custom-field>
+		<custom-field action="translate">_wpt_field_*</custom-field>
+		<custom-field action="copy">_wpt_override_*</custom-field>
+	</custom-fields>
+	<custom-types>
+		<custom-type translate="1">woo_product_tab</custom-type>
+	</custom-types>
+</wpml-config>

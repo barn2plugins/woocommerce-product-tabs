@@ -40,6 +40,7 @@ class Product_Tabs implements Registerable, Standard_Service {
 				'posts_per_page' => -1,
 				'orderby'        => 'menu_order',
 				'order'          => 'asc',
+				'suppress_filters' => 0
 			]
 		);
 
