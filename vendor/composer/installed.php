@@ -3,7 +3,7 @@
         'name' => 'barn2plugins/woocommerce-product-tabs',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '250213cafb01234ad365dfb36dac383b9883cb01',
+        'reference' => 'b37ecd13a2378efefd90684207f3a00ef3febc16',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'barn2plugins/woocommerce-product-tabs' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '250213cafb01234ad365dfb36dac383b9883cb01',
+            'reference' => 'b37ecd13a2378efefd90684207f3a00ef3febc16',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -359,7 +359,7 @@ class Util
         if (!\function_exists('get_plugin_data')) {
             require_once \ABSPATH . 'wp-admin/includes/plugin.php';
         }
-        return \get_plugin_data($plugin->get_file());
+        return \get_plugin_data($plugin->get_file(), \false, \false);
     }
     /**
      * Loops through all active plugins on the user's website and returns ones that are authored by Barn2
@@ -568,7 +568,7 @@ class Util
             if ($plugin && \current_user_can('activate_plugin', $plugin)) {
                 $cache_plugins = \wp_cache_get('plugins', 'plugins');
                 if (!empty($cache_plugins)) {
-                    $new_plugin = \get_plugin_data(\WP_PLUGIN_DIR . '/' . $plugin);
+                    $new_plugin = \get_plugin_data(\WP_PLUGIN_DIR . '/' . $plugin, \false, \false);
                     $cache_plugins[''][$plugin] = $new_plugin;
                     \wp_cache_set('plugins', $cache_plugins, 'plugins');
                 }

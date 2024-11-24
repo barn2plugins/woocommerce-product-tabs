@@ -22,6 +22,7 @@ class ComposerStaticInitdf4e5f2eb664b9ee609626af6b1cda76
 
     public static $classMap = array (
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Abstract_Plugin_Promo' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Admin/Abstract_Plugin_Promo.php',
+        'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Notice' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Admin/Notice.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Notices' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Admin/Notices.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Plugin_Promo' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Admin/Plugin_Promo.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Settings_API_Helper' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Admin/Settings_API_Helper.php',
@@ -64,6 +65,7 @@ class ComposerStaticInitdf4e5f2eb664b9ee609626af6b1cda76
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Service_Container' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Service/Service_Container.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Service_Provider' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Service/Service_Provider.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Standard_Service' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Service/Standard_Service.php',
+        'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Updater' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Service/Updater.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Template_Loader' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Template_Loader.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Traits\\Plugin_Aware' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Traits/Plugin_Aware.php',
         'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Translatable' => __DIR__ . '/../..' . '/dependencies/barn2/barn2-lib/src/Translatable.php',

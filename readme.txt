@@ -5,7 +5,7 @@ Tags: woocommerce product tabs, woocommerce custom tabs, woocommerce tabs, wooco
 Requires PHP: 7.4
 Requires at least: 6.1
 Tested up to: 6.7
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -130,14 +130,20 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 
 == Changelog ==
 
+= 2.1.8 =
+Release date 26 November 2024
+
+* Dev: Tested up to WordPress 6.7.1
+* Dev: Updated the internal libraries
+
+<!-- more -->
+
 = 2.1.7 =
 Release date 18 November 2024
 
 * Dev: tested up to WordPress 6.7 and WooCommerce 9.4.1
 * Dev: Changed the way the tab slug is saved
 * Dev: Added the uninstall file
-
-<!-- more -->
 
 = 2.1.6 =
 Release date 24 September 2024

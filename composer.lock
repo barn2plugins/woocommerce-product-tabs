@@ -210,23 +210,23 @@
         },
         {
             "name": "barn2/barn2-lib",
-            "version": "2.2.0",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:barn2plugins/barn2-lib.git",
-                "reference": "a3050f716819dd957f644291d4ed745ce2b4472a"
+                "reference": "cc582efc9e95f63b0291777808e183b958e05d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barn2plugins/barn2-lib/zipball/a3050f716819dd957f644291d4ed745ce2b4472a",
-                "reference": "a3050f716819dd957f644291d4ed745ce2b4472a",
+                "url": "https://api.github.com/repos/barn2plugins/barn2-lib/zipball/cc582efc9e95f63b0291777808e183b958e05d6d",
+                "reference": "cc582efc9e95f63b0291777808e183b958e05d6d",
                 "shasum": ""
             },
             "require": {
                 "wptrt/admin-notices": "^1.0"
             },
             "require-dev": {
-                "barn2/php-standards": "dev-master"
+                "barn2/php-standards": "^1.0.0"
             },
             "type": "library",
             "autoload": {
@@ -245,10 +245,10 @@
             ],
             "description": "Barn2 Libary code",
             "support": {
-                "source": "https://github.com/barn2plugins/barn2-lib/tree/2.2.0",
+                "source": "https://github.com/barn2plugins/barn2-lib/tree/2.2.4",
                 "issues": "https://github.com/barn2plugins/barn2-lib/issues"
             },
-            "time": "2024-10-22T04:58:48+00:00"
+            "time": "2024-11-25T09:22:34+00:00"
         },
         {
             "name": "barn2/php-scoper-excludes",

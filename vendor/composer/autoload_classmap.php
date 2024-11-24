@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Abstract_Plugin_Promo' => $baseDir . '/dependencies/barn2/barn2-lib/src/Admin/Abstract_Plugin_Promo.php',
+    'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Notice' => $baseDir . '/dependencies/barn2/barn2-lib/src/Admin/Notice.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Notices' => $baseDir . '/dependencies/barn2/barn2-lib/src/Admin/Notices.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Plugin_Promo' => $baseDir . '/dependencies/barn2/barn2-lib/src/Admin/Plugin_Promo.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Admin\\Settings_API_Helper' => $baseDir . '/dependencies/barn2/barn2-lib/src/Admin/Settings_API_Helper.php',
@@ -49,6 +50,7 @@ return array(
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Service_Container' => $baseDir . '/dependencies/barn2/barn2-lib/src/Service/Service_Container.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Service_Provider' => $baseDir . '/dependencies/barn2/barn2-lib/src/Service/Service_Provider.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Standard_Service' => $baseDir . '/dependencies/barn2/barn2-lib/src/Service/Standard_Service.php',
+    'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Service\\Updater' => $baseDir . '/dependencies/barn2/barn2-lib/src/Service/Updater.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Template_Loader' => $baseDir . '/dependencies/barn2/barn2-lib/src/Template_Loader.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Traits\\Plugin_Aware' => $baseDir . '/dependencies/barn2/barn2-lib/src/Traits/Plugin_Aware.php',
     'Barn2\\Plugin\\WC_Product_Tabs_Free\\Dependencies\\Lib\\Translatable' => $baseDir . '/dependencies/barn2/barn2-lib/src/Translatable.php',
