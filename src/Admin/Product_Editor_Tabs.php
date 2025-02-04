@@ -4,6 +4,7 @@ namespace Barn2\Plugin\WC_Product_Tabs_Free\Admin;
 
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Registerable;
 use Barn2\Plugin\WC_Product_Tabs_Free\Dependencies\Lib\Service\Standard_Service;
+use Barn2\Plugin\WC_Product_Tabs_Free\Util;
 
 /**
  * Add metaboxes and handles their behavior for the singled edit tab page
@@ -32,6 +33,9 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		add_action( 'save_post', [ $this, 'save_product_tab_data' ] );
 		add_filter( 'wp_insert_post_data', [ $this, 'insert_tab_menu_order' ], 99, 2 );
 		add_action( 'admin_head', [ $this, 'post_type_menu_active' ] );
+		add_action( 'save_post_product', [ $this, 'make_fields_translatable' ] );
+		add_action( 'admin_init', [ $this, 'make_all_fields_translatable' ] );
+		add_action( 'admin_notices', [ $this, 'show_notice_for_fields' ] );
 	}
 
 	/**
@@ -165,5 +169,139 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		}
 
 		return $product_tabs_list;
+	}
+
+	/**
+	 * Since the custom tab meta key is generated dynamically, we need to make them translatable every time user saves a product.
+	 */
+	public function make_fields_translatable() {
+		// Ensure this is not an auto-save or a revision.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+
+		if ( wp_is_post_revision( $post_id ) ) {
+			return;
+		}
+
+		if( ! Util::is_wpml_active() ) {
+			return;
+		}
+
+		try {
+			$tm                  = \wpml_load_core_tm();
+			$postMetaPreferences = $tm->settings['custom_fields_translation'] ?? [];
+			$postMetaKeys        = get_post_meta( $post_id );
+			$needsPersist        = false;
+
+			foreach ( $postMetaKeys as $key => $value ) {
+				if (
+					0 === strpos( $key, '_wpt_field_' )
+					&& ( ! isset( $postMetaPreferences[ $key ] ) || WPML_TRANSLATE_CUSTOM_FIELD !== $postMetaPreferences[ $key ] )
+				) {
+					$postMetaPreferences[ $key ] = WPML_TRANSLATE_CUSTOM_FIELD;
+					$needsPersist                = true;
+				}
+			}
+
+			if ( $needsPersist ) {
+				$tm->settings['custom_fields_translation'] = $postMetaPreferences;
+				$tm->save_settings();
+			}
+		} catch ( \Throwable $e ) {
+			error_log( $e->getMessage() );
+		}
+	}
+
+	public function make_all_fields_translatable(  ) {
+		if ( isset( $_GET['run_wpml_translation'] ) && '1' === $_GET['run_wpml_translation'] ) {
+			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'], 'run_wpml_translation_nonce' ) ) {
+				wp_die( 'Invalid request. Please try again.' );
+			}
+
+			if( ! Util::is_wpml_active() ) {
+				wp_safe_redirect( admin_url() );
+			}
+
+			try {
+				// Query all WooCommerce products.
+				$args = [
+					'post_type'      => 'product',
+					'posts_per_page' => -1,
+					'fields'         => 'ids',
+				];
+				$products = get_posts( $args );
+
+				if ( empty( $products ) ) {
+					return;
+				}
+
+				// Loop through each product.
+				foreach ( $products as $product_id ) {
+					$postMetaKeys = get_post_meta( $product_id );
+
+					$hasWptField = false;
+
+					// Check for `_wpt_field_` custom fields.
+					foreach ( $postMetaKeys as $key => $value ) {
+						if ( 0 === strpos( $key, '_wpt_field_' ) ) {
+							$hasWptField = true;
+							break;
+						}
+					}
+
+					// If the product has `_wpt_field_` custom fields, save it.
+					if ( $hasWptField ) {
+						wp_update_post( [
+							'ID' => $product_id,
+						] );
+					}
+				}
+
+				wp_safe_redirect( add_query_arg( 'run_wpml_translation_done', '1', admin_url() ) );
+				exit;
+			} catch ( \Throwable $e ) {
+				echo $e->getMessage();
+				exit;
+			}
+		}
+
+		// Display a success message if the task was completed.
+		if ( isset( $_GET['run_wpml_translation_done'] ) && '1' === $_GET['run_wpml_translation_done'] ) {
+			add_action( 'admin_notices', function() {
+				echo '<div class="notice notice-success is-dismissible">
+					<p>'. __( 'Your custom fields are translatable now!', 'woocommerce-product-tabs' ) .'</p>
+				</div>';
+			} );
+		}
+
+	}
+
+	public function show_notice_for_fields() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		// Bail if we have done this before
+		if( get_option( 'wc_product_tabs_made_fields_translatable' ) ) {
+			return;
+		}
+
+		if( !Util::is_wpml_active() ) {
+			return;
+		}
+
+		$url = add_query_arg(
+			[
+				'run_wpml_translation' => '1',
+				'_wpnonce'             => wp_create_nonce( 'run_wpml_translation_nonce' ),
+			],
+			admin_url()
+		);
+
+		echo '<div class="notice notice-info is-dismissible">
+			<p>'. __( 'If you have used WPML to translate the tab custom content fields, please click on the button below to make them translatable in the Translation Editor.', 'woocommerce-product-tabs' ) .'</p>
+			<p><a href="' . esc_url( $url ) . '" class="button button-primary">Run Now</a></p>
+		</div>';
 	}
 }

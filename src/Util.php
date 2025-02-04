@@ -111,4 +111,16 @@ final class Util {
 
 		return $value;
 	}
+
+	public static function is_wpml_active() {
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		if ( ! is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ) {
+			return false;
+		}
+
+		return true;
+	}
 }
