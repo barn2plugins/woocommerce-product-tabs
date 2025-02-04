@@ -24,19 +24,6 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 
 	public function __construct( $dir_path ) {
 		$this->plugin_dir_path   = $dir_path;
-		$this->product_tabs_list = get_posts(
-			[
-				'post_type'      => 'woo_product_tab',
-				'posts_per_page' => -1,
-				'orderby'        => 'menu_order',
-				'order'          => 'asc',
-			]
-		);
-		if ( ! empty( $this->product_tabs_list ) ) {
-			foreach ( $this->product_tabs_list as $key => $t ) {
-				$this->product_tabs_list[ $key ]->post_meta = get_post_meta( $this->product_tabs_list[ $key ]->ID );
-			}
-		}
 	}
 
 	public function register() {
@@ -66,6 +53,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 	 * @since 1.0.0
 	 */
 	function product_data_fields() {
+		$this->product_tabs_list = $this->get_product_tabs_list();
 		include_once $this->plugin_dir_path . 'templates/product-tab-html.php';
 	}
 
@@ -86,7 +74,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 			return;
 		}
 
-		if ( empty( $this->product_tabs_list ) ) {
+		if ( empty( $this->get_product_tabs_list() ) ) {
 			return;
 		}
 
@@ -159,5 +147,23 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		];
 
 		return apply_filters( 'wt_allowed_kses_tags', $allowed_tags );
+	}
+
+	public function get_product_tabs_list() {
+		$product_tabs_list = get_posts(
+			[
+				'post_type'      => 'woo_product_tab',
+				'posts_per_page' => -1,
+				'orderby'        => 'menu_order',
+				'order'          => 'asc',
+			]
+		);
+		if ( ! empty( $product_tabs_list ) ) {
+			foreach ( $product_tabs_list as $key => $t ) {
+				$product_tabs_list[ $key ]->post_meta = get_post_meta( $product_tabs_list[ $key ]->ID );
+			}
+		}
+
+		return $product_tabs_list;
 	}
 }
