@@ -63,7 +63,7 @@ class Post_Type implements Registerable, Standard_Service {
 			'rest_controller_class' => 'WP_REST_Posts_Controller',
 			'show_in_menu'          => 'edit.php?post_type=product',
 			'taxonomies'            => [],
-			'supports'              => [ 'title', 'editor' ],
+			'supports'              => [ 'title', 'editor', 'revisions' ],
 		];
 
 		register_post_type( 'woo_product_tab', $args );
