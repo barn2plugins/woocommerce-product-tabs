@@ -24,7 +24,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 	private $product_tabs_list;
 
 	public function __construct( $dir_path ) {
-		$this->plugin_dir_path   = $dir_path;
+		$this->plugin_dir_path = $dir_path;
 	}
 
 	public function register() {
@@ -184,7 +184,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 			return;
 		}
 
-		if( ! Util::is_wpml_active() ) {
+		if ( ! Util::is_wpml_active() ) {
 			return;
 		}
 
@@ -213,19 +213,19 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		}
 	}
 
-	public function make_all_fields_translatable(  ) {
+	public function make_all_fields_translatable() {
 		if ( isset( $_GET['run_wpml_translation'] ) && '1' === $_GET['run_wpml_translation'] ) {
 			if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'], 'run_wpml_translation_nonce' ) ) {
 				wp_die( 'Invalid request. Please try again.' );
 			}
 
-			if( ! Util::is_wpml_active() ) {
+			if ( ! Util::is_wpml_active() ) {
 				wp_safe_redirect( admin_url() );
 			}
 
 			try {
 				// Query all WooCommerce products.
-				$args = [
+				$args     = [
 					'post_type'      => 'product',
 					'posts_per_page' => -1,
 					'fields'         => 'ids',
@@ -252,9 +252,11 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 
 					// If the product has `_wpt_field_` custom fields, save it.
 					if ( $hasWptField ) {
-						wp_update_post( [
-							'ID' => $product_id,
-						] );
+						wp_update_post(
+							[
+								'ID' => $product_id,
+							]
+						);
 					}
 				}
 
@@ -268,13 +270,15 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 
 		// Display a success message if the task was completed.
 		if ( isset( $_GET['run_wpml_translation_done'] ) && '1' === $_GET['run_wpml_translation_done'] ) {
-			add_action( 'admin_notices', function() {
-				echo '<div class="notice notice-success is-dismissible">
-					<p>'. __( 'Your custom fields are translatable now!', 'woocommerce-product-tabs' ) .'</p>
+			add_action(
+				'admin_notices',
+				function () {
+					echo '<div class="notice notice-success is-dismissible">
+					<p>' . __( 'Your custom fields are translatable now!', 'woocommerce-product-tabs' ) . '</p>
 				</div>';
-			} );
+				}
+			);
 		}
-
 	}
 
 	public function show_notice_for_fields() {
@@ -283,11 +287,11 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		}
 
 		// Bail if we have done this before
-		if( get_option( 'wc_product_tabs_made_fields_translatable' ) ) {
+		if ( get_option( 'wc_product_tabs_made_fields_translatable' ) ) {
 			return;
 		}
 
-		if( !Util::is_wpml_active() ) {
+		if ( ! Util::is_wpml_active() ) {
 			return;
 		}
 
@@ -300,7 +304,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		);
 
 		echo '<div class="notice notice-info is-dismissible">
-			<p>'. __( 'If you have used WPML to translate the tab custom content fields, please click on the button below to make them translatable in the Translation Editor.', 'woocommerce-product-tabs' ) .'</p>
+			<p>' . __( 'If you have used WPML to translate the tab custom content fields, please click on the button below to make them translatable in the Translation Editor.', 'woocommerce-product-tabs' ) . '</p>
 			<p><a href="' . esc_url( $url ) . '" class="button button-primary">Run Now</a></p>
 		</div>';
 	}
