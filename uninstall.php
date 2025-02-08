@@ -19,9 +19,8 @@ if ( ! isset( $settings['delete_data'] ) || ! $settings['delete_data'] ) {
 	return;
 }
 
-foreach ( $settings as $option ) {
-	delete_option( $option );
-}
+delete_option( 'wpt_options' );
+delete_option( 'woocommerce-product-tabs-setup-wizard_completed' );
 
 // Delete all the tabs
 $tabs = get_posts( array(
