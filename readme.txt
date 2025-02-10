@@ -135,7 +135,7 @@ Release date 10 February 2024
 
 * New: Added revisions support
 * New: Added custom tab content fields to WPML translation manager
-* Dev: Updated internal libraries and tested up to WordPress 9.6.1
+* Dev: Updated internal libraries and tested up to WooCommerce 9.6.1
 * Fix: The PolyLang widgets were not shown in Filter Everything plugin
 
 <!-- more -->

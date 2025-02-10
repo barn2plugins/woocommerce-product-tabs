@@ -36,6 +36,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 		add_action( 'save_post_product', [ $this, 'make_fields_translatable' ] );
 		add_action( 'admin_init', [ $this, 'make_all_fields_translatable' ] );
 		add_action( 'admin_notices', [ $this, 'show_notice_for_fields' ] );
+		add_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20, 3 );
 	}
 
 	/**
@@ -121,6 +122,42 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 	}
 
 	/**
+	 * Change the tab slug and start it with wpt prefix.
+	 *
+	 * This is to avoid JS issues with the tab slugs and WooCommerce when a website is not using latin alphabets
+	 *
+	 * @param int     $post_id Post ID.
+	 * @param WP_Post $post WP_Post object.
+	 * @param bool    $update Whether this is update or not.
+	 */
+	public function woo_product_tab_override_tab_slug( $post_id, $post, $update ) {
+		// Only want to set if this is a new post.
+		if ( $update ) {
+			return;
+		}
+		// Bail out if this is an autosave.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+		// Bail out if this is not an event item.
+		if ( 'woo_product_tab' !== $post->post_type ) {
+			return;
+		}
+		// Bail out if no permission.
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+		remove_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20 );
+		$unique_slug = 'wpt-' . $post_id;
+		$new_data = [
+			'ID'        => $post_id,
+			'post_name' => $unique_slug,
+		];
+		wp_update_post( $new_data );
+		add_action( 'save_post', [ $this, 'woo_product_tab_override_tab_slug' ], 20, 3 );
+	}
+
+	/**
 	 * Add active in menu product tabs
 	 *
 	 * @since 1.0.0
@@ -174,7 +211,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 	/**
 	 * Since the custom tab meta key is generated dynamically, we need to make them translatable every time user saves a product.
 	 */
-	public function make_fields_translatable() {
+	public function make_fields_translatable( $post_id ) {
 		// Ensure this is not an auto-save or a revision.
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
