@@ -296,7 +296,7 @@ class Product_Editor_Tabs implements Registerable, Standard_Service {
 						);
 					}
 				}
-
+				update_option( 'wc_product_tabs_made_fields_translatable', true );
 				wp_safe_redirect( add_query_arg( 'run_wpml_translation_done', '1', admin_url() ) );
 				exit;
 			} catch ( \Throwable $e ) {
