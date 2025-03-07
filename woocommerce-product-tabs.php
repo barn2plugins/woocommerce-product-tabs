@@ -20,7 +20,7 @@
  * Requires PHP: 7.4
  * Requires at least: 6.1
  * WC requires at least: 7.2
- * WC tested up to: 9.6.1
+ * WC tested up to: 9.7.1
  *
  * Copyright:       Barn2 Media Ltd
  * License:         GNU General Public License v3.0

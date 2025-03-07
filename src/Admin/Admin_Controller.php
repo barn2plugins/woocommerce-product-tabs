@@ -117,7 +117,7 @@ class Admin_Controller implements Registerable, Standard_Service {
 			wp_enqueue_script( $this->plugin_name . '-product', plugin_dir_url( __DIR__ ) . '../assets/js/admin/product.js', [ 'jquery' ], $this->version, true );
 		}
 
-		if ( $screen->id === 'toplevel_page_woocommerce-product-tabs-setup-wizard' ) {
+		if ( preg_match( '/^toplevel_page_woocommerce-product-tabs(?:-\d+)?-setup-wizard$/', $screen->id ) ) {
 			wp_enqueue_style( $this->plugin_name . '-tab', plugin_dir_url( __DIR__ ) . '../assets/css/admin/wizard.css', [], $this->version, 'all' );
 			wp_enqueue_editor();
 		}
