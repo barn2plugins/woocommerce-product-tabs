@@ -34,7 +34,7 @@
       },
       {
         "step": "runPHP",
-        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 5,\n'post_title' => 'Soap','post_excerpt' => 'Welcome to the WooCommerce Product Tabs preview. Scroll down to see the extra tabs that we have added to this product.',\n\n'post_content' => '<!-- wp:paragraph -->\n<p>Welcome to the WooCommerce Product Tabs preview. This is the description.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_type' => 'product',\n'post_author' => 1 ));"
+        "code": "<?php\ninclude 'wordpress/wp-load.php';\nwp_insert_post(array(\n'import_id' => 5,\n'post_title' => 'Soap','post_excerpt' => 'Welcome to the Product Tabs for WooCommerce preview. Scroll down to see the extra tabs that we have added to this product.',\n\n'post_content' => '<!-- wp:paragraph -->\n<p>Welcome to the Product Tabs for WooCommerce preview. This is the description.</p>\n<!-- \/wp:paragraph -->',\n'post_status' => 'publish',\n'post_type' => 'product',\n'post_author' => 1 ));"
       },
       {
         "step": "runPHP",
@@ -71,7 +71,7 @@
       {
         "step": "setSiteOptions",
         "options": {
-          "blogname": "WooCommerce Product Tabs (Free)"
+          "blogname": "Product Tabs for WooCommerce (Free)"
         }
       }
     ]

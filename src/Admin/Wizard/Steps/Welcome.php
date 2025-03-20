@@ -20,7 +20,7 @@ class Welcome extends Welcome_Free {
     public function __construct()
     {
         $this->set_id( 'welcome_free' );
-        $this->set_title( 'Welcome to WooCommerce Product Tabs' );
+        $this->set_title( 'Welcome to Product Tabs for WooCommerce' );
         $this->set_name( esc_html__( 'Welcome', 'woocommerce-product-tabs' ) );
         $this->set_tooltip( FALSE );
         $this->set_description( esc_html__( 'Create custom tabs in no time.', 'document-library-lite' ) );

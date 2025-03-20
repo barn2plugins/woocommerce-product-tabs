@@ -1,6 +1,6 @@
 {
     "name": "barn2plugins/woocommerce-product-tabs",
-    "description": "WooCommerce Product Tabs (Free)",
+    "description": "Product Tabs for WooCommerce (Free)",
     "type": "wordpress-plugin",
     "license": "GPL-3.0",
     "authors": [

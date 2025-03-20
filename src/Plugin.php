@@ -19,7 +19,7 @@ use Barn2\Plugin\WC_Product_Tabs_Free\Admin\Wizard\Setup_Wizard;
  */
 class Plugin extends Simple_Plugin {
 
-	const NAME    = 'WooCommerce Product Tabs Free';
+	const NAME    = 'Product Tabs for WooCommerce Free';
 	const ITEM_ID = 559044;
 
 	/**

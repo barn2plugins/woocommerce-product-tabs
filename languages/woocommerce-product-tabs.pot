@@ -2,7 +2,7 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Product Tabs 2.0.21\n"
+"Project-Id-Version: Product Tabs for WooCommerce 2.0.21\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/woocommerce-product-tabs\n"
 "POT-Creation-Date: 2023-07-30 05:40:36+00:00\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: node-wp-i18n 1.2.7\n"
 
 #. Plugin Name of the plugin/theme
-msgid "WooCommerce Product Tabs"
+msgid "Product Tabs for WooCommerce"
 msgstr ""
 
 #: admin/admin.php:18
@@ -188,7 +188,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"WooCommerce Product Tabs is the best WordPress plugin to add new tabs for "
+"Product Tabs for WooCommerce is the best WordPress plugin to add new tabs for "
 "WooCommerce products. You can add as many custom tabs as you need to the "
 "product using this plugin."
 msgstr ""
@@ -213,7 +213,7 @@ msgstr ""
 
 #: public/class-woocommerce-product-tabs-public.php:187
 msgctxt "admin menu"
-msgid "WooCommerce Product Tabs"
+msgid "Product Tabs for WooCommerce"
 msgstr ""
 
 #: public/class-woocommerce-product-tabs-public.php:188
