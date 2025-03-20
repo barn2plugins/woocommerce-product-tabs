@@ -5,7 +5,7 @@ Tags: product tabs for woocommerce, woocommerce custom tabs, woocommerce tabs, w
 Requires PHP: 7.4
 Requires at least: 6.1
 Tested up to: 6.7
-Stable tag: 2.1.9
+Stable tag: 2.1.10
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Donate link: https://barn2.com
@@ -129,6 +129,11 @@ Please report any security bugs through the [Patchstack Vulnerability Disclosure
 5. Add any type of content to the product page tabs, including embedded videos
 
 == Changelog ==
+
+= 2.1.10 =
+Release date 20 March 2025
+
+* Tweak: Changed the plugin's name to Product Tabs for WooCommerce
 
 = 2.1.9 =
 Release date 10 March 2024
