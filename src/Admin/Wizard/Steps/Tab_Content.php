@@ -26,7 +26,7 @@ class Tab_Content extends Step {
 	/**
 	 * Constructor.
 	 */
-	public function __construct() {
+	public function init() {
 		$this->set_id( 'tab_content' );
 		$this->set_name( esc_html__( 'Tab Content', 'woocommerce-product-tabs' ) );
 		$this->set_description( esc_html__( "Enter the title for your tab and the content that you'd like to display inside it.", 'woocommerce-product-tabs' ) );

@@ -17,8 +17,8 @@ class Completed extends Ready {
 	/**
 	 * Constructor.
 	 */
-	public function __construct() {
-		parent::__construct();
+	public function init() {
+		parent::init();
 		$this->set_name( esc_html__( 'Ready', 'woocommerce-product-tabs' ) );
 		$this->set_title( esc_html__( 'Complete setup', 'woocommerce-product-tabs' ) );
 
